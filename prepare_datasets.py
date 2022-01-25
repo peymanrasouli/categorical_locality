@@ -5,7 +5,7 @@ from sklearn.datasets import load_diabetes, load_iris, make_moons, load_wine, fe
 import sys
 sys.path.append('LORE')
 from util import *
-from LORE.neighbor_generator import *
+from LORE.gpdatagenerator import *
 
 ## Preparing Adult dataset
 def PrepareAdult(dataset_path, dataset_name):
