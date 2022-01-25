@@ -13,6 +13,7 @@ from random_sampling_neighborhood import RandomSamplingNeighborhood
 from random_oversampling_neigbhorhood import RandomOversamplingNeighborhood
 from random_instance_selection_neighborhood import RandomInstanceSelectionNeighborhood
 from genetic_neighborhood import GeneticNeighborhood
+from meaningful_data_sampling_neighborhood import MeaningfulDataSamplingNeighborhood
 from sklearn import tree
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.tree import _tree
@@ -150,18 +151,14 @@ def main():
     # defining the list of data sets
     datsets_list = {
         'adult': ('adult.csv', PrepareAdult),
-        # 'adult': ('adult.csv', PrepareAdultCat),
         'compas-scores-two-years': ('compas-scores-two-years.csv', PrepareCOMPAS),
-        # 'compas-scores-two-years': ('compas-scores-two-years.csv', PrepareCOMPASCat),
         'credit-card-default': ('credit-card-default.csv', PrepareCreditCardDefault),
-        # 'credit-card-default': ('credit-card-default.csv', PrepareCreditCardDefaultCat),
         'german-credit': ('german-credit.csv', PrepareGermanCredit),
-        # 'german-credit': ('german-credit.csv', PrepareGermanCreditCat),
-        'heart-disease': ('heart-disease.csv', PrepareHeartDisease),
-        # 'heart-disease': ('heart-disease.csv', PrepareHeartDiseaseCat),
         'breast-cancer': ('breast-cancer.data', PrepareBreastCancer),
-        # 'nursery': ('nursery.data', PrepareNursery),
+        'heart-disease': ('heart-disease.csv', PrepareHeartDisease),
+        'nursery': ('nursery.data', PrepareNursery),
         'car': ('car.data', PrepareCar),
+        'wine': ('wine.data', PrepareWine),
     }
 
     # defining the list of black-boxes
@@ -234,32 +231,37 @@ def main():
             exp.fit()
             sampling_methods['exp'] = exp.neighborhoodSampling
 
-            # random neighborhood
-            rnd = RandomSamplingNeighborhood(X, y, blackbox, dataset)
-            rnd.fit()
-            sampling_methods['rnd'] = rnd.neighborhoodSampling
+            # # random neighborhood
+            # rnd = RandomSamplingNeighborhood(X, y, blackbox, dataset)
+            # rnd.fit()
+            # sampling_methods['rnd'] = rnd.neighborhoodSampling
+            #
+            # # random oversampling neighborhood
+            # ros = RandomOversamplingNeighborhood(X, y, blackbox, dataset)
+            # ros.fit()
+            # sampling_methods['ros'] = ros.neighborhoodSampling
+            #
+            # # random instance selection neighborhood
+            # ris = RandomInstanceSelectionNeighborhood(X, y, blackbox, dataset)
+            # ris.fit()
+            # sampling_methods['ris'] = ris.neighborhoodSampling
+            #
+            # # random genetic neighborhood
+            # gp = GeneticNeighborhood(X, y, blackbox, dataset)
+            # gp.fit()
+            # sampling_methods['gp'] = gp.neighborhoodSampling
 
-            # random oversampling neighborhood
-            ros = RandomOversamplingNeighborhood(X, y, blackbox, dataset)
-            ros.fit()
-            sampling_methods['ros'] = ros.neighborhoodSampling
-
-            # random instance selection neighborhood
-            ris = RandomInstanceSelectionNeighborhood(X, y, blackbox, dataset)
-            ris.fit()
-            sampling_methods['ris'] = ris.neighborhoodSampling
-
-            # random genetic neighborhood
-            gp = GeneticNeighborhood(X, y, blackbox, dataset)
-            gp.fit()
-            sampling_methods['gp'] = gp.neighborhoodSampling
+            # meaningful data sampling neighborhood
+            mds = MeaningfulDataSamplingNeighborhood(X, y, blackbox, dataset)
+            mds.fit()
+            sampling_methods['mds'] = mds.neighborhoodSampling
 
             # Generating explanations for the samples in the explain set
             methods_output = {'exp': {'local_model_pred':[], 'local_model_score':[]},
-                              'rnd': {'local_model_pred': [], 'local_model_score': []},
-                              'ros': {'local_model_pred':[], 'local_model_score':[]},
-                              'ris': {'local_model_pred':[], 'local_model_score':[]},
-                              'gp': {'local_model_pred': [], 'local_model_score': []},
+                              # 'rnd': {'local_model_pred': [], 'local_model_score': []},
+                              # 'ros': {'local_model_pred':[], 'local_model_score':[]},
+                              # 'ris': {'local_model_pred':[], 'local_model_score':[]},
+                              # 'gp': {'local_model_pred': [], 'local_model_score': []},
                               'mds': {'local_model_pred': [], 'local_model_score': []}
                               }
 

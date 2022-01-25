@@ -1,7 +1,7 @@
 import collections
 import numpy as np
 
-def RandomSampling(training_data, num_samples):
+def FrequencyBasedRandomSampling(training_data, num_samples):
 
 
     # Collecting values and frequency of values for every feature

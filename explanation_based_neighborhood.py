@@ -5,7 +5,7 @@ from sklearn.neighbors import NearestNeighbors
 from sklearn.inspection import partial_dependence
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.neural_network import MLPClassifier
-from random_sampling import RandomSampling
+from frequency_based_random_sampling import FrequencyBasedRandomSampling
 from encoding_utils import *
 from sklearn.metrics import pairwise_distances
 
@@ -16,7 +16,7 @@ class ExplanationBasedNeighborhood():
                 model,
                 dataset):
 
-        XX = RandomSampling(X, 10000)
+        XX = FrequencyBasedRandomSampling(X, 10000)
         yy = model.predict(XX)
 
         class_set = np.unique(yy)
@@ -117,7 +117,7 @@ class ExplanationBasedNeighborhood():
             x_hat_exp[c] = self.cat2numConverter(instance)
 
         # generating random samples from the distribution of training data
-        X_sampled = RandomSampling(self.X, N_samples * 5)
+        X_sampled = FrequencyBasedRandomSampling(self.X, N_samples * 5)
         X_sampled_c = self.model.predict(X_sampled)
 
         # converting random samples from categorical to numerical representation
