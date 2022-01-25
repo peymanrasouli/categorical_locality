@@ -17,7 +17,7 @@ def PrepareAdult(dataset_path, dataset_name):
     df = df.dropna().reset_index(drop=True)
 
     ## Recognizing inputs
-    class_name = 'salary'
+    class_name = 'class'
     df_X_org = df.loc[:, df.columns!=class_name]
     df_y = df.loc[:, class_name]
 
@@ -218,7 +218,7 @@ def PrepareCOMPAS(dataset_path, dataset_name):
     del df['score_text']
 
     ## Recognizing inputs
-    class_name = 'recidivism'
+    class_name = 'class'
     df_X_org = df.loc[:, df.columns!=class_name]
     df_y = df.loc[:, class_name]
 
@@ -380,7 +380,7 @@ def PrepareCreditCardDefault(dataset_path, dataset_name):
     df = pd.read_csv(dataset_path+dataset_name, delimiter=',')
 
     ## Recognizing inputs
-    class_name = 'default_payment_next_month'
+    class_name = 'default payment next month'
     df_X_org = df.loc[:, df.columns!=class_name]
     df_y = df.loc[:, class_name]
 
