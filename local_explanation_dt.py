@@ -14,7 +14,6 @@ from random_oversampling_neigbhorhood import RandomOversamplingNeighborhood
 from random_instance_selection_neighborhood import RandomInstanceSelectionNeighborhood
 from genetic_neighborhood import GeneticNeighborhood
 from meaningful_data_sampling_neighborhood import MeaningfulDataSamplingNeighborhood
-from sklearn import tree
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.tree import _tree
 import warnings
@@ -154,11 +153,11 @@ def main():
         'compas-scores-two-years': ('compas-scores-two-years.csv', PrepareCOMPAS),
         'credit-card-default': ('credit-card-default.csv', PrepareCreditCardDefault),
         'german-credit': ('german-credit.csv', PrepareGermanCredit),
-        'breast-cancer': ('breast-cancer.data', PrepareBreastCancer),
-        'heart-disease': ('heart-disease.csv', PrepareHeartDisease),
-        'nursery': ('nursery.data', PrepareNursery),
-        'car': ('car.data', PrepareCar),
-        'wine': ('wine.data', PrepareWine),
+        # 'breast-cancer': ('breast-cancer.data', PrepareBreastCancer),
+        # 'heart-disease': ('heart-disease.csv', PrepareHeartDisease),
+        # 'nursery': ('nursery.data', PrepareNursery),
+        # 'car': ('car.data', PrepareCar),
+        # 'wine': ('wine.data', PrepareWine),
     }
 
     # defining the list of black-boxes
@@ -177,7 +176,8 @@ def main():
         'heart-disease': 1000,
         'breast-cancer': 1000,
         'nursery': 1000,
-        'car':1000
+        'car':1000,
+        'wine':1000
     }
 
     N_features = {
@@ -188,7 +188,8 @@ def main():
         'heart-disease': 5,
         'breast-cancer': 5,
         'nursery': 5,
-        'car':5
+        'car':5,
+        'wine':5
     }
 
 
@@ -205,7 +206,7 @@ def main():
         # splitting the data set into train and test sets
         X, y = dataset['X_ord'], dataset['y']
         X_train, X_test, Y_train, Y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-        X_explain = X_test[:min(X_test.shape[0], 50),:]
+        X_explain = X_test[:min(X_test.shape[0], 100),:]
 
         # creating one-hot encoder for discrete features
         ohe_encoder = {}
@@ -245,16 +246,16 @@ def main():
             # ris = RandomInstanceSelectionNeighborhood(X, y, blackbox, dataset)
             # ris.fit()
             # sampling_methods['ris'] = ris.neighborhoodSampling
-            #
+
             # # random genetic neighborhood
             # gp = GeneticNeighborhood(X, y, blackbox, dataset)
             # gp.fit()
             # sampling_methods['gp'] = gp.neighborhoodSampling
 
-            # meaningful data sampling neighborhood
-            mds = MeaningfulDataSamplingNeighborhood(X, y, blackbox, dataset)
-            mds.fit()
-            sampling_methods['mds'] = mds.neighborhoodSampling
+            # # meaningful data sampling neighborhood
+            # mds = MeaningfulDataSamplingNeighborhood(X, y, blackbox, dataset)
+            # mds.fit()
+            # sampling_methods['mds'] = mds.neighborhoodSampling
 
             # Generating explanations for the samples in the explain set
             methods_output = {'exp': {'local_model_pred':[], 'local_model_score':[]},
@@ -262,7 +263,7 @@ def main():
                               # 'ros': {'local_model_pred':[], 'local_model_score':[]},
                               # 'ris': {'local_model_pred':[], 'local_model_score':[]},
                               # 'gp': {'local_model_pred': [], 'local_model_score': []},
-                              'mds': {'local_model_pred': [], 'local_model_score': []}
+                              # 'mds': {'local_model_pred': [], 'local_model_score': []}
                               }
 
             for x in X_explain:

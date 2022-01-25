@@ -2,12 +2,7 @@ import pandas as pd
 import numpy as np
 from PyALE import ale
 from sklearn.neighbors import NearestNeighbors
-from sklearn.inspection import partial_dependence
-from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.neural_network import MLPClassifier
 from frequency_based_random_sampling import FrequencyBasedRandomSampling
-from encoding_utils import *
-from sklearn.metrics import pairwise_distances
 
 class ExplanationBasedNeighborhood():
     def __init__(self,
@@ -16,22 +11,18 @@ class ExplanationBasedNeighborhood():
                 model,
                 dataset):
 
-        XX = FrequencyBasedRandomSampling(X, 10000)
-        yy = model.predict(XX)
-
-        class_set = np.unique(yy)
-        self.class_set = class_set
-
-        self.X = XX
-        self.y = yy
+        self.X = FrequencyBasedRandomSampling(X, 5000)
+        self.y = model.predict(self.X)
         self.model = model
         self.dataset = dataset
         self.discrete_indices = dataset['discrete_indices']
         self.continuous_indices = dataset['continuous_indices']
         self.numerical_width = dataset['feature_width'][dataset['continuous_indices']]
+        self.class_set = np.unique(y)
 
     def categoricalSimilarity(self):
 
+        # initializing the variables
         categorical_similarity = {}
         categorical_width = {}
         categorical_importance = {}
@@ -42,20 +33,19 @@ class ExplanationBasedNeighborhood():
             categorical_importance.update({c: {}})
             class_data.update({c: {}})
 
+        # extracting global explanation of categorical features w.r.t. every classs
         for c in self.class_set:
             ind_c = np.where(self.y==c)[0]
             X_c = self.X[ind_c, :]
             class_data[c] = X_c
             X_df = pd.DataFrame(data= np.r_[self.X, X_c], columns=range(0, self.X.shape[1]))
             for f in self.discrete_indices:
-
                 exp = ale(X_df, self.model, [f], feature_type="discrete", include_CI=True, C=0.95)
                 categorical_similarity[c][f] = exp['eff']
-
                 categorical_width[c][f] = max(exp['eff']) - min(exp['eff'])
-
                 categorical_importance[c][f] = max(exp['eff'])
 
+        # returning the results
         self.categorical_similarity = categorical_similarity
         self.categorical_width = categorical_width
         self.categorical_importance = categorical_importance
@@ -64,9 +54,8 @@ class ExplanationBasedNeighborhood():
     def neighborhoodModel(self):
         models = {}
         for c, X_c in self.class_data.items():
-            X_c_ohe = ord2ohe(X_c, self.dataset)
-            model = NearestNeighbors(n_neighbors=1, algorithm='ball_tree', metric='minkowski', p=2)
-            model.fit(X_c_ohe)
+            model = NearestNeighbors(n_neighbors=1, algorithm='ball_tree', metric='jaccard')
+            model.fit(X_c)
             models[c] = model
         self.neighborhood_models = models
 
@@ -74,21 +63,22 @@ class ExplanationBasedNeighborhood():
         self.categoricalSimilarity()
         self.neighborhoodModel()
 
-
     def cat2numConverter(self,
                           x,
                           feature_list=None):
 
+        # converting features in categorical representation to explanation representation
         if feature_list == None:
             feature_list = self.discrete_indices
 
         x_exp = x.copy()
-
         if x_exp.shape.__len__() == 1:
+            # the input is a single instance
             x_c = self.model.predict(x.reshape(1,-1))[0]
             for f in feature_list:
                 x_exp[f] = self.categorical_similarity[x_c][f][x[f]]
         else:
+            # the input is a matrix of instances
             x_c = self.model.predict(x)
             for f in feature_list:
                 vec = x[:,f]
@@ -100,7 +90,6 @@ class ExplanationBasedNeighborhood():
 
         # finding the label of x
         x_c = self.model.predict(x.reshape(1,-1))[0]
-        x_ohe = ord2ohe(x, self.dataset)
 
         # finding the closest neighbors in the other classes
         x_hat = {}
@@ -108,7 +97,7 @@ class ExplanationBasedNeighborhood():
             if c == x_c:
                 x_hat[c] = x
             else:
-                distances, indices = self.neighborhood_models[c].kneighbors(x_ohe.reshape(1, -1))
+                distances, indices = self.neighborhood_models[c].kneighbors(x.reshape(1, -1))
                 x_hat[c] = self.class_data[c][indices[0][0]].copy()
 
         # converting input samples from categorical to numerical representation
