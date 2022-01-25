@@ -867,6 +867,7 @@ def PrepareNursery(dataset_path, dataset_name):
 
     ## Recognizing inputs
     class_name = 'class'
+    df.loc[df['class'] == 'recommend', 'class'] = 'not_recom'
     df_X_org = df.loc[:, df.columns!=class_name]
     df_y = df.loc[:, class_name]
 
