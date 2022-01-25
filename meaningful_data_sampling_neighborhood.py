@@ -1,6 +1,6 @@
 import sys
 sys.path.append('MDS')
-from FaithfulXAI.meaningful_sampling import MeaningfulSampling
+from MDS.meaningful_sampling import MeaningfulSampling
 
 class MeaningfulDataSamplingNeighborhood():
     def __init__(self,
