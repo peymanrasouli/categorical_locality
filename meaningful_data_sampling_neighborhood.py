@@ -1,5 +1,5 @@
 import sys
-sys.path.append('FaithfulXAI')
+sys.path.append('MDS')
 from FaithfulXAI.meaningful_sampling import MeaningfulSampling
 
 class MeaningfulDataSamplingNeighborhood():
