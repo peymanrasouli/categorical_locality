@@ -1,5 +1,6 @@
 import sys
 sys.path.append('LORE')
+import numpy as np
 from LORE.neighbor_generator import *
 
 class RandomOversamplingNeighborhood():
@@ -21,7 +22,8 @@ class RandomOversamplingNeighborhood():
 
         # generating random oversampling neighborhood data
         Z_df, Z = random_oversampling(self.dfZ, x, self.model, self.dataset)
-        neighborhood_data = Z_df[self.dataset['feature_names']].values
+        sampled_data = Z_df[self.dataset['feature_names']].values
+        neighborhood_data = np.r_[x.reshape(1, -1), sampled_data]
 
         # predicting the label and probability of the neighborhood data
         neighborhood_labels = self.model.predict(neighborhood_data)

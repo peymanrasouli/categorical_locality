@@ -123,8 +123,6 @@ class ExplanationBasedNeighborhood():
         sorted_indices = np.argsort(distance)
         selected_indices = sorted_indices[:N_samples]
         sampled_data = X_sampled[selected_indices, :]
-
-        # merging neighborhood data with x
         neighborhood_data = np.r_[x.reshape(1, -1), sampled_data]
 
         # predicting the label and probability of the neighborhood data

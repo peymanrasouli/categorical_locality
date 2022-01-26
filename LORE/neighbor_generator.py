@@ -1,3 +1,14 @@
+"""
+Copyright 2018 Riccardo Guidotti
+URL: https://github.com/riccotti/LORE
+Released under GNU General Public License v3.0
+26 January 2022 - Modified by Peyman Rasouli
+List of changes:
+    - Modifying the distance function of neighborhood generators to handle both categorical and mixed-feature data sets.
+    - Changing mutation percentage (i.e., mutpb) from 0.2 to 0.4 to increase the results diversity as all individuals in
+      the population are initialized using the input instance (i.e., x).
+"""
+
 from gpdatagenerator import *
 from distance_functions import *
 
@@ -16,13 +27,17 @@ def genetic_neighborhood_old(dfZ, x, blackbox, dataset):
     discrete_no_class.remove(class_name)
 
     def distance_function(x0, x1, discrete, continuous, class_name):
-        return mixed_distance(x0, x1, discrete, continuous, class_name,
-                              ddist=simple_match_distance,
-                              cdist=normalized_euclidean_distance)
+        if continuous.__len__() == 0:
+            return simple_match_distance(x0, x1)
+        else:
+            return mixed_distance(x0, x1, discrete, continuous, class_name,
+                                  ddist=simple_match_distance,
+                                  cdist=normalized_euclidean_distance)
+
 
     Z = generate_data(x, feature_values, blackbox, discrete_no_class, continuous, class_name, idx_features,
                       distance_function, neigtype={'ss': 0.5, 'sd': 0.5}, population_size=1000, halloffame_ratio=0.1,
-                      alpha1=0.5, alpha2=0.5, eta1=1.0, eta2=0.0,  tournsize=3, cxpb=0.5, mutpb=0.2, ngen=10)
+                      alpha1=0.5, alpha2=0.5, eta1=1.0, eta2=0.0,  tournsize=3, cxpb=0.5, mutpb=0.4, ngen=10)
     dfZ = build_df2explain(blackbox, Z, dataset)
     return dfZ, Z
 
@@ -38,13 +53,17 @@ def genetic_neighborhood(dfZ, x, blackbox, dataset):
     discrete_no_class.remove(class_name)
 
     def distance_function(x0, x1, discrete, continuous, class_name):
-        return mixed_distance(x0, x1, discrete, continuous, class_name,
-                              ddist=simple_match_distance,
-                              cdist=normalized_euclidean_distance)
+        if continuous.__len__() == 0:
+            return simple_match_distance(x0, x1)
+        else:
+            return mixed_distance(x0, x1, discrete, continuous, class_name,
+                                  ddist=simple_match_distance,
+                                  cdist=normalized_euclidean_distance)
+
 
     Z = generate_data(x, feature_values, blackbox, discrete_no_class, continuous, class_name, idx_features,
                       distance_function, neigtype={'ss': 0.5, 'sd': 0.5}, population_size=1000, halloffame_ratio=0.1,
-                      alpha1=0.5, alpha2=0.5, eta1=1.0, eta2=0.0,  tournsize=3, cxpb=0.5, mutpb=0.2, ngen=10)
+                      alpha1=0.5, alpha2=0.5, eta1=1.0, eta2=0.0,  tournsize=3, cxpb=0.5, mutpb=0.4, ngen=10)
 
     zy = blackbox.predict(Z)
     # print(np.unique(zy, return_counts=True))
@@ -82,9 +101,12 @@ def closed_real_data(dfZ, x, blackbox, dataset):
     continuous = dataset['continuous']
 
     def distance_function(x0, x1, discrete, continuous, class_name):
-        return mixed_distance(x0, x1, discrete, continuous, class_name,
-                              ddist=simple_match_distance,
-                              cdist=normalized_euclidean_distance)
+        if continuous.__len__() == 0:
+            return simple_match_distance(x0, x1)
+        else:
+            return mixed_distance(x0, x1, discrete, continuous, class_name,
+                                  ddist=simple_match_distance,
+                                  cdist=normalized_euclidean_distance)
 
     dfx = build_df2explain(blackbox, x.reshape(1, -1), dataset).to_dict('records')[0]
     neig_indexes = get_closest_diffoutcome(dfZ, dfx, discrete, continuous, class_name,
@@ -109,9 +131,12 @@ def random_neighborhood(dfZ, x, blackbox, dataset, stratified=True):
     if stratified:
 
         def distance_function(x0, x1, discrete, continuous, class_name):
-            return mixed_distance(x0, x1, discrete, continuous, class_name,
-                                  ddist=simple_match_distance,
-                                  cdist=normalized_euclidean_distance)
+            if continuous.__len__() == 0:
+                return simple_match_distance(x0, x1)
+            else:
+                return mixed_distance(x0, x1, discrete, continuous, class_name,
+                                      ddist=simple_match_distance,
+                                      cdist=normalized_euclidean_distance)
 
         dfx = build_df2explain(blackbox, x.reshape(1, -1), dataset).to_dict('records')[0]
         neig_indexes = get_closest_diffoutcome(dfZ, dfx, discrete, continuous, class_name,

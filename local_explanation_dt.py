@@ -153,11 +153,10 @@ def main():
         'compas-scores-two-years': ('compas-scores-two-years.csv', PrepareCOMPAS),
         'credit-card-default': ('credit-card-default.csv', PrepareCreditCardDefault),
         'german-credit': ('german-credit.csv', PrepareGermanCredit),
-        # 'breast-cancer': ('breast-cancer.data', PrepareBreastCancer),
-        # 'heart-disease': ('heart-disease.csv', PrepareHeartDisease),
-        # 'nursery': ('nursery.data', PrepareNursery),
-        # 'car': ('car.data', PrepareCar),
-        # 'wine': ('wine.data', PrepareWine),
+        'breast-cancer': ('breast-cancer.data', PrepareBreastCancer),
+        'heart-disease': ('heart-disease.csv', PrepareHeartDisease),
+        'nursery': ('nursery.data', PrepareNursery),
+        'car': ('car.data', PrepareCar),
     }
 
     # defining the list of black-boxes
@@ -168,30 +167,29 @@ def main():
         # 'svm': SVC
     }
 
+    # defining the number of neighborhood samples
     N_samples = {
         'adult': 1000,
         'compas-scores-two-years': 1000,
         'credit-card-default': 1000,
         'german-credit': 1000,
-        'heart-disease': 1000,
         'breast-cancer': 1000,
+        'heart-disease': 1000,
         'nursery': 1000,
         'car':1000,
-        'wine':1000
     }
 
+    # defining the number of selected features for explanation
     N_features = {
         'adult': 5,
         'compas-scores-two-years': 5,
         'credit-card-default': 5,
         'german-credit': 5,
-        'heart-disease': 5,
         'breast-cancer': 5,
+        'heart-disease': 5,
         'nursery': 5,
         'car':5,
-        'wine':5
     }
-
 
     # creating a comprehensive dictionary for storing the results
     results = resultFormat(type_format='dt')
@@ -232,38 +230,38 @@ def main():
             exp.fit()
             sampling_methods['exp'] = exp.neighborhoodSampling
 
-            # # random neighborhood
-            # rnd = RandomSamplingNeighborhood(X, y, blackbox, dataset)
-            # rnd.fit()
-            # sampling_methods['rnd'] = rnd.neighborhoodSampling
-            #
-            # # random oversampling neighborhood
-            # ros = RandomOversamplingNeighborhood(X, y, blackbox, dataset)
-            # ros.fit()
-            # sampling_methods['ros'] = ros.neighborhoodSampling
-            #
-            # # random instance selection neighborhood
-            # ris = RandomInstanceSelectionNeighborhood(X, y, blackbox, dataset)
-            # ris.fit()
-            # sampling_methods['ris'] = ris.neighborhoodSampling
+            # random neighborhood
+            rnd = RandomSamplingNeighborhood(X, y, blackbox, dataset)
+            rnd.fit()
+            sampling_methods['rnd'] = rnd.neighborhoodSampling
 
-            # # random genetic neighborhood
-            # gp = GeneticNeighborhood(X, y, blackbox, dataset)
-            # gp.fit()
-            # sampling_methods['gp'] = gp.neighborhoodSampling
+            # random oversampling neighborhood
+            ros = RandomOversamplingNeighborhood(X, y, blackbox, dataset)
+            ros.fit()
+            sampling_methods['ros'] = ros.neighborhoodSampling
 
-            # # meaningful data sampling neighborhood
-            # mds = MeaningfulDataSamplingNeighborhood(X, y, blackbox, dataset)
-            # mds.fit()
-            # sampling_methods['mds'] = mds.neighborhoodSampling
+            # random instance selection neighborhood
+            ris = RandomInstanceSelectionNeighborhood(X, y, blackbox, dataset)
+            ris.fit()
+            sampling_methods['ris'] = ris.neighborhoodSampling
+
+            # random genetic neighborhood
+            gp = GeneticNeighborhood(X, y, blackbox, dataset)
+            gp.fit()
+            sampling_methods['gp'] = gp.neighborhoodSampling
+
+            # meaningful data sampling neighborhood
+            mds = MeaningfulDataSamplingNeighborhood(X, y, blackbox, dataset)
+            mds.fit()
+            sampling_methods['mds'] = mds.neighborhoodSampling
 
             # Generating explanations for the samples in the explain set
             methods_output = {'exp': {'local_model_pred':[], 'local_model_score':[]},
-                              # 'rnd': {'local_model_pred': [], 'local_model_score': []},
-                              # 'ros': {'local_model_pred':[], 'local_model_score':[]},
-                              # 'ris': {'local_model_pred':[], 'local_model_score':[]},
-                              # 'gp': {'local_model_pred': [], 'local_model_score': []},
-                              # 'mds': {'local_model_pred': [], 'local_model_score': []}
+                              'rnd': {'local_model_pred': [], 'local_model_score': []},
+                              'ros': {'local_model_pred':[], 'local_model_score':[]},
+                              'ris': {'local_model_pred':[], 'local_model_score':[]},
+                              'gp': {'local_model_pred': [], 'local_model_score': []},
+                              'mds': {'local_model_pred': [], 'local_model_score': []}
                               }
 
             for x in X_explain:
