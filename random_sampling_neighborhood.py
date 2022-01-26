@@ -21,7 +21,7 @@ class RandomSamplingNeighborhood():
     def neighborhoodSampling(self, x, N_samples):
 
         # generating random neighborhood data
-        Z_df, Z = random_neighborhood(self.dfZ, x, self.model, self.dataset)
+        Z_df, Z = random_neighborhood(self.dfZ, x, self.model, self.dataset, N_samples)
         sampled_data = Z_df[self.dataset['feature_names']].values
         neighborhood_data = np.r_[x.reshape(1, -1), sampled_data]
 

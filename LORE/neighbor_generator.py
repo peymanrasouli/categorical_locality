@@ -7,6 +7,7 @@ List of changes:
     - Modifying the distance function of neighborhood generators to handle both categorical and mixed-feature data sets.
     - Changing mutation percentage (i.e., mutpb) from 0.2 to 0.4 to increase the results diversity as all individuals in
       the population are initialized using the input instance (i.e., x).
+    - Adding parameter N_samples to the neighborhood generators for defining the desired neighborhood size
 """
 
 from gpdatagenerator import *
@@ -16,7 +17,7 @@ from imblearn.over_sampling import RandomOverSampler
 from imblearn.under_sampling import CondensedNearestNeighbour
 
 
-def genetic_neighborhood_old(dfZ, x, blackbox, dataset):
+def genetic_neighborhood_old(dfZ, x, blackbox, dataset, N_samples):
     discrete = dataset['discrete']
     continuous = dataset['continuous']
     class_name = dataset['class_name']
@@ -36,13 +37,13 @@ def genetic_neighborhood_old(dfZ, x, blackbox, dataset):
 
 
     Z = generate_data(x, feature_values, blackbox, discrete_no_class, continuous, class_name, idx_features,
-                      distance_function, neigtype={'ss': 0.5, 'sd': 0.5}, population_size=1000, halloffame_ratio=0.1,
+                      distance_function, neigtype={'ss': 0.5, 'sd': 0.5}, population_size=N_samples, halloffame_ratio=0.1,
                       alpha1=0.5, alpha2=0.5, eta1=1.0, eta2=0.0,  tournsize=3, cxpb=0.5, mutpb=0.4, ngen=10)
     dfZ = build_df2explain(blackbox, Z, dataset)
     return dfZ, Z
 
 
-def genetic_neighborhood(dfZ, x, blackbox, dataset):
+def genetic_neighborhood(dfZ, x, blackbox, dataset, N_samples):
     discrete = dataset['discrete']
     continuous = dataset['continuous']
     class_name = dataset['class_name']
@@ -62,7 +63,7 @@ def genetic_neighborhood(dfZ, x, blackbox, dataset):
 
 
     Z = generate_data(x, feature_values, blackbox, discrete_no_class, continuous, class_name, idx_features,
-                      distance_function, neigtype={'ss': 0.5, 'sd': 0.5}, population_size=1000, halloffame_ratio=0.1,
+                      distance_function, neigtype={'ss': 0.5, 'sd': 0.5}, population_size=N_samples, halloffame_ratio=0.1,
                       alpha1=0.5, alpha2=0.5, eta1=1.0, eta2=0.0,  tournsize=3, cxpb=0.5, mutpb=0.4, ngen=10)
 
     zy = blackbox.predict(Z)
@@ -120,7 +121,7 @@ def closed_real_data(dfZ, x, blackbox, dataset):
     return dfZ, Z
 
 
-def random_neighborhood(dfZ, x, blackbox, dataset, stratified=True):
+def random_neighborhood(dfZ, x, blackbox, dataset, N_samples, stratified=True):
     discrete = dataset['discrete']
     continuous = dataset['continuous']
     label_encoder = dataset['label_encoder']
@@ -144,7 +145,7 @@ def random_neighborhood(dfZ, x, blackbox, dataset, stratified=True):
 
         Z, _ = label_encode(dfZ, discrete, label_encoder)
         Z = Z.iloc[neig_indexes, Z.columns != class_name].values
-        Z = generate_random_data(Z, class_name, columns, discrete, continuous, features_type, size=1000, uniform=True)
+        Z = generate_random_data(Z, class_name, columns, discrete, continuous, features_type, size=N_samples, uniform=True)
         dfZ = build_df2explain(blackbox, Z, dataset)
 
         return dfZ, Z
@@ -153,7 +154,7 @@ def random_neighborhood(dfZ, x, blackbox, dataset, stratified=True):
 
         Z, _ = label_encode(dfZ, discrete, label_encoder)
         Z = Z.iloc[:, Z.columns != class_name].values
-        Z = generate_random_data(Z, class_name, columns, discrete, continuous, features_type, size=1000, uniform=True)
+        Z = generate_random_data(Z, class_name, columns, discrete, continuous, features_type, size=N_samples, uniform=True)
         dfZ = build_df2explain(blackbox, Z, dataset)
 
         return dfZ, Z
@@ -190,8 +191,8 @@ def generate_random_data(X, class_name, columns, discrete, continuous, features_
     return X1
 
 
-def random_oversampling(dfZ, x, blackbox, dataset):
-    dfZ, Z = random_neighborhood(dfZ, x, blackbox, dataset)
+def random_oversampling(dfZ, x, blackbox, dataset, N_samples):
+    dfZ, Z = random_neighborhood(dfZ, x, blackbox, dataset, N_samples)
     y = blackbox.predict(Z)
 
     oversampler = RandomOverSampler()
@@ -200,8 +201,8 @@ def random_oversampling(dfZ, x, blackbox, dataset):
     return dfZ, Z
 
 
-def random_instance_selection(dfZ, x, blackbox, dataset):
-    dfZ1, Z = random_neighborhood(dfZ, x, blackbox, dataset)
+def random_instance_selection(dfZ, x, blackbox, dataset, N_samples):
+    dfZ1, Z = random_neighborhood(dfZ, x, blackbox, dataset, N_samples)
     y = blackbox.predict(Z)
 
     cnn = CondensedNearestNeighbour(return_indices=True)
