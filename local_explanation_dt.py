@@ -203,7 +203,7 @@ def main():
         # splitting the data set into train and test sets
         X, y = dataset['X_ord'], dataset['y']
         X_train, X_test, Y_train, Y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-        X_explain = X_test[:min(X_test.shape[0], 100),:]
+        X_explain = X_test[:min(X_test.shape[0], 500),:]
 
         # creating one-hot encoder for discrete features
         ohe_encoder = {}
