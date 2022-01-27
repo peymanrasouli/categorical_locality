@@ -47,7 +47,6 @@ def forward_selection(data, labels, N_features, ohe_encoder=None):
 
 def interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_proba, N_features=5, ohe_encoder=None):
 
-
     used_features = forward_selection(neighborhood_data, neighborhood_proba, N_features, ohe_encoder)
     data_ohe = []
     for f in used_features:
