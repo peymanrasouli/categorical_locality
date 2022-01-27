@@ -49,7 +49,6 @@ def interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_pro
 
 
     used_features = forward_selection(neighborhood_data, neighborhood_proba, N_features, ohe_encoder)
-    lr = Ridge(random_state=42)
     data_ohe = []
     for f in used_features:
         if ohe_encoder[f] is None:
@@ -57,6 +56,7 @@ def interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_pro
         else:
             data_ohe.append(ohe_encoder[f].transform(neighborhood_data[:, f].reshape(-1, 1)))
     data_ohe = np.hstack(data_ohe)
+    lr = Ridge(random_state=42)
     lr.fit(data_ohe, neighborhood_proba)
     lr_preds = lr.predict(data_ohe)
     local_model_pred = float(lr.predict(data_ohe[0, :].reshape(1, -1)))

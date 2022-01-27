@@ -103,7 +103,6 @@ def interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_pro
 
 
     used_features = forward_selection(neighborhood_data, neighborhood_proba, N_features, ohe_encoder)
-    dt = DecisionTreeClassifier(random_state=42, max_depth=3)
     data_ohe = []
     for f in used_features:
         if ohe_encoder[f] is None:
@@ -111,6 +110,7 @@ def interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_pro
         else:
             data_ohe.append(ohe_encoder[f].transform(neighborhood_data[:, f].reshape(-1, 1)))
     data_ohe = np.hstack(data_ohe)
+    dt = DecisionTreeClassifier(random_state=42, max_depth=3)
     dt.fit(data_ohe, neighborhood_labels)
     dt_labels = dt.predict(data_ohe)
     local_model_pred = int(dt.predict(data_ohe[0,:].reshape(1, -1)))
