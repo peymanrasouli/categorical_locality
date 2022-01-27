@@ -161,7 +161,7 @@ def main():
     # defining the list of black-boxes
     blackbox_list = {
         'nn': MLPClassifier,
-        # 'gb': GradientBoostingClassifier,
+        'gb': GradientBoostingClassifier,
         # 'rf': RandomForestClassifier,
         # 'svm': SVC
     }
