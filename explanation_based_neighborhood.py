@@ -11,7 +11,8 @@ class ExplanationBasedNeighborhood():
                 model,
                 dataset):
 
-        self.X = FrequencyBasedRandomSampling(X, 5000)
+        N_samples = 500
+        self.X = FrequencyBasedRandomSampling(X, N_samples * 10)
         self.y = model.predict(self.X)
         self.model = model
         self.dataset = dataset
@@ -106,7 +107,7 @@ class ExplanationBasedNeighborhood():
             x_hat_exp[c] = self.cat2numConverter(instance)
 
         # generating random samples from the distribution of training data
-        X_sampled = FrequencyBasedRandomSampling(self.X, N_samples * 5)
+        X_sampled = FrequencyBasedRandomSampling(self.X, N_samples * 10)
         X_sampled_c = self.model.predict(X_sampled)
 
         # converting random samples from categorical to numerical representation

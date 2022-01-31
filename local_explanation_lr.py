@@ -14,6 +14,7 @@ from random_instance_selection_neighborhood import RandomInstanceSelectionNeighb
 from genetic_neighborhood import GeneticNeighborhood
 from meaningful_data_sampling_neighborhood import MeaningfulDataSamplingNeighborhood
 from sklearn.preprocessing import OneHotEncoder
+from console_progressbar.progressbar import ProgressBar
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -105,19 +106,19 @@ def main():
         'nn': MLPClassifier,
         'gb': GradientBoostingClassifier,
         # 'rf': RandomForestClassifier,
-        # 'svm': SVC
+        'svm': SVC
     }
 
     # defining the number of neighborhood samples
     N_samples = {
-        'adult': 1000,
-        'compas-scores-two-years': 1000,
-        'credit-card-default': 1000,
-        'german-credit': 1000,
-        'breast-cancer': 1000,
-        'heart-disease': 1000,
-        'nursery': 1000,
-        'car':1000,
+        'adult': 500,
+        'compas-scores-two-years': 500,
+        'credit-card-default': 500,
+        'german-credit': 500,
+        'breast-cancer': 500,
+        'heart-disease': 500,
+        'nursery': 500,
+        'car':500,
     }
 
     # defining the number of selected features for explanation
@@ -145,7 +146,6 @@ def main():
         # splitting the data set into train and test sets
         X, y = dataset['X_ord'], dataset['y']
         X_train, X_test, Y_train, Y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-        X_explain = X_test[:min(X_test.shape[0], 500),:]
 
         # creating one-hot encoder for discrete features
         ohe_encoder = {}
@@ -205,18 +205,35 @@ def main():
                               'mds': {'local_model_pred': [], 'local_model_score': []}
                               }
 
-            for x in X_explain:
-                for method, output in methods_output.items():
-                    local_model_pred, \
-                    local_model_score = explain_instance(x,
-                                                         N_samples=N_samples[dataset_kw],
-                                                         N_features=N_features[dataset_kw],
-                                                         ohe_encoder=ohe_encoder,
-                                                         sampling_method=sampling_methods[method])
-                    methods_output[method]['local_model_pred'].append(local_model_pred)
-                    methods_output[method]['local_model_score'].append(local_model_score)
+            # setting the number of explained instances
+            N_explain = min(X_test.shape[0], 300)
+
+            # explaining instances
+            pb = ProgressBar(total=N_explain, prefix='Progress:', suffix='Complete', decimals=1, length=50,
+                             fill='█', zfill='-')
+            X_explain = []
+            i = 0
+            while i < N_explain:
+                try:
+                    for method, output in methods_output.items():
+                        local_model_pred, \
+                        local_model_score = explain_instance(X_test[i, :],
+                                                             N_samples=N_samples[dataset_kw],
+                                                             N_features=N_features[dataset_kw],
+                                                             ohe_encoder=ohe_encoder,
+                                                             sampling_method=sampling_methods[method])
+                        methods_output[method]['local_model_pred'].append(local_model_pred)
+                        methods_output[method]['local_model_score'].append(local_model_score)
+                    X_explain.append(X_test[i, :])
+                    i += 1
+                    pb.print_progress_bar(i)
+                except Exception:
+                    pass
+                if i == X_test.shape[0]:
+                    break
 
             # calculating the performance of different sampling strategy
+            X_explain = np.vstack(X_explain)
             prediction = blackbox.predict_proba(X_explain)
             bb_pred = np.max(prediction, axis=1)
             for method, output in methods_output.items():
