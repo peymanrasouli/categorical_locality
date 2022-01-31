@@ -118,7 +118,7 @@ def main():
         'breast-cancer': 500,
         'heart-disease': 500,
         'nursery': 500,
-        'car':500,
+        'car': 500,
     }
 
     # defining the number of selected features for explanation
