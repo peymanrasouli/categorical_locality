@@ -106,7 +106,7 @@ def main():
         'nn': MLPClassifier,
         'gb': GradientBoostingClassifier,
         # 'rf': RandomForestClassifier,
-        'svm': SVC
+        # 'svm': SVC
     }
 
     # defining the number of neighborhood samples
@@ -213,6 +213,7 @@ def main():
                              fill='█', zfill='-')
             X_explain = []
             i = 0
+            j = 0
             while i < N_explain:
                 try:
                     for method, output in methods_output.items():
@@ -225,10 +226,12 @@ def main():
                         methods_output[method]['local_model_pred'].append(local_model_pred)
                         methods_output[method]['local_model_score'].append(local_model_score)
                     X_explain.append(X_test[i, :])
-                    i += 1
-                    pb.print_progress_bar(i)
+                    j += 1
+                    pb.print_progress_bar(j)
                 except Exception:
+                    i += 1
                     pass
+
                 if i == X_test.shape[0]:
                     break
 
