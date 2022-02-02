@@ -212,27 +212,28 @@ def main():
             pb = ProgressBar(total=N_explain, prefix='Progress:', suffix='Complete', decimals=1, length=50,
                              fill='█', zfill='-')
             X_explain = []
-            i = 0
-            j = 0
-            while i < N_explain:
+            tried = 0
+            explained = 0
+            while explained < N_explain:
                 try:
                     for method, output in methods_output.items():
                         local_model_pred, \
-                        local_model_score = explain_instance(X_test[i, :],
+                        local_model_score = explain_instance(X_test[tried, :],
                                                              N_samples=N_samples[dataset_kw],
                                                              N_features=N_features[dataset_kw],
                                                              ohe_encoder=ohe_encoder,
                                                              sampling_method=sampling_methods[method])
                         methods_output[method]['local_model_pred'].append(local_model_pred)
                         methods_output[method]['local_model_score'].append(local_model_score)
-                    X_explain.append(X_test[i, :])
-                    j += 1
-                    pb.print_progress_bar(j)
+                    X_explain.append(X_test[tried, :])
+                    explained += 1
+                    pb.print_progress_bar(explained)
+                    tried += 1
                 except Exception:
-                    i += 1
+                    tried += 1
                     pass
 
-                if i == X_test.shape[0]:
+                if tried == X_test.shape[0]:
                     break
 
             # calculating the performance of different sampling strategy
