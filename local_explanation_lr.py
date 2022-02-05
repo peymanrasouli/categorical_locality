@@ -4,9 +4,10 @@ from result_format import resultFormat
 from sklearn.metrics import *
 from sklearn.linear_model import Ridge
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
+from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.svm import SVC
 from sklearn.neural_network import MLPClassifier
+from sklearn.linear_model import LogisticRegression
 from explanation_based_neighborhood import ExplanationBasedNeighborhood
 from random_sampling_neighborhood import RandomSamplingNeighborhood
 from random_oversampling_neigbhorhood import RandomOversamplingNeighborhood
@@ -104,21 +105,21 @@ def main():
     # defining the list of black-boxes
     blackbox_list = {
         'nn': MLPClassifier,
+        'lr': LogisticRegression,
+        'svm': SVC,
         'gb': GradientBoostingClassifier,
-        # 'rf': RandomForestClassifier,
-        # 'svm': SVC
     }
 
     # defining the number of neighborhood samples
     N_samples = {
-        'adult': 500,
-        'compas-scores-two-years': 500,
-        'credit-card-default': 500,
-        'german-credit': 500,
-        'breast-cancer': 500,
-        'heart-disease': 500,
-        'nursery': 500,
-        'car': 500,
+        'adult': 1000,
+        'compas-scores-two-years': 1000,
+        'credit-card-default': 1000,
+        'german-credit': 1000,
+        'breast-cancer': 1000,
+        'heart-disease': 1000,
+        'nursery': 1000,
+        'car': 1000,
     }
 
     # defining the number of selected features for explanation
