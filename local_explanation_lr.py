@@ -106,8 +106,8 @@ def main():
     blackbox_list = {
         'nn': MLPClassifier,
         'lr': LogisticRegression,
-        'svm': SVC,
         'gb': GradientBoostingClassifier,
+        # 'svm': SVC
     }
 
     # defining the number of neighborhood samples
@@ -207,29 +207,35 @@ def main():
                               }
 
             # setting the number of explained instances
-            N_explain = min(X_test.shape[0], 300)
+            N_explain = min(X_test.shape[0], 500)
 
             # explaining instances
             pb = ProgressBar(total=N_explain, prefix='Progress:', suffix='Complete', decimals=1, length=50,
                              fill='█', zfill='-')
+
             X_explain = []
             tried = 0
             explained = 0
             while explained < N_explain:
                 try:
+                    local_model_pred = {}
+                    local_model_score = {}
                     for method, output in methods_output.items():
-                        local_model_pred, \
-                        local_model_score = explain_instance(X_test[tried, :],
+                        local_model_pred[method], \
+                        local_model_score[method] = explain_instance(X_test[tried, :],
                                                              N_samples=N_samples[dataset_kw],
                                                              N_features=N_features[dataset_kw],
                                                              ohe_encoder=ohe_encoder,
                                                              sampling_method=sampling_methods[method])
-                        methods_output[method]['local_model_pred'].append(local_model_pred)
-                        methods_output[method]['local_model_score'].append(local_model_score)
+                    for method, pred in local_model_pred.items():
+                        methods_output[method]['local_model_pred'].append(pred)
+                    for method, score in local_model_score.items():
+                        methods_output[method]['local_model_score'].append(score)
                     X_explain.append(X_test[tried, :])
+                    tried += 1
                     explained += 1
                     pb.print_progress_bar(explained)
-                    tried += 1
+
                 except Exception:
                     tried += 1
                     pass

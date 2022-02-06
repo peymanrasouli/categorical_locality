@@ -62,7 +62,7 @@ def resultFormat(type_format='dt'):
                                           'model_score': []
                                           }
                             },
-                      'rf':{'exp':{'f1_score':[],
+                      'lr':{'exp':{'f1_score':[],
                    'precision':[],
                    'accuracy':[],
                    'model_score':[]
@@ -187,7 +187,7 @@ def resultFormat(type_format='dt'):
                                           'model_score': []
                                           }
                             },
-                      'rf':{'exp':{'f1_score':[],
+                      'lr':{'exp':{'f1_score':[],
                    'precision':[],
                    'accuracy':[],
                    'model_score':[]
@@ -312,7 +312,7 @@ def resultFormat(type_format='dt'):
                                           'model_score': []
                                           }
                             },
-                      'rf':{'exp':{'f1_score':[],
+                      'lr':{'exp':{'f1_score':[],
                    'precision':[],
                    'accuracy':[],
                    'model_score':[]
@@ -437,7 +437,7 @@ def resultFormat(type_format='dt'):
                                           'model_score': []
                                           }
                             },
-                      'rf':{'exp':{'f1_score':[],
+                      'lr':{'exp':{'f1_score':[],
                    'precision':[],
                    'accuracy':[],
                    'model_score':[]
@@ -562,7 +562,7 @@ def resultFormat(type_format='dt'):
                                           'model_score': []
                                           }
                             },
-                      'rf':{'exp':{'f1_score':[],
+                      'lr':{'exp':{'f1_score':[],
                    'precision':[],
                    'accuracy':[],
                    'model_score':[]
@@ -687,7 +687,7 @@ def resultFormat(type_format='dt'):
                                                          'model_score': []
                                                          }
                                             },
-                                     'rf': {'exp': {'f1_score': [],
+                                     'lr': {'exp': {'f1_score': [],
                                                         'precision': [],
                                                         'accuracy': [],
                                                         'model_score': []
@@ -812,7 +812,7 @@ def resultFormat(type_format='dt'):
                                                          'model_score': []
                                                          }
                                             },
-                                     'rf': {'exp': {'f1_score': [],
+                                     'lr': {'exp': {'f1_score': [],
                                                         'precision': [],
                                                         'accuracy': [],
                                                         'model_score': []
@@ -937,7 +937,7 @@ def resultFormat(type_format='dt'):
                                                    'model_score': []
                                                    }
                                       },
-                               'rf': {'exp': {'f1_score': [],
+                               'lr': {'exp': {'f1_score': [],
                                                   'precision': [],
                                                   'accuracy': [],
                                                   'model_score': []
@@ -1062,7 +1062,7 @@ def resultFormat(type_format='dt'):
                                           'model_score': []
                                           }
                                   },
-                           'rf': {'exp': {'f1_score': [],
+                           'lr': {'exp': {'f1_score': [],
                                           'precision': [],
                                           'accuracy': [],
                                           'model_score': []
@@ -1190,7 +1190,7 @@ def resultFormat(type_format='dt'):
                                           'model_score': []
                                           }
                             },
-                      'rf':{'exp':{'r2_score':[],
+                      'lr':{'exp':{'r2_score':[],
                    'mae':[],
                    'mse':[],
                    'model_score':[]
@@ -1315,7 +1315,7 @@ def resultFormat(type_format='dt'):
                                           'model_score': []
                                           }
                             },
-                      'rf':{'exp':{'r2_score':[],
+                      'lr':{'exp':{'r2_score':[],
                    'mae':[],
                    'mse':[],
                    'model_score':[]
@@ -1440,7 +1440,7 @@ def resultFormat(type_format='dt'):
                                           'model_score': []
                                           }
                             },
-                      'rf':{'exp':{'r2_score':[],
+                      'lr':{'exp':{'r2_score':[],
                    'mae':[],
                    'mse':[],
                    'model_score':[]
@@ -1565,7 +1565,7 @@ def resultFormat(type_format='dt'):
                                           'model_score': []
                                           }
                             },
-                      'rf':{'exp':{'r2_score':[],
+                      'lr':{'exp':{'r2_score':[],
                    'mae':[],
                    'mse':[],
                    'model_score':[]
@@ -1690,7 +1690,7 @@ def resultFormat(type_format='dt'):
                                           'model_score': []
                                           }
                             },
-                      'rf':{'exp':{'r2_score':[],
+                      'lr':{'exp':{'r2_score':[],
                    'mae':[],
                    'mse':[],
                    'model_score':[]
@@ -1815,7 +1815,7 @@ def resultFormat(type_format='dt'):
                                         'model_score': []
                                         }
                     },
-                    'rf': {'exp': {'r2_score': [],
+                    'lr': {'exp': {'r2_score': [],
                     'mae': [],
                     'mse': [],
                     'model_score': []
@@ -1940,7 +1940,7 @@ def resultFormat(type_format='dt'):
                                         'model_score': []
                                         }
                     },
-                    'rf': {'exp': {'r2_score': [],
+                    'lr': {'exp': {'r2_score': [],
                       'mae': [],
                       'mse': [],
                       'model_score': []
@@ -2065,7 +2065,7 @@ def resultFormat(type_format='dt'):
                                                    'model_score': []
                                                    }
                                       },
-                               'rf': {'exp': {'r2_score': [],
+                               'lr': {'exp': {'r2_score': [],
                                                   'mae': [],
                                                   'mse': [],
                                                   'model_score': []
@@ -2190,7 +2190,7 @@ def resultFormat(type_format='dt'):
                                           'model_score': []
                                           }
                                   },
-                           'rf': {'exp': {'r2_score': [],
+                           'lr': {'exp': {'r2_score': [],
                                           'mae': [],
                                           'mse': [],
                                           'model_score': []
