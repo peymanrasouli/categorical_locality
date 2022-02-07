@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.svm import SVC
 from sklearn.neural_network import MLPClassifier
-from sklearn.linear_model import LogisticRegression
+from sklearn.naive_bayes import GaussianNB
 from explanation_based_neighborhood import ExplanationBasedNeighborhood
 from random_sampling_neighborhood import RandomSamplingNeighborhood
 from random_oversampling_neigbhorhood import RandomOversamplingNeighborhood
@@ -105,7 +105,7 @@ def main():
     # defining the list of black-boxes
     blackbox_list = {
         'nn': MLPClassifier,
-        'lr': LogisticRegression,
+        'nb': GaussianNB,
         'gb': GradientBoostingClassifier,
         # 'svm': SVC
     }
