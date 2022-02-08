@@ -4,10 +4,8 @@ from result_format import resultFormat
 from sklearn.metrics import *
 from sklearn.linear_model import Ridge
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.svm import SVC
 from sklearn.neural_network import MLPClassifier
-from sklearn.naive_bayes import GaussianNB
+from sklearn.ensemble import GradientBoostingClassifier
 from explanation_based_neighborhood import ExplanationBasedNeighborhood
 from random_sampling_neighborhood import RandomSamplingNeighborhood
 from random_oversampling_neigbhorhood import RandomOversamplingNeighborhood
@@ -16,6 +14,7 @@ from genetic_neighborhood import GeneticNeighborhood
 from meaningful_data_sampling_neighborhood import MeaningfulDataSamplingNeighborhood
 from sklearn.preprocessing import OneHotEncoder
 from console_progressbar.progressbar import ProgressBar
+from datetime import datetime
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -89,6 +88,7 @@ def main():
     # defining path of data sets and experiment results
     path = './'
     dataset_path = path + 'datasets/'
+    experiment_path = path + 'experiments/'
 
     # defining the list of data sets
     datsets_list = {
@@ -105,9 +105,7 @@ def main():
     # defining the list of black-boxes
     blackbox_list = {
         'nn': MLPClassifier,
-        'nb': GaussianNB,
         'gb': GradientBoostingClassifier,
-        # 'svm': SVC
     }
 
     # defining the number of neighborhood samples
@@ -137,8 +135,15 @@ def main():
     # creating a comprehensive dictionary for storing the results
     results = resultFormat(type_format='lr')
 
+    # creating a csv file to store the results
+    results_csv = open(experiment_path + 'local_explanation_lr_%s.csv' % (datetime.now()), 'a')
+
     for dataset_kw in datsets_list:
         print('dataset=', dataset_kw)
+        results_csv.write('%s\n' % ('dataset= ' + dataset_kw))
+        results_csv.write('%s, %s\n' % ('N_samples=' + str(N_samples[dataset_kw]),
+                                        'N_features=' + str(N_features[dataset_kw])))
+        results_csv.flush()
 
         # reading a data set
         dataset_name, prepare_dataset_fn = datsets_list[dataset_kw]
@@ -160,6 +165,8 @@ def main():
 
         for blackbox_name, blackbox_constructor in blackbox_list.items():
             print('blackbox=', blackbox_name)
+            results_csv.write('%s\n' % ('blackbox= ' + blackbox_name))
+            results_csv.flush()
 
             # creating black-box model
             blackbox = CreateModel(X_train, X_test, Y_train, Y_test, blackbox_name, blackbox_constructor)
@@ -266,6 +273,13 @@ def main():
 
             for key, val in results[dataset_kw][blackbox_name].items():
                 print(key, ':', val)
+                results_csv.write('%s\n' % (str(key) + ' : ' + str(val)))
+                results_csv.flush()
+
+        results_csv.write('\n')
+        results_csv.flush()
+
+    results_csv.close()
 
 if __name__ == '__main__':
     main()
