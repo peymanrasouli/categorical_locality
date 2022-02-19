@@ -5,7 +5,7 @@ from sklearn.metrics import *
 from sklearn.linear_model import Ridge
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
-from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier
 from explanation_based_neighborhood import ExplanationBasedNeighborhood
 from random_sampling_neighborhood import RandomSamplingNeighborhood
@@ -164,6 +164,7 @@ def main():
     blackbox_list = {
         'nn': MLPClassifier,
         'gb': GradientBoostingClassifier,
+        'rf': RandomForestClassifier
     }
 
     # defining the number of neighborhood samples
