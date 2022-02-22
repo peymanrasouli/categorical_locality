@@ -17,6 +17,7 @@ from sklearn.preprocessing import OneHotEncoder
 from sklearn.tree import _tree
 from console_progressbar.progressbar import ProgressBar
 from datetime import datetime
+from encoding_utils import *
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -54,13 +55,20 @@ def get_rules(tree, feature_names, class_names):
 
     rules = []
     for path in paths:
-        rule = "if "
+        rule = "IF "
 
         for p in path[:-1]:
-            if rule != "if ":
-                rule += " and "
-            rule += str(p)
-        rule += " then "
+            if rule != "IF ":
+                rule += " AND "
+            p = str(p)
+            if '<= 0.5' in p:
+                p = p.replace('<= 0.5', '')
+                p = p.replace('_', ' != ')
+            elif '> 0.5' in p:
+                p = p.replace('> 0.5', '')
+                p = p.replace('_', ' == ')
+            rule += p
+        rule += " THEN "
         if class_names is None:
             rule += "response: " + str(np.round(path[-1][0][0][0], 3))
         else:
@@ -84,10 +92,7 @@ def forward_selection(data, labels, N_features, ohe_encoder=None):
 
             data_ohe = []
             for f in  used_features + [feature]:
-                if ohe_encoder[f] is None:
-                    data_ohe.append(data[:, f].reshape(-1, 1))
-                else:
-                    data_ohe.append(ohe_encoder[f].transform(data[:,f].reshape(-1, 1)))
+                data_ohe.append(ohe_encoder[f].transform(data[:,f].reshape(-1, 1)))
             data_ohe = np.hstack(data_ohe)
 
             clf.fit(data_ohe,
@@ -100,26 +105,28 @@ def forward_selection(data, labels, N_features, ohe_encoder=None):
         used_features.append(best)
     return np.array(used_features)
 
-def interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_proba, N_features=5, ohe_encoder=None):
+def interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_proba, N_features=5,
+                        dataset=None, ohe_encoder=None):
 
-    used_features = forward_selection(neighborhood_data, neighborhood_proba, N_features, ohe_encoder)
+    neighborhood_data_org = ord2org(neighborhood_data, dataset)
+    used_features = forward_selection(neighborhood_data_org, neighborhood_proba, N_features, ohe_encoder)
     data_ohe = []
+    data_features = []
     for f in used_features:
-        if ohe_encoder[f] is None:
-            data_ohe.append(neighborhood_data[:, f].reshape(-1, 1))
-        else:
-            data_ohe.append(ohe_encoder[f].transform(neighborhood_data[:, f].reshape(-1, 1)))
+        data_ohe.append(ohe_encoder[f].transform(neighborhood_data_org[:, f].reshape(-1, 1)))
+        data_features.append(ohe_encoder[f].get_feature_names(input_features=[dataset['discrete_features'][f]]))
     data_ohe = np.hstack(data_ohe)
+    data_features = np.hstack(data_features)
     dt = DecisionTreeClassifier(random_state=42, max_depth=3)
     dt.fit(data_ohe, neighborhood_labels)
     dt_labels = dt.predict(data_ohe)
     local_model_pred = int(dt.predict(data_ohe[0,:].reshape(1, -1)))
     local_model_score = f1_score(neighborhood_labels, dt_labels, average='weighted')
-    # rules = get_rules(dt, range(data_ohe.shape[1]), 'class')
+    # rules = get_rules(dt, data_features, list(dataset['labels'].values()))
     # for r in rules:
     #     print(r)
+    # print('\n')
     return local_model_pred, local_model_score
-
 
 def data_sampling(sampling_method, instance2explain, N_samples=1000):
 
@@ -130,7 +137,7 @@ def data_sampling(sampling_method, instance2explain, N_samples=1000):
     return neighborhood_data, neighborhood_labels, neighborhood_proba
 
 
-def explain_instance(instance2explain, N_samples=1000, N_features=5, ohe_encoder = None, sampling_method=None):
+def explain_instance(instance2explain, N_samples=1000, N_features=5, dataset=None, ohe_encoder=None, sampling_method=None):
 
     neighborhood_data, \
     neighborhood_labels, \
@@ -138,7 +145,7 @@ def explain_instance(instance2explain, N_samples=1000, N_features=5, ohe_encoder
 
     local_model_pred, \
     local_model_score = interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_proba,
-                                            N_features=N_features, ohe_encoder=ohe_encoder)
+                                            N_features=N_features,  dataset=dataset, ohe_encoder=ohe_encoder)
 
     return local_model_pred, local_model_score
 
@@ -214,13 +221,11 @@ def main():
 
         # creating one-hot encoder for discrete features
         ohe_encoder = {}
-        for f in range(X.shape[1]):
-            if f in dataset['discrete_indices']:
-                enc = OneHotEncoder(sparse=False)
-                enc.fit(X[:,f].reshape(-1, 1))
-                ohe_encoder[f] = enc
-            else:
-                ohe_encoder[f] = None
+        X_org = ord2org(X, dataset)
+        for f_id, f_name in enumerate(dataset['discrete_features']):
+            enc = OneHotEncoder(sparse=False)
+            enc.fit(X_org[:,f_id].reshape(-1, 1))
+            ohe_encoder[f_id] = enc
 
         for blackbox_name, blackbox_constructor in blackbox_list.items():
             print('blackbox=', blackbox_name)
@@ -289,10 +294,11 @@ def main():
                     for method, output in methods_output.items():
                         local_model_pred[method], \
                         local_model_score[method] = explain_instance(X_test[tried, :],
-                                                             N_samples=N_samples[dataset_kw],
-                                                             N_features=N_features[dataset_kw],
-                                                             ohe_encoder=ohe_encoder,
-                                                             sampling_method=sampling_methods[method])
+                                                                     N_samples=N_samples[dataset_kw],
+                                                                     N_features=N_features[dataset_kw],
+                                                                     dataset=dataset,
+                                                                     ohe_encoder=ohe_encoder,
+                                                                     sampling_method=sampling_methods[method])
                     for method, pred in local_model_pred.items():
                         methods_output[method]['local_model_pred'].append(pred)
                     for method, score in local_model_score.items():
