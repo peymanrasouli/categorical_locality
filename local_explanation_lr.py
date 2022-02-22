@@ -97,8 +97,8 @@ def interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_pro
     lr_preds = lr.predict(data_ohe)
     local_model_pred = float(lr.predict(data_ohe[0, :].reshape(1, -1)))
     local_model_score = r2_score(neighborhood_proba, lr_preds)
-    plot_feature_importance(lr, data_features, list(dataset['labels'].values()), data_ohe[0,:], neighborhood_labels[0],
-                            experiment_path, dataset_name, blackbox_name, sampling_name, index_instance)
+    # plot_feature_importance(lr, data_features, list(dataset['labels'].values()), data_ohe[0,:], neighborhood_labels[0],
+    #                         experiment_path, dataset_name, blackbox_name, sampling_name, index_instance)
     return local_model_pred, local_model_score
 
 def data_sampling(sampling_method, instance2explain, N_samples=1000):
