@@ -35,7 +35,7 @@ def plot_feature_importance(model, feature_names, class_name, input, label, expe
 
     for i in range(len(feature_names_)):
         last_char_index = feature_names_[i].rfind("_")
-        feature_names_[i] = feature_names_[i][:last_char_index] + " == " + feature_names_[i][last_char_index+1:]
+        feature_names_[i] = feature_names_[i][:last_char_index] + " = " + feature_names_[i][last_char_index+1:]
 
     feature_importance = {}
     for f,c in zip(feature_names_, coef_):
@@ -45,12 +45,12 @@ def plot_feature_importance(model, feature_names, class_name, input, label, expe
     names = list(feature_importance.keys())
     vals.reverse()
     names.reverse()
-    colors = ['green' if x > 0 else 'red' for x in vals]
+    colors = ['#FF0051' if x > 0 else '#008BFB' for x in vals]
     pos = np.arange(len(vals)) + .5
     plt.barh(pos, vals, align='center', color=colors)
-    plt.yticks(pos, names)
-    plt.title('Local explanation for class %s' % class_name[label])
-    plt.xlabel('importance')
+    plt.yticks(pos, names,fontsize=13)
+    plt.title('Local explanation for class %s' % class_name[label], fontsize=15)
+    plt.xlabel('Regression\'s coefficients (impact on model output)')
     plt.savefig(experiment_path + str(index_instance) + '_' + sampling_name + '_' + dataset_name + '_' + blackbox_name
                 +'.pdf', bbox_inches = 'tight')
 
@@ -79,9 +79,9 @@ def forward_selection(data, labels, N_features, ohe_encoder=None):
         used_features.append(best)
     return np.array(used_features)
 
-def interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_proba, N_features=5,
-                        dataset=None, ohe_encoder=None, experiment_path=None, dataset_name=None,
-                        blackbox_name=None, sampling_name=None, index_instance=None):
+def interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_proba, N_features=5, dataset=None,
+                        ohe_encoder=None, experiment_path=None, dataset_name=None, blackbox_name=None,
+                        sampling_name=None, index_instance=None, plot_explanations=False):
 
     neighborhood_data_org = ord2org(neighborhood_data, dataset)
     used_features = forward_selection(neighborhood_data_org, neighborhood_proba, N_features, ohe_encoder)
@@ -97,8 +97,10 @@ def interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_pro
     lr_preds = lr.predict(data_ohe)
     local_model_pred = float(lr.predict(data_ohe[0, :].reshape(1, -1)))
     local_model_score = r2_score(neighborhood_proba, lr_preds)
-    # plot_feature_importance(lr, data_features, list(dataset['labels'].values()), data_ohe[0,:], neighborhood_labels[0],
-    #                         experiment_path, dataset_name, blackbox_name, sampling_name, index_instance)
+    if plot_explanations:
+        plot_feature_importance(lr, data_features, list(dataset['labels'].values()), data_ohe[0,:],
+                                neighborhood_labels[0], experiment_path, dataset_name, blackbox_name,
+                                sampling_name, index_instance)
     return local_model_pred, local_model_score
 
 def data_sampling(sampling_method, instance2explain, N_samples=1000):
@@ -112,7 +114,7 @@ def data_sampling(sampling_method, instance2explain, N_samples=1000):
 
 def explain_instance(instance2explain, N_samples=1000, N_features=5, dataset=None, ohe_encoder=None,
                      sampling_method=None, experiment_path=None, dataset_name=None, blackbox_name=None,
-                     sampling_name=None, index_instance=None):
+                     sampling_name=None, index_instance=None, plot_explanations=False):
 
     neighborhood_data, \
     neighborhood_labels, \
@@ -123,7 +125,7 @@ def explain_instance(instance2explain, N_samples=1000, N_features=5, dataset=Non
                                             N_features=N_features, dataset=dataset, ohe_encoder=ohe_encoder,
                                             experiment_path=experiment_path, dataset_name=dataset_name,
                                             blackbox_name=blackbox_name, sampling_name=sampling_name,
-                                            index_instance=index_instance)
+                                            index_instance=index_instance, plot_explanations=plot_explanations)
     return local_model_pred, local_model_score
 
 def main():
@@ -280,7 +282,8 @@ def main():
                                                                      dataset_name=dataset_kw,
                                                                      blackbox_name=blackbox_name,
                                                                      sampling_name=method,
-                                                                     index_instance=tried
+                                                                     index_instance=tried,
+                                                                     plot_explanations=False
                                                                      )
                     for method, pred in local_model_pred.items():
                         methods_output[method]['local_model_pred'].append(pred)
