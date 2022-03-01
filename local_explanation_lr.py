@@ -238,9 +238,9 @@ def main():
             sampling_methods['ris'] = ris.neighborhoodSampling
 
             # random genetic neighborhood
-            gp = GeneticNeighborhood(X, y, blackbox, dataset)
-            gp.fit()
-            sampling_methods['gp'] = gp.neighborhoodSampling
+            gen = GeneticNeighborhood(X, y, blackbox, dataset)
+            gen.fit()
+            sampling_methods['gen'] = gen.neighborhoodSampling
 
             # meaningful data sampling neighborhood
             mds = MeaningfulDataSamplingNeighborhood(X, y, blackbox, dataset)
@@ -252,7 +252,7 @@ def main():
                               'rnd': {'local_model_pred': [], 'local_model_score': []},
                               'ros': {'local_model_pred':[], 'local_model_score':[]},
                               'ris': {'local_model_pred':[], 'local_model_score':[]},
-                              'gp': {'local_model_pred': [], 'local_model_score': []},
+                              'gen': {'local_model_pred': [], 'local_model_score': []},
                               'mds': {'local_model_pred': [], 'local_model_score': []}
                               }
 

@@ -15,7 +15,7 @@ def resultFormat(type_format='dt'):
                    'accuracy':[],
                    'model_score':[]
                    },
-                            'gp':{'f1_score':[],
+                            'gen':{'f1_score':[],
                    'precision':[],
                    'accuracy':[],
                    'model_score':[]
@@ -46,7 +46,7 @@ def resultFormat(type_format='dt'):
                    'accuracy':[],
                    'model_score':[]
                    },
-                            'gp':{'f1_score':[],
+                            'gen':{'f1_score':[],
                    'precision':[],
                    'accuracy':[],
                    'model_score':[]
@@ -77,7 +77,7 @@ def resultFormat(type_format='dt'):
                    'accuracy':[],
                    'model_score':[]
                    },
-                            'gp':{'f1_score':[],
+                            'gen':{'f1_score':[],
                    'precision':[],
                    'accuracy':[],
                    'model_score':[]
@@ -108,7 +108,7 @@ def resultFormat(type_format='dt'):
                    'accuracy':[],
                    'model_score':[]
                    },
-                            'gp':{'f1_score':[],
+                            'gen':{'f1_score':[],
                    'precision':[],
                    'accuracy':[],
                    'model_score':[]
@@ -140,7 +140,7 @@ def resultFormat(type_format='dt'):
                    'accuracy':[],
                    'model_score':[]
                    },
-                            'gp':{'f1_score':[],
+                            'gen':{'f1_score':[],
                    'precision':[],
                    'accuracy':[],
                    'model_score':[]
@@ -171,7 +171,7 @@ def resultFormat(type_format='dt'):
                    'accuracy':[],
                    'model_score':[]
                    },
-                            'gp':{'f1_score':[],
+                            'gen':{'f1_score':[],
                    'precision':[],
                    'accuracy':[],
                    'model_score':[]
@@ -202,7 +202,7 @@ def resultFormat(type_format='dt'):
                    'accuracy':[],
                    'model_score':[]
                    },
-                            'gp':{'f1_score':[],
+                            'gen':{'f1_score':[],
                    'precision':[],
                    'accuracy':[],
                    'model_score':[]
@@ -233,7 +233,7 @@ def resultFormat(type_format='dt'):
                    'accuracy':[],
                    'model_score':[]
                    },
-                            'gp':{'f1_score':[],
+                            'gen':{'f1_score':[],
                    'precision':[],
                    'accuracy':[],
                    'model_score':[]
@@ -265,7 +265,7 @@ def resultFormat(type_format='dt'):
                    'accuracy':[],
                    'model_score':[]
                    },
-                            'gp':{'f1_score':[],
+                            'gen':{'f1_score':[],
                    'precision':[],
                    'accuracy':[],
                    'model_score':[]
@@ -296,7 +296,7 @@ def resultFormat(type_format='dt'):
                    'accuracy':[],
                    'model_score':[]
                    },
-                            'gp':{'f1_score':[],
+                            'gen':{'f1_score':[],
                    'precision':[],
                    'accuracy':[],
                    'model_score':[]
@@ -327,7 +327,7 @@ def resultFormat(type_format='dt'):
                    'accuracy':[],
                    'model_score':[]
                    },
-                            'gp':{'f1_score':[],
+                            'gen':{'f1_score':[],
                    'precision':[],
                    'accuracy':[],
                    'model_score':[]
@@ -358,7 +358,7 @@ def resultFormat(type_format='dt'):
                    'accuracy':[],
                    'model_score':[]
                    },
-                            'gp':{'f1_score':[],
+                            'gen':{'f1_score':[],
                    'precision':[],
                    'accuracy':[],
                    'model_score':[]
@@ -390,7 +390,7 @@ def resultFormat(type_format='dt'):
                    'accuracy':[],
                    'model_score':[]
                    },
-                            'gp':{'f1_score':[],
+                            'gen':{'f1_score':[],
                    'precision':[],
                    'accuracy':[],
                    'model_score':[]
@@ -421,7 +421,7 @@ def resultFormat(type_format='dt'):
                    'accuracy':[],
                    'model_score':[]
                    },
-                            'gp':{'f1_score':[],
+                            'gen':{'f1_score':[],
                    'precision':[],
                    'accuracy':[],
                    'model_score':[]
@@ -452,7 +452,7 @@ def resultFormat(type_format='dt'):
                    'accuracy':[],
                    'model_score':[]
                    },
-                            'gp':{'f1_score':[],
+                            'gen':{'f1_score':[],
                    'precision':[],
                    'accuracy':[],
                    'model_score':[]
@@ -483,7 +483,7 @@ def resultFormat(type_format='dt'):
                    'accuracy':[],
                    'model_score':[]
                    },
-                            'gp':{'f1_score':[],
+                            'gen':{'f1_score':[],
                    'precision':[],
                    'accuracy':[],
                    'model_score':[]
@@ -515,7 +515,7 @@ def resultFormat(type_format='dt'):
                    'accuracy':[],
                    'model_score':[]
                    },
-                            'gp':{'f1_score':[],
+                            'gen':{'f1_score':[],
                    'precision':[],
                    'accuracy':[],
                    'model_score':[]
@@ -546,7 +546,7 @@ def resultFormat(type_format='dt'):
                    'accuracy':[],
                    'model_score':[]
                    },
-                            'gp':{'f1_score':[],
+                            'gen':{'f1_score':[],
                    'precision':[],
                    'accuracy':[],
                    'model_score':[]
@@ -577,7 +577,7 @@ def resultFormat(type_format='dt'):
                    'accuracy':[],
                    'model_score':[]
                    },
-                            'gp':{'f1_score':[],
+                            'gen':{'f1_score':[],
                    'precision':[],
                    'accuracy':[],
                    'model_score':[]
@@ -608,7 +608,7 @@ def resultFormat(type_format='dt'):
                    'accuracy':[],
                    'model_score':[]
                    },
-                            'gp':{'f1_score':[],
+                            'gen':{'f1_score':[],
                    'precision':[],
                    'accuracy':[],
                    'model_score':[]
@@ -640,7 +640,7 @@ def resultFormat(type_format='dt'):
                                                    'accuracy': [],
                                                    'model_score': []
                                                    },
-                                            'gp': {'f1_score': [],
+                                            'gen': {'f1_score': [],
                                                       'precision': [],
                                                       'accuracy': [],
                                                       'model_score': []
@@ -671,7 +671,7 @@ def resultFormat(type_format='dt'):
                                                    'accuracy': [],
                                                    'model_score': []
                                                    },
-                                            'gp': {'f1_score': [],
+                                            'gen': {'f1_score': [],
                                                       'precision': [],
                                                       'accuracy': [],
                                                       'model_score': []
@@ -702,7 +702,7 @@ def resultFormat(type_format='dt'):
                                                    'accuracy': [],
                                                    'model_score': []
                                                    },
-                                            'gp': {'f1_score': [],
+                                            'gen': {'f1_score': [],
                                                       'precision': [],
                                                       'accuracy': [],
                                                       'model_score': []
@@ -733,7 +733,7 @@ def resultFormat(type_format='dt'):
                                                     'accuracy': [],
                                                     'model_score': []
                                                     },
-                                             'gp': {'f1_score': [],
+                                             'gen': {'f1_score': [],
                                                        'precision': [],
                                                        'accuracy': [],
                                                        'model_score': []
@@ -765,7 +765,7 @@ def resultFormat(type_format='dt'):
                                                    'accuracy': [],
                                                    'model_score': []
                                                    },
-                                            'gp': {'f1_score': [],
+                                            'gen': {'f1_score': [],
                                                       'precision': [],
                                                       'accuracy': [],
                                                       'model_score': []
@@ -796,7 +796,7 @@ def resultFormat(type_format='dt'):
                                                    'accuracy': [],
                                                    'model_score': []
                                                    },
-                                            'gp': {'f1_score': [],
+                                            'gen': {'f1_score': [],
                                                       'precision': [],
                                                       'accuracy': [],
                                                       'model_score': []
@@ -827,7 +827,7 @@ def resultFormat(type_format='dt'):
                                                    'accuracy': [],
                                                    'model_score': []
                                                    },
-                                            'gp': {'f1_score': [],
+                                            'gen': {'f1_score': [],
                                                       'precision': [],
                                                       'accuracy': [],
                                                       'model_score': []
@@ -858,7 +858,7 @@ def resultFormat(type_format='dt'):
                                                     'accuracy': [],
                                                     'model_score': []
                                                     },
-                                             'gp': {'f1_score': [],
+                                             'gen': {'f1_score': [],
                                                        'precision': [],
                                                        'accuracy': [],
                                                        'model_score': []
@@ -890,7 +890,7 @@ def resultFormat(type_format='dt'):
                                              'accuracy': [],
                                              'model_score': []
                                              },
-                                      'gp': {'f1_score': [],
+                                      'gen': {'f1_score': [],
                                                 'precision': [],
                                                 'accuracy': [],
                                                 'model_score': []
@@ -921,7 +921,7 @@ def resultFormat(type_format='dt'):
                                              'accuracy': [],
                                              'model_score': []
                                              },
-                                      'gp': {'f1_score': [],
+                                      'gen': {'f1_score': [],
                                                 'precision': [],
                                                 'accuracy': [],
                                                 'model_score': []
@@ -952,7 +952,7 @@ def resultFormat(type_format='dt'):
                                              'accuracy': [],
                                              'model_score': []
                                              },
-                                      'gp': {'f1_score': [],
+                                      'gen': {'f1_score': [],
                                                 'precision': [],
                                                 'accuracy': [],
                                                 'model_score': []
@@ -983,7 +983,7 @@ def resultFormat(type_format='dt'):
                                               'accuracy': [],
                                               'model_score': []
                                               },
-                                       'gp': {'f1_score': [],
+                                       'gen': {'f1_score': [],
                                                  'precision': [],
                                                  'accuracy': [],
                                                  'model_score': []
@@ -1015,7 +1015,7 @@ def resultFormat(type_format='dt'):
                                           'accuracy': [],
                                           'model_score': []
                                           },
-                                  'gp': {'f1_score': [],
+                                  'gen': {'f1_score': [],
                                          'precision': [],
                                          'accuracy': [],
                                          'model_score': []
@@ -1046,7 +1046,7 @@ def resultFormat(type_format='dt'):
                                           'accuracy': [],
                                           'model_score': []
                                           },
-                                  'gp': {'f1_score': [],
+                                  'gen': {'f1_score': [],
                                          'precision': [],
                                          'accuracy': [],
                                          'model_score': []
@@ -1077,7 +1077,7 @@ def resultFormat(type_format='dt'):
                                           'accuracy': [],
                                           'model_score': []
                                           },
-                                  'gp': {'f1_score': [],
+                                  'gen': {'f1_score': [],
                                          'precision': [],
                                          'accuracy': [],
                                          'model_score': []
@@ -1108,7 +1108,7 @@ def resultFormat(type_format='dt'):
                                            'accuracy': [],
                                            'model_score': []
                                            },
-                                   'gp': {'f1_score': [],
+                                   'gen': {'f1_score': [],
                                           'precision': [],
                                           'accuracy': [],
                                           'model_score': []
@@ -1143,7 +1143,7 @@ def resultFormat(type_format='dt'):
                    'mse':[],
                    'model_score':[]
                    },
-                            'gp':{'r2_score':[],
+                            'gen':{'r2_score':[],
                    'mae':[],
                    'mse':[],
                    'model_score':[]
@@ -1174,7 +1174,7 @@ def resultFormat(type_format='dt'):
                    'mse':[],
                    'model_score':[]
                    },
-                            'gp':{'r2_score':[],
+                            'gen':{'r2_score':[],
                    'mae':[],
                    'mse':[],
                    'model_score':[]
@@ -1205,7 +1205,7 @@ def resultFormat(type_format='dt'):
                    'mse':[],
                    'model_score':[]
                    },
-                            'gp':{'r2_score':[],
+                            'gen':{'r2_score':[],
                    'mae':[],
                    'mse':[],
                    'model_score':[]
@@ -1236,7 +1236,7 @@ def resultFormat(type_format='dt'):
                    'mse':[],
                    'model_score':[]
                    },
-                            'gp':{'r2_score':[],
+                            'gen':{'r2_score':[],
                    'mae':[],
                    'mse':[],
                    'model_score':[]
@@ -1268,7 +1268,7 @@ def resultFormat(type_format='dt'):
                    'mse':[],
                    'model_score':[]
                    },
-                            'gp':{'r2_score':[],
+                            'gen':{'r2_score':[],
                    'mae':[],
                    'mse':[],
                    'model_score':[]
@@ -1299,7 +1299,7 @@ def resultFormat(type_format='dt'):
                    'mse':[],
                    'model_score':[]
                    },
-                            'gp':{'r2_score':[],
+                            'gen':{'r2_score':[],
                    'mae':[],
                    'mse':[],
                    'model_score':[]
@@ -1330,7 +1330,7 @@ def resultFormat(type_format='dt'):
                    'mse':[],
                    'model_score':[]
                    },
-                            'gp':{'r2_score':[],
+                            'gen':{'r2_score':[],
                    'mae':[],
                    'mse':[],
                    'model_score':[]
@@ -1361,7 +1361,7 @@ def resultFormat(type_format='dt'):
                    'mse':[],
                    'model_score':[]
                    },
-                            'gp':{'r2_score':[],
+                            'gen':{'r2_score':[],
                    'mae':[],
                    'mse':[],
                    'model_score':[]
@@ -1393,7 +1393,7 @@ def resultFormat(type_format='dt'):
                    'mse':[],
                    'model_score':[]
                    },
-                            'gp':{'r2_score':[],
+                            'gen':{'r2_score':[],
                    'mae':[],
                    'mse':[],
                    'model_score':[]
@@ -1424,7 +1424,7 @@ def resultFormat(type_format='dt'):
                    'mse':[],
                    'model_score':[]
                    },
-                            'gp':{'r2_score':[],
+                            'gen':{'r2_score':[],
                    'mae':[],
                    'mse':[],
                    'model_score':[]
@@ -1455,7 +1455,7 @@ def resultFormat(type_format='dt'):
                    'mse':[],
                    'model_score':[]
                    },
-                            'gp':{'r2_score':[],
+                            'gen':{'r2_score':[],
                    'mae':[],
                    'mse':[],
                    'model_score':[]
@@ -1486,7 +1486,7 @@ def resultFormat(type_format='dt'):
                    'mse':[],
                    'model_score':[]
                    },
-                            'gp':{'r2_score':[],
+                            'gen':{'r2_score':[],
                    'mae':[],
                    'mse':[],
                    'model_score':[]
@@ -1518,7 +1518,7 @@ def resultFormat(type_format='dt'):
                    'mse':[],
                    'model_score':[]
                    },
-                            'gp':{'r2_score':[],
+                            'gen':{'r2_score':[],
                    'mae':[],
                    'mse':[],
                    'model_score':[]
@@ -1549,7 +1549,7 @@ def resultFormat(type_format='dt'):
                    'mse':[],
                    'model_score':[]
                    },
-                            'gp':{'r2_score':[],
+                            'gen':{'r2_score':[],
                    'mae':[],
                    'mse':[],
                    'model_score':[]
@@ -1580,7 +1580,7 @@ def resultFormat(type_format='dt'):
                    'mse':[],
                    'model_score':[]
                    },
-                            'gp':{'r2_score':[],
+                            'gen':{'r2_score':[],
                    'mae':[],
                    'mse':[],
                    'model_score':[]
@@ -1611,7 +1611,7 @@ def resultFormat(type_format='dt'):
                    'mse':[],
                    'model_score':[]
                    },
-                            'gp':{'r2_score':[],
+                            'gen':{'r2_score':[],
                    'mae':[],
                    'mse':[],
                    'model_score':[]
@@ -1643,7 +1643,7 @@ def resultFormat(type_format='dt'):
                    'mse':[],
                    'model_score':[]
                    },
-                            'gp':{'r2_score':[],
+                            'gen':{'r2_score':[],
                    'mae':[],
                    'mse':[],
                    'model_score':[]
@@ -1674,7 +1674,7 @@ def resultFormat(type_format='dt'):
                    'mse':[],
                    'model_score':[]
                    },
-                            'gp':{'r2_score':[],
+                            'gen':{'r2_score':[],
                    'mae':[],
                    'mse':[],
                    'model_score':[]
@@ -1705,7 +1705,7 @@ def resultFormat(type_format='dt'):
                    'mse':[],
                    'model_score':[]
                    },
-                            'gp':{'r2_score':[],
+                            'gen':{'r2_score':[],
                    'mae':[],
                    'mse':[],
                    'model_score':[]
@@ -1736,7 +1736,7 @@ def resultFormat(type_format='dt'):
                    'mse':[],
                    'model_score':[]
                    },
-                            'gp':{'r2_score':[],
+                            'gen':{'r2_score':[],
                    'mae':[],
                    'mse':[],
                    'model_score':[]
@@ -1768,7 +1768,7 @@ def resultFormat(type_format='dt'):
                     'mse': [],
                     'model_score': []
                     },
-                    'gp': {'r2_score': [],
+                    'gen': {'r2_score': [],
                     'mae': [],
                     'mse': [],
                     'model_score': []
@@ -1799,7 +1799,7 @@ def resultFormat(type_format='dt'):
                     'mse': [],
                     'model_score': []
                     },
-                    'gp': {'r2_score': [],
+                    'gen': {'r2_score': [],
                     'mae': [],
                     'mse': [],
                     'model_score': []
@@ -1830,7 +1830,7 @@ def resultFormat(type_format='dt'):
                     'mse': [],
                     'model_score': []
                     },
-                    'gp': {'r2_score': [],
+                    'gen': {'r2_score': [],
                     'mae': [],
                     'mse': [],
                     'model_score': []
@@ -1861,7 +1861,7 @@ def resultFormat(type_format='dt'):
                     'mse': [],
                     'model_score': []
                     },
-                    'gp': {'r2_score': [],
+                    'gen': {'r2_score': [],
                     'mae': [],
                     'mse': [],
                     'model_score': []
@@ -1893,7 +1893,7 @@ def resultFormat(type_format='dt'):
                     'mse': [],
                     'model_score': []
                     },
-                    'gp': {'r2_score': [],
+                    'gen': {'r2_score': [],
                       'mae': [],
                       'mse': [],
                       'model_score': []
@@ -1924,7 +1924,7 @@ def resultFormat(type_format='dt'):
                     'mse': [],
                     'model_score': []
                     },
-                    'gp': {'r2_score': [],
+                    'gen': {'r2_score': [],
                       'mae': [],
                       'mse': [],
                       'model_score': []
@@ -1955,7 +1955,7 @@ def resultFormat(type_format='dt'):
                     'mse': [],
                     'model_score': []
                     },
-                    'gp': {'r2_score': [],
+                    'gen': {'r2_score': [],
                       'mae': [],
                       'mse': [],
                       'model_score': []
@@ -1986,7 +1986,7 @@ def resultFormat(type_format='dt'):
                     'mse': [],
                     'model_score': []
                     },
-                    'gp': {'r2_score': [],
+                    'gen': {'r2_score': [],
                        'mae': [],
                        'mse': [],
                        'model_score': []
@@ -2018,7 +2018,7 @@ def resultFormat(type_format='dt'):
                                              'mse': [],
                                              'model_score': []
                                              },
-                                      'gp': {'r2_score': [],
+                                      'gen': {'r2_score': [],
                                                 'mae': [],
                                                 'mse': [],
                                                 'model_score': []
@@ -2049,7 +2049,7 @@ def resultFormat(type_format='dt'):
                                              'mse': [],
                                              'model_score': []
                                              },
-                                      'gp': {'r2_score': [],
+                                      'gen': {'r2_score': [],
                                                 'mae': [],
                                                 'mse': [],
                                                 'model_score': []
@@ -2080,7 +2080,7 @@ def resultFormat(type_format='dt'):
                                              'mse': [],
                                              'model_score': []
                                              },
-                                      'gp': {'r2_score': [],
+                                      'gen': {'r2_score': [],
                                                 'mae': [],
                                                 'mse': [],
                                                 'model_score': []
@@ -2111,7 +2111,7 @@ def resultFormat(type_format='dt'):
                                               'mse': [],
                                               'model_score': []
                                               },
-                                       'gp': {'r2_score': [],
+                                       'gen': {'r2_score': [],
                                                  'mae': [],
                                                  'mse': [],
                                                  'model_score': []
@@ -2143,7 +2143,7 @@ def resultFormat(type_format='dt'):
                                           'mse': [],
                                           'model_score': []
                                           },
-                                  'gp': {'r2_score': [],
+                                  'gen': {'r2_score': [],
                                          'mae': [],
                                          'mse': [],
                                          'model_score': []
@@ -2174,7 +2174,7 @@ def resultFormat(type_format='dt'):
                                           'mse': [],
                                           'model_score': []
                                           },
-                                  'gp': {'r2_score': [],
+                                  'gen': {'r2_score': [],
                                          'mae': [],
                                          'mse': [],
                                          'model_score': []
@@ -2205,7 +2205,7 @@ def resultFormat(type_format='dt'):
                                           'mse': [],
                                           'model_score': []
                                           },
-                                  'gp': {'r2_score': [],
+                                  'gen': {'r2_score': [],
                                          'mae': [],
                                          'mse': [],
                                          'model_score': []
@@ -2236,7 +2236,7 @@ def resultFormat(type_format='dt'):
                                            'mse': [],
                                            'model_score': []
                                            },
-                                   'gp': {'r2_score': [],
+                                   'gen': {'r2_score': [],
                                           'mae': [],
                                           'mse': [],
                                           'model_score': []
