@@ -57,7 +57,7 @@ class ExplanationBasedNeighborhood():
         models = {}
         for c, X_c in self.class_data.items():
             X_c_ohe = ord2ohe(X_c, self.dataset)
-            model = NearestNeighbors(n_neighbors=1, algorithm='ball_tree', metric='jaccard')
+            model = NearestNeighbors(n_neighbors=1, algorithm='ball_tree', metric='matching')
             model.fit(X_c_ohe)
             models[c] = model
         self.neighborhood_models = models
