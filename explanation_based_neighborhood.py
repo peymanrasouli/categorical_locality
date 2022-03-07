@@ -3,6 +3,7 @@ import numpy as np
 from PyALE import ale
 from sklearn.neighbors import NearestNeighbors
 from frequency_based_random_sampling import FrequencyBasedRandomSampling
+from encoding_utils import *
 
 class ExplanationBasedNeighborhood():
     def __init__(self,
@@ -55,8 +56,9 @@ class ExplanationBasedNeighborhood():
     def neighborhoodModel(self):
         models = {}
         for c, X_c in self.class_data.items():
+            X_c_ohe = ord2ohe(X_c, self.dataset)
             model = NearestNeighbors(n_neighbors=1, algorithm='ball_tree', metric='jaccard')
-            model.fit(X_c)
+            model.fit(X_c_ohe)
             models[c] = model
         self.neighborhood_models = models
 
@@ -94,11 +96,12 @@ class ExplanationBasedNeighborhood():
 
         # finding the closest neighbors in the other classes
         x_hat = {}
+        x_ohe = ord2ohe(x, self.dataset)
         for c in self.class_set:
             if c == x_c:
                 x_hat[c] = x
             else:
-                distances, indices = self.neighborhood_models[c].kneighbors(x.reshape(1, -1))
+                distances, indices = self.neighborhood_models[c].kneighbors(x_ohe.reshape(1, -1))
                 x_hat[c] = self.class_data[c][indices[0][0]].copy()
 
         # converting input samples from categorical to numerical representation
