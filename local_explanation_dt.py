@@ -4,8 +4,9 @@ from result_format import resultFormat
 from sklearn.metrics import *
 from sklearn.linear_model import Ridge
 from sklearn.model_selection import train_test_split
+from sklearn.model_selection import cross_val_score
 from sklearn.neural_network import MLPClassifier
-from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
+from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.tree import DecisionTreeClassifier
 from explanation_based_neighborhood import ExplanationBasedNeighborhood
 from random_sampling_neighborhood import RandomSamplingNeighborhood
@@ -20,7 +21,6 @@ from datetime import datetime
 from encoding_utils import *
 import warnings
 warnings.filterwarnings('ignore')
-
 
 def get_rules(tree, feature_names, class_names):
     tree_ = tree.tree_
@@ -117,15 +117,28 @@ def interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_pro
         data_features.append(ohe_encoder[f].get_feature_names(input_features=[dataset['discrete_features'][f]]))
     data_ohe = np.hstack(data_ohe)
     data_features = np.hstack(data_features)
-    dt = DecisionTreeClassifier(random_state=42, max_depth=3)
+
+    # finding best value for max_depth using cross validation technique to avoid over-fitting
+    cv_scores_mean = []
+    for depth in range(1, 10):
+        tree_model = DecisionTreeClassifier(max_depth=depth)
+        cv_scores = cross_val_score(tree_model, data_ohe, neighborhood_labels, cv=5, scoring='f1')
+        cv_scores_mean.append(cv_scores.mean())
+    cv_scores_mean = np.array(cv_scores_mean)
+    max_depth = np.argmax(cv_scores_mean)
+
+    # creating a decision tree using he achieved max_depth
+    dt = DecisionTreeClassifier(random_state=42, max_depth=max_depth)
     dt.fit(data_ohe, neighborhood_labels)
     dt_labels = dt.predict(data_ohe)
     local_model_pred = int(dt.predict(data_ohe[0,:].reshape(1, -1)))
     local_model_score = f1_score(neighborhood_labels, dt_labels, average='weighted')
+
     # rules = get_rules(dt, data_features, list(dataset['labels'].values()))
     # for r in rules:
     #     print(r)
     # print('\n')
+
     return local_model_pred, local_model_score
 
 def data_sampling(sampling_method, instance2explain, N_samples=1000):
@@ -170,8 +183,7 @@ def main():
     # defining the list of black-boxes
     blackbox_list = {
         'nn': MLPClassifier,
-        'gb': GradientBoostingClassifier,
-        'rf': RandomForestClassifier
+        'gb': GradientBoostingClassifier
     }
 
     # defining the number of neighborhood samples
@@ -223,7 +235,7 @@ def main():
         ohe_encoder = {}
         X_org = ord2org(X, dataset)
         for f_id, f_name in enumerate(dataset['discrete_features']):
-            enc = OneHotEncoder(sparse=False)
+            enc = OneHotEncoder(sparse=False, categories='auto')
             enc.fit(X_org[:,f_id].reshape(-1, 1))
             ohe_encoder[f_id] = enc
 
@@ -278,7 +290,7 @@ def main():
                               }
 
             # setting the number of explained instances
-            N_explain = min(X_test.shape[0], 500)
+            N_explain = min(X_test.shape[0], 300)
 
             # explaining instances
             pb = ProgressBar(total=N_explain, prefix='Progress:', suffix='Complete', decimals=1, length=50,

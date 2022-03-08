@@ -5,7 +5,7 @@ from sklearn.metrics import *
 from sklearn.linear_model import Ridge
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
-from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
+from sklearn.ensemble import GradientBoostingClassifier
 from explanation_based_neighborhood import ExplanationBasedNeighborhood
 from random_sampling_neighborhood import RandomSamplingNeighborhood
 from random_oversampling_neigbhorhood import RandomOversamplingNeighborhood
@@ -149,8 +149,7 @@ def main():
     # defining the list of black-boxes
     blackbox_list = {
         'nn': MLPClassifier,
-        'gb': GradientBoostingClassifier,
-        'rf': RandomForestClassifier
+        'gb': GradientBoostingClassifier
     }
 
     # defining the number of neighborhood samples
@@ -202,7 +201,7 @@ def main():
         ohe_encoder = {}
         X_org = ord2org(X, dataset)
         for f_id, f_name in enumerate(dataset['discrete_features']):
-            enc = OneHotEncoder(sparse=False)
+            enc = OneHotEncoder(sparse=False, categories='auto')
             enc.fit(X_org[:,f_id].reshape(-1, 1))
             ohe_encoder[f_id] = enc
 
@@ -257,7 +256,7 @@ def main():
                               }
 
             # setting the number of explained instances
-            N_explain = min(X_test.shape[0], 500)
+            N_explain = min(X_test.shape[0], 300)
 
             # explaining instances
             pb = ProgressBar(total=N_explain, prefix='Progress:', suffix='Complete', decimals=1, length=50,
