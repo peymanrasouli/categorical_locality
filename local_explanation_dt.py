@@ -5,8 +5,9 @@ from sklearn.metrics import *
 from sklearn.linear_model import Ridge
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import GridSearchCV
 from sklearn.neural_network import MLPClassifier
-from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.ensemble import GradientBoostingClassifier, AdaBoostClassifier
 from sklearn.tree import DecisionTreeClassifier
 from explanation_based_neighborhood import ExplanationBasedNeighborhood
 from random_sampling_neighborhood import RandomSamplingNeighborhood
@@ -119,16 +120,39 @@ def interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_pro
     data_features = np.hstack(data_features)
 
     # finding best value for max_depth using cross validation technique to avoid over-fitting
-    cv_scores_mean = []
-    for depth in range(1, 10):
-        tree_model = DecisionTreeClassifier(max_depth=depth)
-        cv_scores = cross_val_score(tree_model, data_ohe, neighborhood_labels, cv=5, scoring='f1')
-        cv_scores_mean.append(cv_scores.mean())
-    cv_scores_mean = np.array(cv_scores_mean)
-    max_depth = np.argmax(cv_scores_mean)
+    # cv_scores_mean = []
+    # for depth in range(1, 10):
+    #     tree_model = DecisionTreeClassifier(max_depth=depth)
+    #     cv_scores = cross_val_score(tree_model, data_ohe, neighborhood_labels, cv=3, scoring='accuracy')
+    #     cv_scores_mean.append(cv_scores.mean())
+    # cv_scores_mean = np.array(cv_scores_mean)
+    # max_depth = np.argmax(cv_scores_mean)
+    # dt = DecisionTreeClassifier(random_state=42, max_depth=max_depth)
 
-    # creating a decision tree using he achieved max_depth
-    dt = DecisionTreeClassifier(random_state=42, max_depth=max_depth)
+    # finding best value for max_depth using cross validation technique to avoid over-fitting
+    # X_tr, X_ts, Y_tr, Y_ts = train_test_split(data_ohe, neighborhood_labels, test_size=0.3, random_state=42)
+    # scores = []
+    # for depth in range(1, 10):
+    #     tree_model = DecisionTreeClassifier(random_state=42, max_depth=depth)
+    #     tree_model.fit(X_tr, Y_tr)
+    #     preds = tree_model.predict(X_ts)
+    #     score = f1_score(Y_ts, preds, average='weighted')
+    #     scores.append(score)
+    # max_depth = np.argmax(scores)+1
+    # dt = DecisionTreeClassifier(random_state=42, max_depth=max_depth)
+
+    # finding best value for max_depth using cross validation technique to avoid over-fitting
+    # param_grid = {
+    #     "max_depth": [3, 5, 10, 15, 20, None],
+    #     "min_samples_split": [2, 5, 7, 10],
+    #     "min_samples_leaf": [1, 2, 5]
+    # }
+    # clf = DecisionTreeClassifier(random_state=42)
+    # grid_cv = GridSearchCV(clf, param_grid, scoring="f1_weighted", n_jobs=-1, cv=3).fit(data_ohe, neighborhood_labels)
+    # dt = grid_cv.best_estimator_
+
+    dt = AdaBoostClassifier(random_state=42)
+
     dt.fit(data_ohe, neighborhood_labels)
     dt_labels = dt.predict(data_ohe)
     local_model_pred = int(dt.predict(data_ohe[0,:].reshape(1, -1)))
@@ -183,7 +207,7 @@ def main():
     # defining the list of black-boxes
     blackbox_list = {
         'nn': MLPClassifier,
-        'gb': GradientBoostingClassifier
+        # 'gb': GradientBoostingClassifier
     }
 
     # defining the number of neighborhood samples
@@ -282,15 +306,15 @@ def main():
 
             # Generating explanations for the samples in the explain set
             methods_output = {'exp': {'local_model_pred':[], 'local_model_score':[]},
-                              'rnd': {'local_model_pred': [], 'local_model_score': []},
-                              'ros': {'local_model_pred':[], 'local_model_score':[]},
-                              'ris': {'local_model_pred':[], 'local_model_score':[]},
+                              # 'rnd': {'local_model_pred': [], 'local_model_score': []},
+                              # 'ros': {'local_model_pred':[], 'local_model_score':[]},
+                              # 'ris': {'local_model_pred':[], 'local_model_score':[]},
                               'gen': {'local_model_pred': [], 'local_model_score': []},
                               'mds': {'local_model_pred': [], 'local_model_score': []}
                               }
 
             # setting the number of explained instances
-            N_explain = min(X_test.shape[0], 300)
+            N_explain = min(X_test.shape[0], 150)
 
             # explaining instances
             pb = ProgressBar(total=N_explain, prefix='Progress:', suffix='Complete', decimals=1, length=50,
