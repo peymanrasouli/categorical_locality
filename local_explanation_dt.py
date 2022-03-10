@@ -4,10 +4,8 @@ from result_format import resultFormat
 from sklearn.metrics import *
 from sklearn.linear_model import Ridge
 from sklearn.model_selection import train_test_split
-from sklearn.model_selection import cross_val_score
-from sklearn.model_selection import GridSearchCV
 from sklearn.neural_network import MLPClassifier
-from sklearn.ensemble import GradientBoostingClassifier, AdaBoostClassifier
+from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.tree import DecisionTreeClassifier
 from explanation_based_neighborhood import ExplanationBasedNeighborhood
 from random_sampling_neighborhood import RandomSamplingNeighborhood
@@ -64,10 +62,12 @@ def get_rules(tree, feature_names, class_names):
             p = str(p)
             if '<= 0.5' in p:
                 p = p.replace('<= 0.5', '')
-                p = p.replace('_', ' != ')
+                last_char_index = p.rfind("_")
+                p = p[:last_char_index] +  ' != ' + p[last_char_index + 1:]
             elif '> 0.5' in p:
                 p = p.replace('> 0.5', '')
-                p = p.replace('_', ' == ')
+                last_char_index = p.rfind("_")
+                p = p[:last_char_index] + ' == ' + p[last_char_index + 1:]
             rule += p
         rule += " THEN "
         if class_names is None:
@@ -107,10 +107,11 @@ def forward_selection(data, labels, N_features, ohe_encoder=None):
     return np.array(used_features)
 
 def interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_proba, N_features=5,
-                        dataset=None, ohe_encoder=None):
+                        dataset=None, ohe_encoder=None, print_rules=False):
 
     neighborhood_data_org = ord2org(neighborhood_data, dataset)
     used_features = forward_selection(neighborhood_data_org, neighborhood_proba, N_features, ohe_encoder)
+
     data_ohe = []
     data_features = []
     for f in used_features:
@@ -119,49 +120,17 @@ def interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_pro
     data_ohe = np.hstack(data_ohe)
     data_features = np.hstack(data_features)
 
-    # finding best value for max_depth using cross validation technique to avoid over-fitting
-    # cv_scores_mean = []
-    # for depth in range(1, 10):
-    #     tree_model = DecisionTreeClassifier(max_depth=depth)
-    #     cv_scores = cross_val_score(tree_model, data_ohe, neighborhood_labels, cv=3, scoring='accuracy')
-    #     cv_scores_mean.append(cv_scores.mean())
-    # cv_scores_mean = np.array(cv_scores_mean)
-    # max_depth = np.argmax(cv_scores_mean)
-    # dt = DecisionTreeClassifier(random_state=42, max_depth=max_depth)
-
-    # finding best value for max_depth using cross validation technique to avoid over-fitting
-    # X_tr, X_ts, Y_tr, Y_ts = train_test_split(data_ohe, neighborhood_labels, test_size=0.3, random_state=42)
-    # scores = []
-    # for depth in range(1, 10):
-    #     tree_model = DecisionTreeClassifier(random_state=42, max_depth=depth)
-    #     tree_model.fit(X_tr, Y_tr)
-    #     preds = tree_model.predict(X_ts)
-    #     score = f1_score(Y_ts, preds, average='weighted')
-    #     scores.append(score)
-    # max_depth = np.argmax(scores)+1
-    # dt = DecisionTreeClassifier(random_state=42, max_depth=max_depth)
-
-    # finding best value for max_depth using cross validation technique to avoid over-fitting
-    # param_grid = {
-    #     "max_depth": [3, 5, 10, 15, 20, None],
-    #     "min_samples_split": [2, 5, 7, 10],
-    #     "min_samples_leaf": [1, 2, 5]
-    # }
-    # clf = DecisionTreeClassifier(random_state=42)
-    # grid_cv = GridSearchCV(clf, param_grid, scoring="f1_weighted", n_jobs=-1, cv=3).fit(data_ohe, neighborhood_labels)
-    # dt = grid_cv.best_estimator_
-
-    dt = AdaBoostClassifier(random_state=42)
-
+    dt = DecisionTreeClassifier(random_state=42, max_depth=5)
     dt.fit(data_ohe, neighborhood_labels)
     dt_labels = dt.predict(data_ohe)
     local_model_pred = int(dt.predict(data_ohe[0,:].reshape(1, -1)))
     local_model_score = f1_score(neighborhood_labels, dt_labels, average='weighted')
 
-    # rules = get_rules(dt, data_features, list(dataset['labels'].values()))
-    # for r in rules:
-    #     print(r)
-    # print('\n')
+    if print_rules:
+        rules = get_rules(dt, data_features, list(dataset['labels'].values()))
+        for r in rules:
+            print(r)
+        print('\n')
 
     return local_model_pred, local_model_score
 
@@ -174,15 +143,20 @@ def data_sampling(sampling_method, instance2explain, N_samples=1000):
     return neighborhood_data, neighborhood_labels, neighborhood_proba
 
 
-def explain_instance(instance2explain, N_samples=1000, N_features=5, dataset=None, ohe_encoder=None, sampling_method=None):
+def explain_instance(instance2explain, N_samples=1000, N_features=5, dataset=None, ohe_encoder=None,
+                     sampling_method=None, print_rules=False):
 
     neighborhood_data, \
     neighborhood_labels, \
     neighborhood_proba = data_sampling(sampling_method, instance2explain, N_samples)
 
+    if print_rules:
+        print(sampling_method, ':')
+
     local_model_pred, \
     local_model_score = interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_proba,
-                                            N_features=N_features,  dataset=dataset, ohe_encoder=ohe_encoder)
+                                            N_features=N_features,  dataset=dataset, ohe_encoder=ohe_encoder,
+                                            print_rules=print_rules)
 
     return local_model_pred, local_model_score
 
@@ -200,26 +174,24 @@ def main():
         'german-credit': ('german-credit.csv', PrepareGermanCredit),
         'breast-cancer': ('breast-cancer.data', PrepareBreastCancer),
         'heart-disease': ('heart-disease.csv', PrepareHeartDisease),
-        'nursery': ('nursery.data', PrepareNursery),
         'car': ('car.data', PrepareCar),
     }
 
     # defining the list of black-boxes
     blackbox_list = {
         'nn': MLPClassifier,
-        # 'gb': GradientBoostingClassifier
+        'gb': GradientBoostingClassifier
     }
 
     # defining the number of neighborhood samples
     N_samples = {
-        'adult': 1000,
-        'compas-scores-two-years': 1000,
-        'credit-card-default': 1000,
-        'german-credit': 1000,
-        'breast-cancer': 1000,
-        'heart-disease': 1000,
-        'nursery': 1000,
-        'car': 1000,
+        'adult': 2000,
+        'compas-scores-two-years': 2000,
+        'credit-card-default': 2000,
+        'german-credit': 2000,
+        'breast-cancer': 2000,
+        'heart-disease': 2000,
+        'car': 2000,
     }
 
     # defining the number of selected features for explanation
@@ -230,7 +202,6 @@ def main():
         'german-credit': 5,
         'breast-cancer': 5,
         'heart-disease': 5,
-        'nursery': 5,
         'car':5,
     }
 
@@ -334,7 +305,8 @@ def main():
                                                                      N_features=N_features[dataset_kw],
                                                                      dataset=dataset,
                                                                      ohe_encoder=ohe_encoder,
-                                                                     sampling_method=sampling_methods[method])
+                                                                     sampling_method=sampling_methods[method],
+                                                                     print_rules=False)
                     for method, pred in local_model_pred.items():
                         methods_output[method]['local_model_pred'].append(pred)
                     for method, score in local_model_score.items():

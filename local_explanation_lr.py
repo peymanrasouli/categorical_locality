@@ -85,6 +85,7 @@ def interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_pro
 
     neighborhood_data_org = ord2org(neighborhood_data, dataset)
     used_features = forward_selection(neighborhood_data_org, neighborhood_proba, N_features, ohe_encoder)
+
     data_ohe = []
     data_features = []
     for f in used_features:
@@ -92,11 +93,13 @@ def interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_pro
         data_features.append(ohe_encoder[f].get_feature_names(input_features=[dataset['discrete_features'][f]]))
     data_ohe = np.hstack(data_ohe)
     data_features = np.hstack(data_features)
+
     lr = Ridge(random_state=42)
     lr.fit(data_ohe, neighborhood_proba)
     lr_preds = lr.predict(data_ohe)
     local_model_pred = float(lr.predict(data_ohe[0, :].reshape(1, -1)))
     local_model_score = r2_score(neighborhood_proba, lr_preds)
+
     if plot_explanations:
         plot_feature_importance(lr, data_features, list(dataset['labels'].values()), data_ohe[0,:],
                                 neighborhood_labels[0], experiment_path, dataset_name, blackbox_name,
@@ -142,7 +145,6 @@ def main():
         'german-credit': ('german-credit.csv', PrepareGermanCredit),
         'breast-cancer': ('breast-cancer.data', PrepareBreastCancer),
         'heart-disease': ('heart-disease.csv', PrepareHeartDisease),
-        'nursery': ('nursery.data', PrepareNursery),
         'car': ('car.data', PrepareCar),
     }
 
@@ -160,7 +162,6 @@ def main():
         'german-credit': 1000,
         'breast-cancer': 1000,
         'heart-disease': 1000,
-        'nursery': 1000,
         'car': 1000,
     }
 
@@ -172,7 +173,6 @@ def main():
         'german-credit': 5,
         'breast-cancer': 5,
         'heart-disease': 5,
-        'nursery': 5,
         'car':5,
     }
 
