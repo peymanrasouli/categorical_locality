@@ -156,13 +156,13 @@ def main():
 
     # defining the number of neighborhood samples
     N_samples = {
-        'adult': 1000,
-        'compas-scores-two-years': 1000,
-        'credit-card-default': 1000,
-        'german-credit': 1000,
-        'breast-cancer': 1000,
-        'heart-disease': 1000,
-        'car': 1000,
+        'adult': 2000,
+        'compas-scores-two-years': 2000,
+        'credit-card-default': 2000,
+        'german-credit': 2000,
+        'breast-cancer': 2000,
+        'heart-disease': 2000,
+        'car': 2000,
     }
 
     # defining the number of selected features for explanation
