@@ -120,7 +120,7 @@ def interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_pro
     data_ohe = np.hstack(data_ohe)
     data_features = np.hstack(data_features)
 
-    dt = DecisionTreeClassifier(random_state=42, max_depth=5, min_samples_split=10, min_samples_leaf=5)
+    dt = DecisionTreeClassifier(random_state=42, max_depth=5)
     dt.fit(data_ohe, neighborhood_labels)
     dt_labels = dt.predict(data_ohe)
     local_model_pred = int(dt.predict(data_ohe[0,:].reshape(1, -1)))

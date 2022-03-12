@@ -188,8 +188,8 @@ def PrepareAdult(dataset_path, dataset_name):
     df_y = df.loc[:, class_name]
 
     # discretizing some selective continuous features
-    df_X_org['age'] = pd.cut(x=df_X_org['age'], bins=[i for i in range(0,101,5)])
-    df_X_org['hours-per-week'] = pd.cut(x=df_X_org['hours-per-week'], bins=[i for i in range(0,101,5)])
+    df_X_org['age'] = pd.cut(x=df_X_org['age'], bins=[i for i in range(0,101,10)])
+    df_X_org['hours-per-week'] = pd.cut(x=df_X_org['hours-per-week'], bins=[i for i in range(0,101,10)])
 
     continuous_features = []
     discrete_features = ['age', 'hours-per-week', 'work-class', 'education', 'marital-status',
@@ -577,7 +577,7 @@ def PrepareCOMPAS(dataset_path, dataset_name):
     df_y = df.loc[:, class_name]
 
     # discretizing some selective continuous features
-    df_X_org['age'] = pd.cut(x=df_X_org['age'], bins=[i for i in range(0,101,5)])
+    df_X_org['age'] = pd.cut(x=df_X_org['age'], bins=[i for i in range(0,101,10)])
     df_X_org.loc[df_X_org['priors_count']<=0, 'priors_count'] = 0.1
     df_X_org['priors_count'] = pd.cut(x=df_X_org['priors_count'], bins=[i for i in range(0,42,4)])
 
@@ -895,7 +895,7 @@ def PrepareCreditCardDefault(dataset_path, dataset_name):
     df_y = df.loc[:, class_name]
 
     # discretizing some selective continuous features
-    df_X_org['AGE'] = pd.cut(x=df_X_org['AGE'], bins=[i for i in range(0,101,5)])
+    df_X_org['AGE'] = pd.cut(x=df_X_org['AGE'], bins=[i for i in range(0,101,10)])
 
     continuous_features = []
     discrete_features = ['AGE','SEX', 'EDUCATION', 'MARRIAGE', 'PAY_0', 'PAY_2', 'PAY_3', 'PAY_4', 'PAY_5', 'PAY_6']
@@ -1211,7 +1211,7 @@ def PrepareGermanCredit(dataset_path, dataset_name):
     df_y = df.loc[:, class_name]
 
     # discretizing some selective continuous features
-    df_X_org['age'] = pd.cut(x=df_X_org['age'], bins=[i for i in range(0,101,5)])
+    df_X_org['age'] = pd.cut(x=df_X_org['age'], bins=[i for i in range(0,101,10)])
     df_X_org.loc[df_X_org['duration_in_month'] <= 4, 'duration_in_month'] = 4.1
     df_X_org['duration_in_month'] = pd.cut(x=df_X_org['duration_in_month'], bins=[i for i in range(4, 73, 4)])
 
@@ -1997,7 +1997,7 @@ def PrepareHeartDisease(dataset_path, dataset_name):
     df_y = df.loc[:, class_name]
 
     # discretizing some selective continuous features
-    df_X_org['age'] = pd.cut(x=df_X_org['age'], bins=[i for i in range(0,101,5)])
+    df_X_org['age'] = pd.cut(x=df_X_org['age'], bins=[i for i in range(0,101,10)])
 
     continuous_features = []
     discrete_features = ['age', 'oldpeak', 'sex', 'cp', 'fbs', 'restecg', 'exang', 'slope', 'ca', 'thal']
