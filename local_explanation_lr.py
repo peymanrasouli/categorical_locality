@@ -5,7 +5,7 @@ from sklearn.metrics import *
 from sklearn.linear_model import Ridge
 from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
-from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.ensemble import RandomForestClassifier
 from explanation_based_neighborhood import ExplanationBasedNeighborhood
 from random_sampling_neighborhood import RandomSamplingNeighborhood
 from random_oversampling_neigbhorhood import RandomOversamplingNeighborhood
@@ -151,18 +151,18 @@ def main():
     # defining the list of black-boxes
     blackbox_list = {
         'nn': MLPClassifier,
-        'gb': GradientBoostingClassifier
+        'rf': RandomForestClassifier
     }
 
     # defining the number of neighborhood samples
     N_samples = {
-        'adult': 2000,
-        'compas-scores-two-years': 2000,
-        'credit-card-default': 2000,
-        'german-credit': 2000,
-        'breast-cancer': 2000,
-        'heart-disease': 2000,
-        'car': 2000,
+        'adult': 1000,
+        'compas-scores-two-years': 1000,
+        'credit-card-default': 1000,
+        'german-credit': 1000,
+        'breast-cancer': 1000,
+        'heart-disease': 1000,
+        'car': 1000,
     }
 
     # defining the number of selected features for explanation
