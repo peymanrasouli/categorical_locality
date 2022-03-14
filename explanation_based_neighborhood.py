@@ -1,8 +1,7 @@
 import pandas as pd
-import numpy as np
-from PyALE import ale
 from sklearn.neighbors import NearestNeighbors
 from frequency_based_random_sampling import FrequencyBasedRandomSampling
+from alibi.explainers import ALE
 from encoding_utils import *
 
 class ExplanationBasedNeighborhood():
@@ -35,17 +34,21 @@ class ExplanationBasedNeighborhood():
             categorical_importance.update({c: {}})
             class_data.update({c: {}})
 
-        # extracting global explanation of categorical features w.r.t. every classs
+        # creating ALE explainer
+        ale_explainer = ALE(self.model.predict_proba, feature_names=self.discrete_indices, target_names=self.class_set,
+                            low_resolution_threshold=100)
+        ale_exp = ale_explainer.explain(self.X)
+        # plot_ale(ale_exp)
+
+        # extracting global effect values
         for c in self.class_set:
             ind_c = np.where(self.y==c)[0]
             X_c = self.X[ind_c, :]
             class_data[c] = X_c
-            X_df = pd.DataFrame(data= np.r_[self.X, X_c], columns=range(0, self.X.shape[1]))
             for f in self.discrete_indices:
-                exp = ale(X_df, self.model, [f], feature_type="discrete", include_CI=True, C=0.95)
-                categorical_similarity[c][f] = exp['eff']
-                categorical_width[c][f] = max(exp['eff']) - min(exp['eff'])
-                categorical_importance[c][f] = max(exp['eff'])
+                categorical_similarity[c][f] = pd.Series(ale_exp.ale_values[f][:,c])
+                categorical_width[c][f] = max(ale_exp.ale_values[f][:,c]) - min(ale_exp.ale_values[f][:,c])
+                categorical_importance[c][f] = max(ale_exp.ale_values[f][:,c])
 
         # returning the results
         self.categorical_similarity = categorical_similarity

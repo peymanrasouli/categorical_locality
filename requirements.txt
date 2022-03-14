@@ -1,3 +1,4 @@
+alibi==0.6.2
 category-encoders==2.3.0
 chardet==3.0.4
 cycler==0.11.0
@@ -30,3 +31,4 @@ sklearn==0.0
 statsmodels==0.12.2
 urllib3==1.25.11
 console-progressbar==1.1.2
+tensorflow=2.4
