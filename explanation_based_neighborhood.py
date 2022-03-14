@@ -12,7 +12,7 @@ class ExplanationBasedNeighborhood():
                 dataset,
                 N_samples):
 
-        self.X = FrequencyBasedRandomSampling(X, N_samples * 20)
+        self.X = X #FrequencyBasedRandomSampling(X, N_samples * 20)
         self.y = model.predict(self.X)
         self.model = model
         self.dataset = dataset
