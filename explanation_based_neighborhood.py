@@ -35,7 +35,9 @@ class ExplanationBasedNeighborhood():
             class_data.update({c: {}})
 
         # creating ALE explainer
-        ale_explainer = ALE(self.model.predict_proba, feature_names=self.discrete_indices, target_names=self.class_set,
+        ale_explainer = ALE(self.model.predict_proba,
+                            feature_names=self.discrete_indices,
+                            target_names=self.class_set,
                             low_resolution_threshold=100)
         ale_exp = ale_explainer.explain(self.X)
         # plot_ale(ale_exp)
