@@ -31,4 +31,4 @@ sklearn==0.0
 statsmodels==0.12.2
 urllib3==1.25.11
 console-progressbar==1.1.2
-tensorflow=2.4
+tensorflow==2.4
