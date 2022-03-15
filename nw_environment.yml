@@ -1,7 +1,0 @@
-name: new_work
-channels:
-  - defaults
-dependencies:
-  - python=3.6
-  - scikit-learn==0.24.1
-prefix: /home/peyman/anaconda3/envs/new_work
