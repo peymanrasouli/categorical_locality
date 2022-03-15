@@ -53,7 +53,6 @@ mkl-service==2.3.0
 murmurhash==1.0.6
 networkx==2.4
 numba==0.53.1
-numpy @ file:///tmp/build/80754af9/numpy_and_numpy_base_1603487797006/work
 oauthlib==3.2.0
 opt-einsum==3.3.0
 packaging==21.3
@@ -104,7 +103,6 @@ tensorflow==2.4.0
 tensorflow-estimator==2.4.0
 termcolor==1.1.0
 thinc==8.0.14
-threadpoolctl @ file:///Users/ktietz/demo/mc3/conda-bld/threadpoolctl_1629802263681/work
 tifffile==2020.9.3
 tokenizers==0.11.6
 tqdm==4.62.3
