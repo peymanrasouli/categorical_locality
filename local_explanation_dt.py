@@ -3,7 +3,7 @@ from create_model import CreateModel
 from result_format import resultFormat
 from sklearn.metrics import *
 from sklearn.linear_model import Ridge
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.neural_network import MLPClassifier
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.tree import DecisionTreeClassifier
@@ -120,7 +120,21 @@ def interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_pro
     data_ohe = np.hstack(data_ohe)
     data_features = np.hstack(data_features)
 
-    dt = DecisionTreeClassifier(random_state=42, max_depth=5)
+    param_grid = {
+        "max_depth": [3, 5, 10, 15, 20, None],
+        "min_samples_split": [2, 5, 7, 10],
+        "min_samples_leaf": [1, 2, 5]
+    }
+    clf = DecisionTreeClassifier(random_state=42)
+    grid_cv = GridSearchCV(clf, param_grid, scoring="roc_auc", n_jobs=-1, cv=3).fit(data_ohe, neighborhood_labels)
+    # print("Param for GS", grid_cv.best_params_)
+    # print("CV score for GS", grid_cv.best_score_)
+    # print("AUC ROC Score for GS: ", roc_auc_score(neighborhood_labels, grid_cv.predict(data_ohe)))
+
+    dt = grid_cv.best_estimator_
+
+    # dt = DecisionTreeClassifier(random_state=42, max_depth=5)
+
     dt.fit(data_ohe, neighborhood_labels)
     dt_labels = dt.predict(data_ohe)
     local_model_pred = int(dt.predict(data_ohe[0,:].reshape(1, -1)))
