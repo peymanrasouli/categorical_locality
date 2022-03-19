@@ -126,7 +126,7 @@ def interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_pro
         "min_samples_leaf": [1, 2, 5]
     }
     clf = DecisionTreeClassifier(random_state=42)
-    grid_cv = GridSearchCV(clf, param_grid, scoring="roc_auc", n_jobs=-1, cv=3).fit(data_ohe, neighborhood_labels)
+    grid_cv = GridSearchCV(clf, param_grid, scoring="f1_weighted", n_jobs=-1, cv=3).fit(data_ohe, neighborhood_labels)
     # print("Param for GS", grid_cv.best_params_)
     # print("CV score for GS", grid_cv.best_score_)
     # print("AUC ROC Score for GS: ", roc_auc_score(neighborhood_labels, grid_cv.predict(data_ohe)))
