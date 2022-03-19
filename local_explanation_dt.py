@@ -120,25 +120,24 @@ def interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_pro
     data_ohe = np.hstack(data_ohe)
     data_features = np.hstack(data_features)
 
-    param_grid = {
-        "max_depth": [3, 5, 10, 15, 20, None],
-        "min_samples_split": [2, 5, 7, 10],
-        "min_samples_leaf": [1, 2, 5]
-    }
-    clf = DecisionTreeClassifier(random_state=42)
-    grid_cv = GridSearchCV(clf, param_grid, scoring="f1_weighted", n_jobs=-1, cv=3).fit(data_ohe, neighborhood_labels)
-    # print("Param for GS", grid_cv.best_params_)
-    # print("CV score for GS", grid_cv.best_score_)
-    # print("AUC ROC Score for GS: ", roc_auc_score(neighborhood_labels, grid_cv.predict(data_ohe)))
+    # param_grid = {
+    #     "max_depth": [3, 5, 10, 15, 20, None],
+    #     "min_samples_split": [2, 5, 7, 10],
+    #     "min_samples_leaf": [1, 2, 5]
+    # }
+    # clf = DecisionTreeClassifier(random_state=42)
+    # grid_cv = GridSearchCV(clf, param_grid, scoring="f1_macro", n_jobs=-1, cv=3).fit(data_ohe, neighborhood_labels)
+    # # print("Param for GS", grid_cv.best_params_)
+    # # print("CV score for GS", grid_cv.best_score_)
+    # # print("AUC ROC Score for GS: ", roc_auc_score(neighborhood_labels, grid_cv.predict(data_ohe)))
+    # dt = grid_cv.best_estimator_
 
-    dt = grid_cv.best_estimator_
-
-    # dt = DecisionTreeClassifier(random_state=42, max_depth=5)
+    dt = DecisionTreeClassifier(random_state=42, max_depth=5)
 
     dt.fit(data_ohe, neighborhood_labels)
     dt_labels = dt.predict(data_ohe)
     local_model_pred = int(dt.predict(data_ohe[0,:].reshape(1, -1)))
-    local_model_score = f1_score(neighborhood_labels, dt_labels, average='weighted')
+    local_model_score = f1_score(neighborhood_labels, dt_labels, average='macro')
 
     if print_rules:
         rules = get_rules(dt, data_features, list(dataset['labels'].values()))
@@ -342,11 +341,11 @@ def main():
             bb_pred = blackbox.predict(X_explain)
             for method, output in methods_output.items():
                 # F1 score
-                local_f1 = f1_score(bb_pred, np.asarray(output['local_model_pred']), average='weighted')
+                local_f1 = f1_score(bb_pred, np.asarray(output['local_model_pred']), average='macro')
                 results[dataset_kw][blackbox_name][method]['f1_score'] = local_f1
 
                 # Precision score
-                local_precision = precision_score(bb_pred, np.asarray(output['local_model_pred']), average='weighted')
+                local_precision = precision_score(bb_pred, np.asarray(output['local_model_pred']), average='macro')
                 results[dataset_kw][blackbox_name][method]['precision'] = local_precision
 
                 # Accuracy score
