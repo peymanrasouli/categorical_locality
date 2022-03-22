@@ -12,8 +12,8 @@ class ExplanationBasedNeighborhood():
                 dataset,
                 N_samples):
 
-        self.X = X #FrequencyBasedRandomSampling(X, N_samples * 20)
-        self.y = model.predict(self.X)
+        self.X = X # FrequencyBasedRandomSampling(X, N_samples * 20)
+        self.y = y # model.predict(self.X)
         self.model = model
         self.dataset = dataset
         self.discrete_indices = dataset['discrete_indices']

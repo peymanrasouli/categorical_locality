@@ -84,7 +84,7 @@ def interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_pro
                         sampling_name=None, index_instance=None, plot_explanations=False):
 
     neighborhood_data_org = ord2org(neighborhood_data, dataset)
-    used_features = range(neighborhood_data.shape[1]) #forward_selection(neighborhood_data_org, neighborhood_proba, N_features, ohe_encoder)
+    used_features = forward_selection(neighborhood_data_org, neighborhood_proba, N_features, ohe_encoder)
 
     data_ohe = []
     data_features = []
