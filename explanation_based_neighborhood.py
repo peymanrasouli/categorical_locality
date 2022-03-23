@@ -8,12 +8,15 @@ class ExplanationBasedNeighborhood():
     def __init__(self,
                 X,
                 y,
+                X_train,
+                y_train,
                 model,
-                dataset,
-                N_samples):
+                dataset):
 
-        self.X = X # FrequencyBasedRandomSampling(X, N_samples * 20)
-        self.y = y # model.predict(self.X)
+        self.X = X
+        self.y = y
+        self.X_train = X_train
+        self.y_train = y_train
         self.model = model
         self.dataset = dataset
         self.discrete_indices = dataset['discrete_indices']
@@ -27,12 +30,10 @@ class ExplanationBasedNeighborhood():
         categorical_similarity = {}
         categorical_width = {}
         categorical_importance = {}
-        class_data = {}
         for c in self.class_set:
             categorical_similarity.update({c: {}})
             categorical_width.update({c: {}})
             categorical_importance.update({c: {}})
-            class_data.update({c: {}})
 
         # creating ALE explainer
         ale_explainer = ALE(self.model.predict_proba,
@@ -44,9 +45,6 @@ class ExplanationBasedNeighborhood():
 
         # extracting global effect values
         for c in self.class_set:
-            ind_c = np.where(self.y==c)[0]
-            X_c = self.X[ind_c, :]
-            class_data[c] = X_c
             for f in self.discrete_indices:
                 categorical_similarity[c][f] = pd.Series(ale_exp.ale_values[f][:,c])
                 categorical_width[c][f] = max(ale_exp.ale_values[f][:,c]) - min(ale_exp.ale_values[f][:,c])
@@ -56,15 +54,25 @@ class ExplanationBasedNeighborhood():
         self.categorical_similarity = categorical_similarity
         self.categorical_width = categorical_width
         self.categorical_importance = categorical_importance
-        self.class_data = class_data
 
     def neighborhoodModel(self):
+
+        # creating neighborhood models based on class-wise ground-truth data
+        class_data = {}
+        for c in self.class_set:
+            class_data.update({c: {}})
+
+        class_data = {}
         models = {}
-        for c, X_c in self.class_data.items():
+        for c in self.class_set:
+            ind_c = np.where(self.y_train == c)[0]
+            X_c = self.X_train[ind_c, :]
+            class_data[c] = X_c
             X_c_ohe = ord2ohe(X_c, self.dataset)
             model = NearestNeighbors(n_neighbors=1, algorithm='ball_tree', metric='matching')
             model.fit(X_c_ohe)
             models[c] = model
+        self.class_data = class_data
         self.neighborhood_models = models
 
     def fit(self):
