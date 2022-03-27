@@ -3,7 +3,7 @@ from create_model import CreateModel
 from result_format import resultFormat
 from sklearn.metrics import *
 from sklearn.linear_model import Ridge
-from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.tree import DecisionTreeClassifier
