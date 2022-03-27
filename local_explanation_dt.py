@@ -259,7 +259,7 @@ def main():
             sampling_methods = {}
 
             # explanation based neighborhood
-            exp = ExplanationBasedNeighborhood(X, y, X_train, Y_train, blackbox, dataset)
+            exp = ExplanationBasedNeighborhood(X, y, blackbox, dataset)
             exp.fit()
             sampling_methods['exp'] = exp.neighborhoodSampling
 

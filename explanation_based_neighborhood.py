@@ -1,4 +1,5 @@
 import pandas as pd
+from sklearn.model_selection import train_test_split
 from sklearn.neighbors import NearestNeighbors
 from frequency_based_random_sampling import FrequencyBasedRandomSampling
 from alibi.explainers import ALE
@@ -6,15 +7,24 @@ from encoding_utils import *
 
 class ExplanationBasedNeighborhood():
     def __init__(self,
-                X,
-                y,
-                X_train,
-                y_train,
-                model,
-                dataset):
+                 X,
+                 y,
+                 model,
+                 dataset):
 
-        self.X = X
-        self.y = y
+        # splitting the data into train and test set with the same random state used for training the model
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+        # check whether the training data contains all possible values for the features; add extra samples in case
+        for f in range(X_train.shape[1]):
+            for fv in dataset['feature_values'][f]:
+                if fv in np.unique(X_train[:,f]):
+                    pass
+                else:
+                    idx = np.where(X_test[:, f] == fv)[0][0]
+                    X_train = np.r_[X_train, X_test[idx, :].reshape(1,-1)]
+                    y_train = np.r_[y_train, y_test[idx]]
+
         self.X_train = X_train
         self.y_train = y_train
         self.model = model
@@ -22,7 +32,7 @@ class ExplanationBasedNeighborhood():
         self.discrete_indices = dataset['discrete_indices']
         self.continuous_indices = dataset['continuous_indices']
         self.numerical_width = dataset['feature_width'][dataset['continuous_indices']]
-        self.class_set = np.unique(y)
+        self.class_set = np.unique(y_train)
 
     def categoricalSimilarity(self):
 
@@ -40,7 +50,7 @@ class ExplanationBasedNeighborhood():
                             feature_names=self.discrete_indices,
                             target_names=self.class_set,
                             low_resolution_threshold=100)
-        ale_exp = ale_explainer.explain(self.X)
+        ale_exp = ale_explainer.explain(self.X_train)
         # plot_ale(ale_exp)
 
         # extracting global effect values
@@ -123,7 +133,7 @@ class ExplanationBasedNeighborhood():
             x_hat_exp[c] = self.cat2numConverter(instance)
 
         # generating random samples from the distribution of training data
-        X_sampled = FrequencyBasedRandomSampling(self.X, N_samples * 10)
+        X_sampled = FrequencyBasedRandomSampling(self.X_train, N_samples * 10)
         X_sampled_c = self.model.predict(X_sampled)
 
         # converting random samples from categorical to numerical representation
