@@ -54,7 +54,7 @@ def plot_feature_importance(model, feature_names, class_name, input, label, expe
     plt.savefig(experiment_path + str(index_instance) + '_' + sampling_name + '_' + dataset_name + '_' + blackbox_name
                 +'.pdf', bbox_inches = 'tight')
 
-def forward_selection(data, labels, N_features, ohe_encoder=None):
+def forward_selection(data, labels, N_features):
     clf = Ridge()
     used_features = []
     for _ in range(min(N_features, data.shape[1])):
@@ -63,16 +63,8 @@ def forward_selection(data, labels, N_features, ohe_encoder=None):
         for feature in range(data.shape[1]):
             if feature in used_features:
                 continue
-
-            data_ohe = []
-            for f in  used_features + [feature]:
-                data_ohe.append(ohe_encoder[f].transform(data[:,f].reshape(-1, 1)))
-            data_ohe = np.hstack(data_ohe)
-
-            clf.fit(data_ohe,
-                    labels)
-            score = clf.score(data_ohe,
-                              labels)
+            clf.fit(data[:, used_features + [feature]], labels)
+            score = clf.score(data[:, used_features + [feature]], labels)
             if score > max_:
                 best = feature
                 max_ = score
@@ -84,15 +76,17 @@ def interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_pro
                         sampling_name=None, index_instance=None, plot_explanations=False):
 
     neighborhood_data_org = ord2org(neighborhood_data, dataset)
-    used_features = forward_selection(neighborhood_data_org, neighborhood_proba, N_features, ohe_encoder)
-
     data_ohe = []
     data_features = []
-    for f in used_features:
+    for f in range(neighborhood_data_org.shape[1]):
         data_ohe.append(ohe_encoder[f].transform(neighborhood_data_org[:, f].reshape(-1, 1)))
         data_features.append(ohe_encoder[f].get_feature_names(input_features=[dataset['discrete_features'][f]]))
     data_ohe = np.hstack(data_ohe)
     data_features = np.hstack(data_features)
+
+    used_features = forward_selection(data_ohe, neighborhood_proba, N_features)
+    data_ohe = data_ohe[:, used_features]
+    data_features = data_features[used_features]
 
     lr = Ridge(random_state=42)
     lr.fit(data_ohe, neighborhood_proba)
@@ -248,11 +242,11 @@ def main():
 
             # Generating explanations for the samples in the explain set
             methods_output = {'exp': {'local_model_pred':[], 'local_model_score':[]},
-                              # 'rnd': {'local_model_pred': [], 'local_model_score': []},
-                              # 'ros': {'local_model_pred':[], 'local_model_score':[]},
-                              # 'ris': {'local_model_pred':[], 'local_model_score':[]},
-                              # 'gen': {'local_model_pred': [], 'local_model_score': []},
-                              # 'mds': {'local_model_pred': [], 'local_model_score': []}
+                              'rnd': {'local_model_pred': [], 'local_model_score': []},
+                              'ros': {'local_model_pred':[], 'local_model_score':[]},
+                              'ris': {'local_model_pred':[], 'local_model_score':[]},
+                              'gen': {'local_model_pred': [], 'local_model_score': []},
+                              'mds': {'local_model_pred': [], 'local_model_score': []}
                               }
 
             # setting the number of explained instances
