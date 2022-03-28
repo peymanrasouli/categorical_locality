@@ -248,11 +248,11 @@ def main():
 
             # Generating explanations for the samples in the explain set
             methods_output = {'exp': {'local_model_pred':[], 'local_model_score':[]},
-                              'rnd': {'local_model_pred': [], 'local_model_score': []},
-                              'ros': {'local_model_pred':[], 'local_model_score':[]},
-                              'ris': {'local_model_pred':[], 'local_model_score':[]},
-                              'gen': {'local_model_pred': [], 'local_model_score': []},
-                              'mds': {'local_model_pred': [], 'local_model_score': []}
+                              # 'rnd': {'local_model_pred': [], 'local_model_score': []},
+                              # 'ros': {'local_model_pred':[], 'local_model_score':[]},
+                              # 'ris': {'local_model_pred':[], 'local_model_score':[]},
+                              # 'gen': {'local_model_pred': [], 'local_model_score': []},
+                              # 'mds': {'local_model_pred': [], 'local_model_score': []}
                               }
 
             # setting the number of explained instances
