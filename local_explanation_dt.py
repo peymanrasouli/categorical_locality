@@ -82,7 +82,7 @@ def get_rules(tree, feature_names, class_names):
     return rules
 
 def forward_selection(data, labels, N_features, ohe_encoder=None):
-    clf = DecisionTreeClassifier(random_state=42)
+    clf = Ridge()
     used_features = []
     for _ in range(min(N_features, data.shape[1])):
         max_ = -100000000
@@ -98,9 +98,8 @@ def forward_selection(data, labels, N_features, ohe_encoder=None):
 
             clf.fit(data_ohe,
                     labels)
-            score = f1_score(clf.predict(data_ohe),
-                             labels,
-                             average='macro')
+            score = clf.score(data_ohe,
+                              labels)
             if score > max_:
                 best = feature
                 max_ = score
@@ -111,7 +110,7 @@ def interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_pro
                         dataset=None, ohe_encoder=None, print_rules=False):
 
     neighborhood_data_org = ord2org(neighborhood_data, dataset)
-    used_features = forward_selection(neighborhood_data_org, neighborhood_labels, N_features, ohe_encoder)
+    used_features = forward_selection(neighborhood_data_org, neighborhood_proba, N_features, ohe_encoder)
 
     data_ohe = []
     data_features = []

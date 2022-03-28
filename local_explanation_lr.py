@@ -55,7 +55,7 @@ def plot_feature_importance(model, feature_names, class_name, input, label, expe
                 +'.pdf', bbox_inches = 'tight')
 
 def forward_selection(data, labels, N_features, ohe_encoder=None):
-    clf = Ridge(random_state=42)
+    clf = Ridge()
     used_features = []
     for _ in range(min(N_features, data.shape[1])):
         max_ = -100000000
