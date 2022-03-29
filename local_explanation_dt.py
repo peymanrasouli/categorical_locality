@@ -81,7 +81,7 @@ def get_rules(tree, feature_names, class_names):
 
     return rules
 
-def forward_selection(data, labels, N_features):
+def forward_selection(data, labels, N_features, ohe_encoder=None):
     clf = Ridge()
     used_features = []
     for _ in range(min(N_features, data.shape[1])):
@@ -90,8 +90,16 @@ def forward_selection(data, labels, N_features):
         for feature in range(data.shape[1]):
             if feature in used_features:
                 continue
-            clf.fit(data[:, used_features + [feature]], labels)
-            score = clf.score(data[:, used_features + [feature]], labels)
+
+            data_ohe = []
+            for f in  used_features + [feature]:
+                data_ohe.append(ohe_encoder[f].transform(data[:,f].reshape(-1, 1)))
+            data_ohe = np.hstack(data_ohe)
+
+            clf.fit(data_ohe,
+                    labels)
+            score = clf.score(data_ohe,
+                              labels)
             if score > max_:
                 best = feature
                 max_ = score
@@ -102,19 +110,17 @@ def interpretable_model(neighborhood_data, neighborhood_labels, neighborhood_pro
                         dataset=None, ohe_encoder=None, print_rules=False):
 
     neighborhood_data_org = ord2org(neighborhood_data, dataset)
+    used_features = forward_selection(neighborhood_data_org, neighborhood_proba, N_features, ohe_encoder)
+
     data_ohe = []
     data_features = []
-    for f in range(neighborhood_data_org.shape[1]):
+    for f in used_features:
         data_ohe.append(ohe_encoder[f].transform(neighborhood_data_org[:, f].reshape(-1, 1)))
         data_features.append(ohe_encoder[f].get_feature_names(input_features=[dataset['discrete_features'][f]]))
     data_ohe = np.hstack(data_ohe)
     data_features = np.hstack(data_features)
 
-    used_features = forward_selection(data_ohe, neighborhood_proba, N_features)
-    data_ohe = data_ohe[:, used_features]
-    data_features = data_features[used_features]
-
-    dt = DecisionTreeClassifier(random_state=42, max_depth=N_features)
+    dt = DecisionTreeClassifier(random_state=42, max_depth=5)
     dt.fit(data_ohe, neighborhood_labels)
     dt_labels = dt.predict(data_ohe)
     local_model_pred = int(dt.predict(data_ohe[0,:].reshape(1, -1)))
@@ -279,7 +285,7 @@ def main():
                               }
 
             # setting the number of explained instances
-            N_explain = min(X_test.shape[0], 300)
+            N_explain = min(X_test.shape[0], 500)
 
             # explaining instances
             pb = ProgressBar(total=N_explain, prefix='Progress:', suffix='Complete', decimals=1, length=50,
