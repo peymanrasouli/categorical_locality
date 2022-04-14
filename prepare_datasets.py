@@ -188,8 +188,12 @@ def PrepareAdult(dataset_path, dataset_name):
     df_y = df.loc[:, class_name]
 
     # discretizing some selective continuous features
-    df_X_org['age'] = pd.cut(x=df_X_org['age'], bins=[i for i in range(0,101,10)])
-    df_X_org['hours-per-week'] = pd.cut(x=df_X_org['hours-per-week'], bins=[i for i in range(0,101,10)])
+    df_X_org['age'] = pd.cut(x=df_X_org['age'], bins=[i for i in range(0,101,10)]).astype(str)
+    df_X_org['age'] = 'cat-' + df_X_org['age']
+    df_X_org['age'] = df_X_org['age'].str.replace(" ","")
+    df_X_org['hours-per-week'] = pd.cut(x=df_X_org['hours-per-week'], bins=[i for i in range(0,101,10)]).astype(str)
+    df_X_org['hours-per-week'] = 'range-' + df_X_org['hours-per-week']
+    df_X_org['hours-per-week'] = df_X_org['hours-per-week'].str.replace(" ","")
 
     continuous_features = []
     discrete_features = ['age', 'hours-per-week', 'work-class', 'education', 'marital-status',
