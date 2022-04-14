@@ -177,7 +177,7 @@ from LORE.gpdatagenerator import *
 def PrepareAdult(dataset_path, dataset_name):
 
     ## Reading data from a csv file
-    df = pd.read_csv(dataset_path + dataset_name, delimiter=',', na_values=' ?')
+    df = pd.read_csv(dataset_path + dataset_name, delimiter=',', na_values=' ?', skipinitialspace=True)
 
     ## Handling missing values
     df = df.dropna().reset_index(drop=True)
