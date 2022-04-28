@@ -215,7 +215,7 @@ def PrepareAdult(dataset_path, dataset_name):
     discrete_availability = True
 
     df_X_org = pd.concat([df_X_org[continuous_features], df_X_org[discrete_features]], axis=1)
-    df_X_org.to_csv('datasets/adult_categorical.csv')
+    df_X_org.to_csv('datasets/adult_categorical.csv', index=False)
 
     continuous_indices = [df_X_org.columns.get_loc(f) for f in continuous_features]
     discrete_indices = [df_X_org.columns.get_loc(f) for f in discrete_features]
