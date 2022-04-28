@@ -177,7 +177,7 @@ from LORE.gpdatagenerator import *
 def PrepareAdult(dataset_path, dataset_name):
 
     ## Reading data from a csv file
-    df = pd.read_csv(dataset_path + dataset_name, delimiter=',', na_values=' ?', skipinitialspace=True)
+    df = pd.read_csv(dataset_path + dataset_name, delimiter=',', na_values='?', skipinitialspace=True)
 
     ## Handling missing values
     df = df.dropna().reset_index(drop=True)
@@ -189,11 +189,23 @@ def PrepareAdult(dataset_path, dataset_name):
 
     # discretizing some selective continuous features
     df_X_org['age'] = pd.cut(x=df_X_org['age'], bins=[i for i in range(0,101,10)]).astype(str)
-    df_X_org['age'] = 'cat-' + df_X_org['age']
-    df_X_org['age'] = df_X_org['age'].str.replace(" ","")
     df_X_org['hours-per-week'] = pd.cut(x=df_X_org['hours-per-week'], bins=[i for i in range(0,101,10)]).astype(str)
-    df_X_org['hours-per-week'] = 'range-' + df_X_org['hours-per-week']
+
+    # renaming categories to make them more meaningful
+    df_X_org['age'] = 'AgeCat-' + df_X_org['age']
+    df_X_org['age'] = df_X_org['age'].str.replace(" ","")
+    df_X_org['age'] = df_X_org['age'].str.replace("(", "")
+    df_X_org['age'] = df_X_org['age'].str.replace(",", "-")
+    df_X_org['age'] = df_X_org['age'].str.replace("]", "")
+    df_X_org['hours-per-week'] = 'HoursCat-' + df_X_org['hours-per-week']
     df_X_org['hours-per-week'] = df_X_org['hours-per-week'].str.replace(" ","")
+    df_X_org['hours-per-week'] = df_X_org['hours-per-week'].str.replace("(", "")
+    df_X_org['hours-per-week'] = df_X_org['hours-per-week'].str.replace(",", "-")
+    df_X_org['hours-per-week'] = df_X_org['hours-per-week'].str.replace("]", "")
+    df_X_org.loc[df_X_org['education'].str.startswith(('1', '5', '7', '9')), 'education'] = \
+        "Grade-" + df_X_org.loc[df_X_org['education'].str.startswith(('1', '5', '7', '9')), 'education']
+    df_X_org.loc[df_X_org['native-country'] == 'Outlying-US(Guam-USVI-etc)', 'native-country'] = \
+        'Outlying-US-Guam-USVI-etc'
 
     continuous_features = []
     discrete_features = ['age', 'hours-per-week', 'work-class', 'education', 'marital-status',
@@ -203,6 +215,7 @@ def PrepareAdult(dataset_path, dataset_name):
     discrete_availability = True
 
     df_X_org = pd.concat([df_X_org[continuous_features], df_X_org[discrete_features]], axis=1)
+    df_X_org.to_csv('datasets/adult_categorical.csv')
 
     continuous_indices = [df_X_org.columns.get_loc(f) for f in continuous_features]
     discrete_indices = [df_X_org.columns.get_loc(f) for f in discrete_features]
