@@ -11,25 +11,23 @@ from rdflib import Namespace
 from rdflib.namespace import OWL, RDF, RDFS, FOAF, XSD
 from rdflib.util import guess_format
 import pandas as pd
-from .isub import isub
-from .lookup import DBpediaLookup
+from isub import isub
+from lookup import DBpediaLookup
 import csv
 import owlrl
 
 
 
-class Lab5Solution(object):
-    '''
-    Example of a partial solution for Lab 5 
-    '''
-    def __init__(self, input_file):
+class CSV2GRAPH(object):
+
+    def __init__(self, csv_file):
    
         #The idea is to cover as much as possible from the original csv file, but for the lab and coursework I'm more interested 
         #in the ideas and proposed implementation than covering all possible cases in all rows (a perfect solution fall more into
         #the score of a PhD project). Also in terms of scalability calling the 
         #look-up services may be expensive so if this is a limitation, a solution tested over a reasonable percentage of the original 
         #file will be of course accepted.        
-        self.file = input_file
+        self.file = csv_file
     
         #Dictionary that keeps the URIs. Specially useful if accessing a remote service to get a candidate URI to avoid repeated calls
         self.stringToURI = dict()
@@ -41,13 +39,13 @@ class Lab5Solution(object):
         self.g = Graph()
         
         #Note that this is the same namespace used in the ontology "ontology_lab5.ttl"
-        self.lab5_ns_str= "http://www.semanticweb.org/ernesto/in3067-inm713/lab5/"
+        self.adult_ns_str= "http://www.semanticweb.org/peyman/adult_dataset/"
         
         #Special namspaces class to create directly URIRefs in python.           
-        self.lab5 = Namespace(self.lab5_ns_str)
+        self.adult = Namespace(self.adult_ns_str)
         
         #Prefixes for the serialization
-        self.g.bind("lab5", self.lab5) #lab5 is a newly created namespace
+        self.g.bind("adult", self.adult) #lab5 is a newly created namespace
         
         
         #Load data in dataframe  
@@ -71,8 +69,8 @@ class Lab5Solution(object):
         #Unlike the modular approach (see ConvertCSVToRDF) this solution is less flexible to adaptations  
         
         #Format:
-        #0        1             2    3        4        5        6        7            8         9
-        #city     city_ascii    lat  lng    country    iso2    iso3    admin_name    capital    population                        
+        #  0        1               2           3            4             5            6          7     8         9
+        # age   hours-per-week  work-class  education  marital-status  occupation  relationship   race  sex  native-country
         for row in self.data_frame.itertuples(index=False):
             #print(row[0])
                                     
@@ -425,50 +423,47 @@ class Lab5Solution(object):
         ##SAVE/SERIALIZE GRAPH
         #print(self.g.serialize(format="turtle").decode("utf-8"))
         self.g.serialize(destination=file_output, format='ttl')
-        
-        
-    
-    
-    
+
+
+def main():
+    # Format:
+    # age   hours-per-week  work-class  education  marital-status  occupation  relationship   race  sex  native-country
+    file = "../datasets/adult_categorical.csv"
+
+    solution = CSV2GRAPH(file)
+
+    # task = "task1"
+    # task = "task2"
+    task = "Simple_Mapping"
+
+    # Create RDF triples
+    if task == "task1":
+        solution.Task1()  # Fresh entity URIs
+    elif task == "task2":
+        solution.Task2()  # Reusing URIs from DBPedia
+    else:
+        solution.SimpleUniqueMapping()  # Simple and unique mapping/transformation
+
+    # Graph with only data
+    solution.saveGraph(file.replace(".csv", "-" + task) + ".ttl")
+
+    # OWL 2 RL reasoning
+    # We will see reasoning next week. Not strictly necessary for this
+    solution.performReasoning("../ontology_lab5.ttl")  ##ttl format
+    # solution.performReasoning("ontology_lab6.owl") ##owl (rdf/xml) format
+
+    # Graph with ontology triples and entailed triples
+    solution.saveGraph(file.replace(".csv", "-" + task) + "-reasoning.ttl")
+
+    # SPARQL results into CSV
+    solution.performSPARQLQuery(file.replace(".csv", "-" + task) + "-query-results.csv")
+
+    # SPARQL for Lab 7 2021
+    # solution.performSPARQLQueryLab7()
 
 if __name__ == '__main__':
-    
-    #Format:
-    #city    city_ascii    lat    lng    country    iso2    iso3    admin_name    capital    population
-    file = "worldcities-free-100.csv"
-    
-    solution = Lab5Solution(file)
-    
-    #task = "task1"
-    #task = "task2"
-    task = "Simple_Mapping"
-    
-    #Create RDF triples
-    if task == "task1":
-        solution.Task1()  #Fresh entity URIs
-    elif task == "task2":
-        solution.Task2()  #Reusing URIs from DBPedia
-    else:
-        solution.SimpleUniqueMapping()  #Simple and unique mapping/transformation
-        
-    
-    #Graph with only data
-    solution.saveGraph(file.replace(".csv", "-"+task)+".ttl")
-    
-    #OWL 2 RL reasoning
-    #We will see reasoning next week. Not strictly necessary for this 
-    solution.performReasoning("../ontology_lab5.ttl") ##ttl format
-    #solution.performReasoning("ontology_lab6.owl") ##owl (rdf/xml) format
-    
-    #Graph with ontology triples and entailed triples       
-    solution.saveGraph(file.replace(".csv", "-"+task)+"-reasoning.ttl")
-    
-    #SPARQL results into CSV
-    solution.performSPARQLQuery(file.replace(".csv", "-"+task)+"-query-results.csv")
-    
-    
-    #SPARQL for Lab 7 2021
-    #solution.performSPARQLQueryLab7()
+    main()
+
     
     
     
