@@ -21,7 +21,7 @@ from LORE.gpdatagenerator import *
 #     df_X_org = df.loc[:, df.columns!=class_name]
 #     df_y = df.loc[:, class_name]
 #
-#     continuous_features = ['age','fnlwgt', 'education-num', 'capital-gain', 'capital-loss', 'hours-per-week']
+#     continuous_features = ['age','fnlwgt', 'education-num', 'capital-gain', 'capital-loss', 'WeeklyWorkingHours']
 #     discrete_features = ['work-class', 'education', 'marital-status', 'occupation', 'relationship',
 #                          'race', 'sex', 'native-country']
 #
@@ -178,6 +178,11 @@ def PrepareAdult(dataset_path, dataset_name):
 
     ## Reading data from a csv file
     df = pd.read_csv(dataset_path + dataset_name, delimiter=',', na_values='?', skipinitialspace=True)
+    df = df.rename(columns={'age':'AgeCategory', 'hours-per-week':'WeeklyWorkingHours',
+                            'work-class':'WorkClass', 'education':'Education',
+                            'marital-status':'MaritalStatus', 'occupation':'Occupation',
+                            'relationship':'Relationship', 'race':'Race',
+                            'sex':'Sex', 'native-country':'NativeCountry'})
 
     ## Handling missing values
     df = df.dropna().reset_index(drop=True)
@@ -188,28 +193,28 @@ def PrepareAdult(dataset_path, dataset_name):
     df_y = df.loc[:, class_name]
 
     # discretizing some selective continuous features
-    df_X_org['age'] = pd.cut(x=df_X_org['age'], bins=[i for i in range(0,101,10)]).astype(str)
-    df_X_org['hours-per-week'] = pd.cut(x=df_X_org['hours-per-week'], bins=[i for i in range(0,101,10)]).astype(str)
+    df_X_org['AgeCategory'] = pd.cut(x=df_X_org['AgeCategory'], bins=[i for i in range(0,101,10)]).astype(str)
+    df_X_org['WeeklyWorkingHours'] = pd.cut(x=df_X_org['WeeklyWorkingHours'], bins=[i for i in range(0,101,10)]).astype(str)
 
     # renaming categories to make them more meaningful
-    df_X_org['age'] = 'AgeCat-' + df_X_org['age']
-    df_X_org['age'] = df_X_org['age'].str.replace(" ","")
-    df_X_org['age'] = df_X_org['age'].str.replace("(", "")
-    df_X_org['age'] = df_X_org['age'].str.replace(",", "-")
-    df_X_org['age'] = df_X_org['age'].str.replace("]", "")
-    df_X_org['hours-per-week'] = 'HoursCat-' + df_X_org['hours-per-week']
-    df_X_org['hours-per-week'] = df_X_org['hours-per-week'].str.replace(" ","")
-    df_X_org['hours-per-week'] = df_X_org['hours-per-week'].str.replace("(", "")
-    df_X_org['hours-per-week'] = df_X_org['hours-per-week'].str.replace(",", "-")
-    df_X_org['hours-per-week'] = df_X_org['hours-per-week'].str.replace("]", "")
-    df_X_org.loc[df_X_org['education'].str.startswith(('1', '5', '7', '9')), 'education'] = \
-        "Grade-" + df_X_org.loc[df_X_org['education'].str.startswith(('1', '5', '7', '9')), 'education']
-    df_X_org.loc[df_X_org['native-country'] == 'Outlying-US(Guam-USVI-etc)', 'native-country'] = \
+    df_X_org['AgeCategory'] = 'AgeCat-' + df_X_org['AgeCategory']
+    df_X_org['AgeCategory'] = df_X_org['AgeCategory'].str.replace(" ","")
+    df_X_org['AgeCategory'] = df_X_org['AgeCategory'].str.replace("(", "")
+    df_X_org['AgeCategory'] = df_X_org['AgeCategory'].str.replace(",", "-")
+    df_X_org['AgeCategory'] = df_X_org['AgeCategory'].str.replace("]", "")
+    df_X_org['WeeklyWorkingHours'] = 'HoursCat-' + df_X_org['WeeklyWorkingHours']
+    df_X_org['WeeklyWorkingHours'] = df_X_org['WeeklyWorkingHours'].str.replace(" ","")
+    df_X_org['WeeklyWorkingHours'] = df_X_org['WeeklyWorkingHours'].str.replace("(", "")
+    df_X_org['WeeklyWorkingHours'] = df_X_org['WeeklyWorkingHours'].str.replace(",", "-")
+    df_X_org['WeeklyWorkingHours'] = df_X_org['WeeklyWorkingHours'].str.replace("]", "")
+    df_X_org.loc[df_X_org['Education'].str.startswith(('1', '5', '7', '9')), 'Education'] = \
+        "Grade-" + df_X_org.loc[df_X_org['Education'].str.startswith(('1', '5', '7', '9')), 'Education']
+    df_X_org.loc[df_X_org['NativeCountry'] == 'Outlying-US(Guam-USVI-etc)', 'NativeCountry'] = \
         'Outlying-US-Guam-USVI-etc'
 
     continuous_features = []
-    discrete_features = ['age', 'hours-per-week', 'work-class', 'education', 'marital-status',
-                         'occupation', 'relationship','race', 'sex', 'native-country']
+    discrete_features = ['AgeCategory', 'WeeklyWorkingHours', 'WorkClass', 'Education', 'MaritalStatus',
+                         'Occupation', 'Relationship','Race', 'Sex', 'NativeCountry']
 
     continuous_availability = False
     discrete_availability = True

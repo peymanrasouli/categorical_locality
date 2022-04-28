@@ -1,4 +1,4 @@
-age,hours-per-week,work-class,education,marital-status,occupation,relationship,race,sex,native-country
+AgeCategory,WeeklyWorkingHours,WorkClass,Education,MaritalStatus,Occupation,Relationship,Race,Sex,NativeCountry
 AgeCat-30-40,HoursCat-30-40,State-gov,Bachelors,Never-married,Adm-clerical,Not-in-family,White,Male,United-States
 AgeCat-40-50,HoursCat-10-20,Self-emp-not-inc,Bachelors,Married-civ-spouse,Exec-managerial,Husband,White,Male,United-States
 AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Divorced,Handlers-cleaners,Not-in-family,White,Male,United-States
