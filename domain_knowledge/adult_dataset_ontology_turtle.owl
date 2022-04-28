@@ -1,0 +1,1760 @@
+@prefix : <http://www.semanticweb.org/peyman/ontologies/2022/3/untitled-ontology-9#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix adult_dataset: <http://www.semanticweb.org/peyman/adult_dataset#> .
+@prefix untitled-ontology-30: <http://www.semanticweb.org/peyman/ontologies/2022/3/untitled-ontology-30#> .
+@base <http://www.semanticweb.org/peyman/adult_dataset> .
+
+<http://www.semanticweb.org/peyman/adult_dataset> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/peyman/adult_dataset#biggerThan
+adult_dataset:biggerThan rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf owl:topObjectProperty ;
+                         rdf:type owl:TransitiveProperty ;
+                         rdfs:domain adult_dataset:WeeklyWorkingHours ;
+                         rdfs:range adult_dataset:WeeklyWorkingHours .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#hasAgeCategory
+adult_dataset:hasAgeCategory rdf:type owl:ObjectProperty ;
+                             rdfs:subPropertyOf owl:topObjectProperty ;
+                             rdfs:domain adult_dataset:Person ;
+                             rdfs:range adult_dataset:AgeCategory .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#hasEducation
+adult_dataset:hasEducation rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf owl:topObjectProperty ;
+                           rdfs:domain adult_dataset:Person ;
+                           rdfs:range adult_dataset:Education .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#hasMaritalStatus
+adult_dataset:hasMaritalStatus rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf owl:topObjectProperty ;
+                               rdfs:domain adult_dataset:Person ;
+                               rdfs:range adult_dataset:MaritalStatus .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#hasNativeCountry
+adult_dataset:hasNativeCountry rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf owl:topObjectProperty ;
+                               rdfs:domain adult_dataset:Person ;
+                               rdfs:range adult_dataset:NativeCountry .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#hasOccupation
+adult_dataset:hasOccupation rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf owl:topObjectProperty ;
+                            rdfs:domain adult_dataset:Person ;
+                            rdfs:range adult_dataset:Occupation .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#hasRace
+adult_dataset:hasRace rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      rdfs:domain adult_dataset:Person ;
+                      rdfs:range adult_dataset:Race .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#hasRelationship
+adult_dataset:hasRelationship rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf owl:topObjectProperty ;
+                              rdfs:domain adult_dataset:Person ;
+                              rdfs:range adult_dataset:Relationship .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#hasSex
+adult_dataset:hasSex rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdfs:domain adult_dataset:Person ;
+                     rdfs:range adult_dataset:Sex .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#hasWeeklyWorkingHours
+adult_dataset:hasWeeklyWorkingHours rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf owl:topObjectProperty ;
+                                    rdfs:domain adult_dataset:Person ;
+                                    rdfs:range adult_dataset:WeeklyWorkingHours .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#hasWorkClass
+adult_dataset:hasWorkClass rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf owl:topObjectProperty ;
+                           rdfs:domain adult_dataset:Person ;
+                           rdfs:range adult_dataset:WorkClass .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#higherThan
+adult_dataset:higherThan rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf owl:topObjectProperty ;
+                         rdf:type owl:TransitiveProperty ;
+                         rdfs:domain adult_dataset:Education ;
+                         rdfs:range adult_dataset:Education .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#morePaidThan
+adult_dataset:morePaidThan rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf owl:topObjectProperty ;
+                           rdf:type owl:TransitiveProperty ;
+                           rdfs:domain adult_dataset:Occupation ;
+                           rdfs:range adult_dataset:Occupation .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#olderThan
+adult_dataset:olderThan rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf owl:topObjectProperty ;
+                        rdf:type owl:TransitiveProperty ;
+                        rdfs:domain adult_dataset:AgeCategory ;
+                        rdfs:range adult_dataset:AgeCategory .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Adm-clerical
+adult_dataset:Adm-clerical rdf:type owl:Class ;
+                           rdfs:subClassOf adult_dataset:Low-annual-wage-jobs .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#After-marriage
+adult_dataset:After-marriage rdf:type owl:Class ;
+                             rdfs:subClassOf adult_dataset:Single .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#AgeCat-10-20
+adult_dataset:AgeCat-10-20 rdf:type owl:Class ;
+                           rdfs:subClassOf adult_dataset:Young-adults .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#AgeCat-20-30
+adult_dataset:AgeCat-20-30 rdf:type owl:Class ;
+                           rdfs:subClassOf adult_dataset:Young-adults ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty adult_dataset:olderThan ;
+                                             owl:someValuesFrom adult_dataset:AgeCat-10-20
+                                           ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#AgeCat-30-40
+adult_dataset:AgeCat-30-40 rdf:type owl:Class ;
+                           rdfs:subClassOf adult_dataset:Young-adults ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty adult_dataset:olderThan ;
+                                             owl:someValuesFrom adult_dataset:AgeCat-20-30
+                                           ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#AgeCat-40-50
+adult_dataset:AgeCat-40-50 rdf:type owl:Class ;
+                           rdfs:subClassOf adult_dataset:Middle-aged-adults .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#AgeCat-50-60
+adult_dataset:AgeCat-50-60 rdf:type owl:Class ;
+                           rdfs:subClassOf adult_dataset:Middle-aged-adults ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty adult_dataset:olderThan ;
+                                             owl:someValuesFrom adult_dataset:AgeCat-40-50
+                                           ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#AgeCat-60-70
+adult_dataset:AgeCat-60-70 rdf:type owl:Class ;
+                           rdfs:subClassOf adult_dataset:Old-adults .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#AgeCat-70-80
+adult_dataset:AgeCat-70-80 rdf:type owl:Class ;
+                           rdfs:subClassOf adult_dataset:Old-adults ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty adult_dataset:olderThan ;
+                                             owl:someValuesFrom adult_dataset:AgeCat-60-70
+                                           ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#AgeCat-80-90
+adult_dataset:AgeCat-80-90 rdf:type owl:Class ;
+                           rdfs:subClassOf adult_dataset:Old-adults ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty adult_dataset:olderThan ;
+                                             owl:someValuesFrom adult_dataset:AgeCat-70-80
+                                           ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#AgeCategory
+adult_dataset:AgeCategory rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Amer-Indian-Eskimo
+adult_dataset:Amer-Indian-Eskimo rdf:type owl:Class ;
+                                 rdfs:subClassOf adult_dataset:Race .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Armed-Forces
+adult_dataset:Armed-Forces rdf:type owl:Class ;
+                           rdfs:subClassOf adult_dataset:Medium-annual-wage-jobs .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Asian-Pac-Islander
+adult_dataset:Asian-Pac-Islander rdf:type owl:Class ;
+                                 rdfs:subClassOf adult_dataset:Race .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Assoc-acdm
+adult_dataset:Assoc-acdm rdf:type owl:Class ;
+                         rdfs:subClassOf adult_dataset:College .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Assoc-voc
+adult_dataset:Assoc-voc rdf:type owl:Class ;
+                        rdfs:subClassOf adult_dataset:College .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Australia-and-New-Zealand
+adult_dataset:Australia-and-New-Zealand rdf:type owl:Class ;
+                                        rdfs:subClassOf adult_dataset:Oceania .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Bachelors
+adult_dataset:Bachelors rdf:type owl:Class ;
+                        rdfs:subClassOf adult_dataset:Undergraduate ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty adult_dataset:higherThan ;
+                                          owl:someValuesFrom adult_dataset:College
+                                        ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Black
+adult_dataset:Black rdf:type owl:Class ;
+                    rdfs:subClassOf adult_dataset:Race .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Cambodia
+adult_dataset:Cambodia rdf:type owl:Class ;
+                       rdfs:subClassOf adult_dataset:South-eastern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Canada
+adult_dataset:Canada rdf:type owl:Class ;
+                     rdfs:subClassOf adult_dataset:Northern-America .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Caribbean
+adult_dataset:Caribbean rdf:type owl:Class ;
+                        rdfs:subClassOf adult_dataset:Latin-America-and-the-Caribbean .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Central-America
+adult_dataset:Central-America rdf:type owl:Class ;
+                              rdfs:subClassOf adult_dataset:Latin-America-and-the-Caribbean .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Central-Asia
+adult_dataset:Central-Asia rdf:type owl:Class ;
+                           rdfs:subClassOf adult_dataset:Central-and-Southern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Central-and-Southern-Asia
+adult_dataset:Central-and-Southern-Asia rdf:type owl:Class ;
+                                        rdfs:subClassOf adult_dataset:NativeCountry .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#China
+adult_dataset:China rdf:type owl:Class ;
+                    rdfs:subClassOf adult_dataset:Eastern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#College
+adult_dataset:College rdf:type owl:Class ;
+                      rdfs:subClassOf adult_dataset:Undergraduate .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Columbia
+adult_dataset:Columbia rdf:type owl:Class ;
+                       rdfs:subClassOf adult_dataset:South-America .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Couple
+adult_dataset:Couple rdf:type owl:Class ;
+                     rdfs:subClassOf adult_dataset:Relationship .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Craft-repair
+adult_dataset:Craft-repair rdf:type owl:Class ;
+                           rdfs:subClassOf adult_dataset:Medium-annual-wage-jobs .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Cuba
+adult_dataset:Cuba rdf:type owl:Class ;
+                   rdfs:subClassOf adult_dataset:Caribbean .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Divorced
+adult_dataset:Divorced rdf:type owl:Class ;
+                       rdfs:subClassOf adult_dataset:After-marriage .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Doctorate
+adult_dataset:Doctorate rdf:type owl:Class ;
+                        rdfs:subClassOf adult_dataset:Postgraduate ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty adult_dataset:higherThan ;
+                                          owl:someValuesFrom adult_dataset:Masters
+                                        ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Dominican-Republic
+adult_dataset:Dominican-Republic rdf:type owl:Class ;
+                                 rdfs:subClassOf adult_dataset:Caribbean .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Eastern-Asia
+adult_dataset:Eastern-Asia rdf:type owl:Class ;
+                           rdfs:subClassOf adult_dataset:Eastern-and-South-Eastern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Eastern-Europe
+adult_dataset:Eastern-Europe rdf:type owl:Class ;
+                             rdfs:subClassOf adult_dataset:Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Eastern-and-South-Eastern-Asia
+adult_dataset:Eastern-and-South-Eastern-Asia rdf:type owl:Class ;
+                                             rdfs:subClassOf adult_dataset:NativeCountry .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Ecuador
+adult_dataset:Ecuador rdf:type owl:Class ;
+                      rdfs:subClassOf adult_dataset:South-America .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Education
+adult_dataset:Education rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#El-Salvador
+adult_dataset:El-Salvador rdf:type owl:Class ;
+                          rdfs:subClassOf adult_dataset:Central-America .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#England
+adult_dataset:England rdf:type owl:Class ;
+                      rdfs:subClassOf adult_dataset:Northern-Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Europe
+adult_dataset:Europe rdf:type owl:Class ;
+                     rdfs:subClassOf adult_dataset:Europe-and-Northern-America .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Europe-and-Northern-America
+adult_dataset:Europe-and-Northern-America rdf:type owl:Class ;
+                                          rdfs:subClassOf adult_dataset:NativeCountry .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Exec-managerial
+adult_dataset:Exec-managerial rdf:type owl:Class ;
+                              rdfs:subClassOf adult_dataset:High-annual-wage-jobs .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Farming-fishing
+adult_dataset:Farming-fishing rdf:type owl:Class ;
+                              rdfs:subClassOf adult_dataset:Low-annual-wage-jobs .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Federal-gov
+adult_dataset:Federal-gov rdf:type owl:Class ;
+                          rdfs:subClassOf adult_dataset:Government .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Female
+adult_dataset:Female rdf:type owl:Class ;
+                     rdfs:subClassOf adult_dataset:Sex .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#France
+adult_dataset:France rdf:type owl:Class ;
+                     rdfs:subClassOf adult_dataset:Western-Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Germany
+adult_dataset:Germany rdf:type owl:Class ;
+                      rdfs:subClassOf adult_dataset:Western-Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Government
+adult_dataset:Government rdf:type owl:Class ;
+                         rdfs:subClassOf adult_dataset:WorkClass .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Grade-10th
+adult_dataset:Grade-10th rdf:type owl:Class ;
+                         rdfs:subClassOf adult_dataset:High-school ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty adult_dataset:higherThan ;
+                                           owl:someValuesFrom adult_dataset:Grade-9th
+                                         ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Grade-11th
+adult_dataset:Grade-11th rdf:type owl:Class ;
+                         rdfs:subClassOf adult_dataset:High-school ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty adult_dataset:higherThan ;
+                                           owl:someValuesFrom adult_dataset:Grade-10th
+                                         ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Grade-12th
+adult_dataset:Grade-12th rdf:type owl:Class ;
+                         rdfs:subClassOf adult_dataset:High-school ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty adult_dataset:higherThan ;
+                                           owl:someValuesFrom adult_dataset:Grade-11th
+                                         ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Grade-1st-4th
+adult_dataset:Grade-1st-4th rdf:type owl:Class ;
+                            rdfs:subClassOf adult_dataset:Primary-school .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Grade-5th-6th
+adult_dataset:Grade-5th-6th rdf:type owl:Class ;
+                            rdfs:subClassOf adult_dataset:Middle-school .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Grade-7th-8th
+adult_dataset:Grade-7th-8th rdf:type owl:Class ;
+                            rdfs:subClassOf adult_dataset:Middle-school ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty adult_dataset:higherThan ;
+                                              owl:someValuesFrom adult_dataset:Grade-5th-6th
+                                            ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Grade-9th
+adult_dataset:Grade-9th rdf:type owl:Class ;
+                        rdfs:subClassOf adult_dataset:High-school .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Greece
+adult_dataset:Greece rdf:type owl:Class ;
+                     rdfs:subClassOf adult_dataset:Southern-Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Guatemala
+adult_dataset:Guatemala rdf:type owl:Class ;
+                        rdfs:subClassOf adult_dataset:Central-America .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#HS-grad
+adult_dataset:HS-grad rdf:type owl:Class ;
+                      rdfs:subClassOf adult_dataset:High-school ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty adult_dataset:higherThan ;
+                                        owl:someValuesFrom adult_dataset:Grade-12th
+                                      ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Haiti
+adult_dataset:Haiti rdf:type owl:Class ;
+                    rdfs:subClassOf adult_dataset:Caribbean .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Handlers-cleaners
+adult_dataset:Handlers-cleaners rdf:type owl:Class ;
+                                rdfs:subClassOf adult_dataset:Low-annual-wage-jobs .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#High-annual-wage-jobs
+adult_dataset:High-annual-wage-jobs rdf:type owl:Class ;
+                                    rdfs:subClassOf adult_dataset:Occupation ,
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty adult_dataset:morePaidThan ;
+                                                      owl:someValuesFrom adult_dataset:Medium-annual-wage-jobs
+                                                    ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#High-school
+adult_dataset:High-school rdf:type owl:Class ;
+                          rdfs:subClassOf adult_dataset:Secondary ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty adult_dataset:higherThan ;
+                                            owl:someValuesFrom adult_dataset:Middle-school
+                                          ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#HighWorkingHours
+adult_dataset:HighWorkingHours rdf:type owl:Class ;
+                               rdfs:subClassOf adult_dataset:WeeklyWorkingHours ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty adult_dataset:biggerThan ;
+                                                 owl:someValuesFrom adult_dataset:MediumWorkingHours
+                                               ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#HighestWorkingHours
+adult_dataset:HighestWorkingHours rdf:type owl:Class ;
+                                  rdfs:subClassOf adult_dataset:WeeklyWorkingHours ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty adult_dataset:biggerThan ;
+                                                    owl:someValuesFrom adult_dataset:HighWorkingHours
+                                                  ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Holand-Netherlands
+adult_dataset:Holand-Netherlands rdf:type owl:Class ;
+                                 rdfs:subClassOf adult_dataset:Western-Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Honduras
+adult_dataset:Honduras rdf:type owl:Class ;
+                       rdfs:subClassOf adult_dataset:Central-America .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Hong
+adult_dataset:Hong rdf:type owl:Class ;
+                   rdfs:subClassOf adult_dataset:Eastern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#HoursCat-0-10
+adult_dataset:HoursCat-0-10 rdf:type owl:Class ;
+                            rdfs:subClassOf adult_dataset:LowestWorkingHours .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#HoursCat-10-20
+adult_dataset:HoursCat-10-20 rdf:type owl:Class ;
+                             rdfs:subClassOf adult_dataset:LowestWorkingHours ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty adult_dataset:biggerThan ;
+                                               owl:someValuesFrom adult_dataset:HoursCat-0-10
+                                             ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#HoursCat-20-30
+adult_dataset:HoursCat-20-30 rdf:type owl:Class ;
+                             rdfs:subClassOf adult_dataset:LowWorkingHours .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#HoursCat-30-40
+adult_dataset:HoursCat-30-40 rdf:type owl:Class ;
+                             rdfs:subClassOf adult_dataset:LowWorkingHours ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty adult_dataset:biggerThan ;
+                                               owl:someValuesFrom adult_dataset:HoursCat-20-30
+                                             ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#HoursCat-40-50
+adult_dataset:HoursCat-40-50 rdf:type owl:Class ;
+                             rdfs:subClassOf adult_dataset:MediumWorkingHours .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#HoursCat-50-60
+adult_dataset:HoursCat-50-60 rdf:type owl:Class ;
+                             rdfs:subClassOf adult_dataset:MediumWorkingHours ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty adult_dataset:biggerThan ;
+                                               owl:someValuesFrom adult_dataset:HoursCat-40-50
+                                             ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#HoursCat-60-70
+adult_dataset:HoursCat-60-70 rdf:type owl:Class ;
+                             rdfs:subClassOf adult_dataset:HighWorkingHours .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#HoursCat-70-80
+adult_dataset:HoursCat-70-80 rdf:type owl:Class ;
+                             rdfs:subClassOf adult_dataset:HighWorkingHours ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty adult_dataset:biggerThan ;
+                                               owl:someValuesFrom adult_dataset:HoursCat-60-70
+                                             ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#HoursCat-80-90
+adult_dataset:HoursCat-80-90 rdf:type owl:Class ;
+                             rdfs:subClassOf adult_dataset:HighestWorkingHours .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#HoursCat-90-100
+adult_dataset:HoursCat-90-100 rdf:type owl:Class ;
+                              rdfs:subClassOf adult_dataset:HighestWorkingHours ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty adult_dataset:biggerThan ;
+                                                owl:someValuesFrom adult_dataset:HoursCat-80-90
+                                              ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Hungary
+adult_dataset:Hungary rdf:type owl:Class ;
+                      rdfs:subClassOf adult_dataset:Eastern-Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Husband
+adult_dataset:Husband rdf:type owl:Class ;
+                      rdfs:subClassOf adult_dataset:Couple .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#India
+adult_dataset:India rdf:type owl:Class ;
+                    rdfs:subClassOf adult_dataset:Southern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Individual
+adult_dataset:Individual rdf:type owl:Class ;
+                         rdfs:subClassOf adult_dataset:Relationship .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Iran
+adult_dataset:Iran rdf:type owl:Class ;
+                   rdfs:subClassOf adult_dataset:Southern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Ireland
+adult_dataset:Ireland rdf:type owl:Class ;
+                      rdfs:subClassOf adult_dataset:Northern-Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Italy
+adult_dataset:Italy rdf:type owl:Class ;
+                    rdfs:subClassOf adult_dataset:Southern-Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Jamaica
+adult_dataset:Jamaica rdf:type owl:Class ;
+                      rdfs:subClassOf adult_dataset:Caribbean .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Japan
+adult_dataset:Japan rdf:type owl:Class ;
+                    rdfs:subClassOf adult_dataset:Eastern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Laos
+adult_dataset:Laos rdf:type owl:Class ;
+                   rdfs:subClassOf adult_dataset:South-eastern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Latin-America-and-the-Caribbean
+adult_dataset:Latin-America-and-the-Caribbean rdf:type owl:Class ;
+                                              rdfs:subClassOf adult_dataset:NativeCountry .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Local-gov
+adult_dataset:Local-gov rdf:type owl:Class ;
+                        rdfs:subClassOf adult_dataset:Government .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Low-annual-wage-jobs
+adult_dataset:Low-annual-wage-jobs rdf:type owl:Class ;
+                                   rdfs:subClassOf adult_dataset:Occupation .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#LowWorkingHours
+adult_dataset:LowWorkingHours rdf:type owl:Class ;
+                              rdfs:subClassOf adult_dataset:WeeklyWorkingHours ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty adult_dataset:biggerThan ;
+                                                owl:someValuesFrom adult_dataset:LowestWorkingHours
+                                              ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#LowestWorkingHours
+adult_dataset:LowestWorkingHours rdf:type owl:Class ;
+                                 rdfs:subClassOf adult_dataset:WeeklyWorkingHours .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Machine-op-inspct
+adult_dataset:Machine-op-inspct rdf:type owl:Class ;
+                                rdfs:subClassOf adult_dataset:Medium-annual-wage-jobs .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Male
+adult_dataset:Male rdf:type owl:Class ;
+                   rdfs:subClassOf adult_dataset:Sex .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#MaritalStatus
+adult_dataset:MaritalStatus rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Married
+adult_dataset:Married rdf:type owl:Class ;
+                      rdfs:subClassOf adult_dataset:MaritalStatus .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Married-AF-spouse
+adult_dataset:Married-AF-spouse rdf:type owl:Class ;
+                                rdfs:subClassOf adult_dataset:Married .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Married-civ-spouse
+adult_dataset:Married-civ-spouse rdf:type owl:Class ;
+                                 rdfs:subClassOf adult_dataset:Married .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Married-spouse-absent
+adult_dataset:Married-spouse-absent rdf:type owl:Class ;
+                                    rdfs:subClassOf adult_dataset:Married .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Masters
+adult_dataset:Masters rdf:type owl:Class ;
+                      rdfs:subClassOf adult_dataset:Postgraduate .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Medium-annual-wage-jobs
+adult_dataset:Medium-annual-wage-jobs rdf:type owl:Class ;
+                                      rdfs:subClassOf adult_dataset:Occupation ,
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty adult_dataset:morePaidThan ;
+                                                        owl:someValuesFrom adult_dataset:Low-annual-wage-jobs
+                                                      ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#MediumWorkingHours
+adult_dataset:MediumWorkingHours rdf:type owl:Class ;
+                                 rdfs:subClassOf adult_dataset:WeeklyWorkingHours ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty adult_dataset:biggerThan ;
+                                                   owl:someValuesFrom adult_dataset:LowWorkingHours
+                                                 ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Melanesia
+adult_dataset:Melanesia rdf:type owl:Class ;
+                        rdfs:subClassOf adult_dataset:Oceania-excluding-Australia-and-New-Zealand .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Mexico
+adult_dataset:Mexico rdf:type owl:Class ;
+                     rdfs:subClassOf adult_dataset:Central-America .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Micronesia
+adult_dataset:Micronesia rdf:type owl:Class ;
+                         rdfs:subClassOf adult_dataset:Oceania-excluding-Australia-and-New-Zealand .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Middle-aged-adults
+adult_dataset:Middle-aged-adults rdf:type owl:Class ;
+                                 rdfs:subClassOf adult_dataset:AgeCategory ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty adult_dataset:olderThan ;
+                                                   owl:someValuesFrom adult_dataset:Young-adults
+                                                 ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Middle-school
+adult_dataset:Middle-school rdf:type owl:Class ;
+                            rdfs:subClassOf adult_dataset:Secondary .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#NativeCountry
+adult_dataset:NativeCountry rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Never-married
+adult_dataset:Never-married rdf:type owl:Class ;
+                            rdfs:subClassOf adult_dataset:Single .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Never-worked
+adult_dataset:Never-worked rdf:type owl:Class ;
+                           rdfs:subClassOf adult_dataset:No-salary .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Nicaragua
+adult_dataset:Nicaragua rdf:type owl:Class ;
+                        rdfs:subClassOf adult_dataset:Central-America .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#No-salary
+adult_dataset:No-salary rdf:type owl:Class ;
+                        rdfs:subClassOf adult_dataset:WorkClass .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Northern-Africa
+adult_dataset:Northern-Africa rdf:type owl:Class ;
+                              rdfs:subClassOf adult_dataset:Northern-Africa-and-Western-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Northern-Africa-and-Western-Asia
+adult_dataset:Northern-Africa-and-Western-Asia rdf:type owl:Class ;
+                                               rdfs:subClassOf adult_dataset:NativeCountry .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Northern-America
+adult_dataset:Northern-America rdf:type owl:Class ;
+                               rdfs:subClassOf adult_dataset:Europe-and-Northern-America .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Northern-Europe
+adult_dataset:Northern-Europe rdf:type owl:Class ;
+                              rdfs:subClassOf adult_dataset:Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Not-in-family
+adult_dataset:Not-in-family rdf:type owl:Class ;
+                            rdfs:subClassOf adult_dataset:Individual .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Nursery-school
+adult_dataset:Nursery-school rdf:type owl:Class ;
+                             rdfs:subClassOf adult_dataset:Primary .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Occupation
+adult_dataset:Occupation rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Oceania
+adult_dataset:Oceania rdf:type owl:Class ;
+                      rdfs:subClassOf adult_dataset:NativeCountry .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Oceania-excluding-Australia-and-New-Zealand
+adult_dataset:Oceania-excluding-Australia-and-New-Zealand rdf:type owl:Class ;
+                                                          rdfs:subClassOf adult_dataset:Oceania .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Old-adults
+adult_dataset:Old-adults rdf:type owl:Class ;
+                         rdfs:subClassOf adult_dataset:AgeCategory ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty adult_dataset:olderThan ;
+                                           owl:someValuesFrom adult_dataset:Middle-aged-adults
+                                         ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Other-race
+adult_dataset:Other-race rdf:type owl:Class ;
+                         rdfs:subClassOf adult_dataset:Race .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Other-relative
+adult_dataset:Other-relative rdf:type owl:Class ;
+                             rdfs:subClassOf adult_dataset:Individual .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Other-service
+adult_dataset:Other-service rdf:type owl:Class ;
+                            rdfs:subClassOf adult_dataset:Low-annual-wage-jobs .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Outlying-US-Guam-USVI-etc
+adult_dataset:Outlying-US-Guam-USVI-etc rdf:type owl:Class ;
+                                        rdfs:subClassOf adult_dataset:Caribbean .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Own-child
+adult_dataset:Own-child rdf:type owl:Class ;
+                        rdfs:subClassOf adult_dataset:Individual .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Person
+adult_dataset:Person rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Peru
+adult_dataset:Peru rdf:type owl:Class ;
+                   rdfs:subClassOf adult_dataset:South-America .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Philippines
+adult_dataset:Philippines rdf:type owl:Class ;
+                          rdfs:subClassOf adult_dataset:South-eastern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Poland
+adult_dataset:Poland rdf:type owl:Class ;
+                     rdfs:subClassOf adult_dataset:Eastern-Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Polynesia
+adult_dataset:Polynesia rdf:type owl:Class ;
+                        rdfs:subClassOf adult_dataset:Oceania-excluding-Australia-and-New-Zealand .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Portugal
+adult_dataset:Portugal rdf:type owl:Class ;
+                       rdfs:subClassOf adult_dataset:Southern-Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Postgraduate
+adult_dataset:Postgraduate rdf:type owl:Class ;
+                           rdfs:subClassOf adult_dataset:University ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty adult_dataset:higherThan ;
+                                             owl:someValuesFrom adult_dataset:Undergraduate
+                                           ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Preschool
+adult_dataset:Preschool rdf:type owl:Class ;
+                        rdfs:subClassOf adult_dataset:Nursery-school .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Primary
+adult_dataset:Primary rdf:type owl:Class ;
+                      rdfs:subClassOf adult_dataset:Education .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Primary-school
+adult_dataset:Primary-school rdf:type owl:Class ;
+                             rdfs:subClassOf adult_dataset:Primary ,
+                                             [ rdf:type owl:Restriction ;
+                                               owl:onProperty adult_dataset:higherThan ;
+                                               owl:someValuesFrom adult_dataset:Nursery-school
+                                             ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Priv-house-serv
+adult_dataset:Priv-house-serv rdf:type owl:Class ;
+                              rdfs:subClassOf adult_dataset:Low-annual-wage-jobs .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Private
+adult_dataset:Private rdf:type owl:Class ;
+                      rdfs:subClassOf adult_dataset:WorkClass .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Prof-school
+adult_dataset:Prof-school rdf:type owl:Class ;
+                          rdfs:subClassOf adult_dataset:Undergraduate ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty adult_dataset:higherThan ;
+                                            owl:someValuesFrom adult_dataset:College
+                                          ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Prof-specialty
+adult_dataset:Prof-specialty rdf:type owl:Class ;
+                             rdfs:subClassOf adult_dataset:High-annual-wage-jobs .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Protective-serv
+adult_dataset:Protective-serv rdf:type owl:Class ;
+                              rdfs:subClassOf adult_dataset:Medium-annual-wage-jobs .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Puerto-Rico
+adult_dataset:Puerto-Rico rdf:type owl:Class ;
+                          rdfs:subClassOf adult_dataset:Caribbean .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Race
+adult_dataset:Race rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Relationship
+adult_dataset:Relationship rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Sales
+adult_dataset:Sales rdf:type owl:Class ;
+                    rdfs:subClassOf adult_dataset:Medium-annual-wage-jobs .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Scotland
+adult_dataset:Scotland rdf:type owl:Class ;
+                       rdfs:subClassOf adult_dataset:Northern-Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Secondary
+adult_dataset:Secondary rdf:type owl:Class ;
+                        rdfs:subClassOf adult_dataset:Education ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty adult_dataset:higherThan ;
+                                          owl:someValuesFrom adult_dataset:Primary
+                                        ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Self-emp-inc
+adult_dataset:Self-emp-inc rdf:type owl:Class ;
+                           rdfs:subClassOf adult_dataset:Self-employed .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Self-emp-not-inc
+adult_dataset:Self-emp-not-inc rdf:type owl:Class ;
+                               rdfs:subClassOf adult_dataset:Self-employed .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Self-employed
+adult_dataset:Self-employed rdf:type owl:Class ;
+                            rdfs:subClassOf adult_dataset:WorkClass .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Separated
+adult_dataset:Separated rdf:type owl:Class ;
+                        rdfs:subClassOf adult_dataset:After-marriage .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Sex
+adult_dataset:Sex rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Single
+adult_dataset:Single rdf:type owl:Class ;
+                     rdfs:subClassOf adult_dataset:MaritalStatus .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Some-college
+adult_dataset:Some-college rdf:type owl:Class ;
+                           rdfs:subClassOf adult_dataset:College .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#South
+adult_dataset:South rdf:type owl:Class ;
+                    rdfs:subClassOf adult_dataset:Eastern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#South-America
+adult_dataset:South-America rdf:type owl:Class ;
+                            rdfs:subClassOf adult_dataset:Latin-America-and-the-Caribbean .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#South-eastern-Asia
+adult_dataset:South-eastern-Asia rdf:type owl:Class ;
+                                 rdfs:subClassOf adult_dataset:Eastern-and-South-Eastern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Southern-Asia
+adult_dataset:Southern-Asia rdf:type owl:Class ;
+                            rdfs:subClassOf adult_dataset:Central-and-Southern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Southern-Europe
+adult_dataset:Southern-Europe rdf:type owl:Class ;
+                              rdfs:subClassOf adult_dataset:Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#State-gov
+adult_dataset:State-gov rdf:type owl:Class ;
+                        rdfs:subClassOf adult_dataset:Government .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Sub-Saharan-Africa
+adult_dataset:Sub-Saharan-Africa rdf:type owl:Class ;
+                                 rdfs:subClassOf adult_dataset:NativeCountry .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Taiwan
+adult_dataset:Taiwan rdf:type owl:Class ;
+                     rdfs:subClassOf adult_dataset:Eastern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Tech-support
+adult_dataset:Tech-support rdf:type owl:Class ;
+                           rdfs:subClassOf adult_dataset:High-annual-wage-jobs .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Thailand
+adult_dataset:Thailand rdf:type owl:Class ;
+                       rdfs:subClassOf adult_dataset:South-eastern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Transport-moving
+adult_dataset:Transport-moving rdf:type owl:Class ;
+                               rdfs:subClassOf adult_dataset:Low-annual-wage-jobs .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Undergraduate
+adult_dataset:Undergraduate rdf:type owl:Class ;
+                            rdfs:subClassOf adult_dataset:University .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#United-States
+adult_dataset:United-States rdf:type owl:Class ;
+                            rdfs:subClassOf adult_dataset:Northern-America .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#University
+adult_dataset:University rdf:type owl:Class ;
+                         rdfs:subClassOf adult_dataset:Education ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty adult_dataset:higherThan ;
+                                           owl:someValuesFrom adult_dataset:Secondary
+                                         ] .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Unmarried
+adult_dataset:Unmarried rdf:type owl:Class ;
+                        rdfs:subClassOf adult_dataset:Individual .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Vietnam
+adult_dataset:Vietnam rdf:type owl:Class ;
+                      rdfs:subClassOf adult_dataset:South-eastern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#WeeklyWorkingHours
+adult_dataset:WeeklyWorkingHours rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Western-Asia
+adult_dataset:Western-Asia rdf:type owl:Class ;
+                           rdfs:subClassOf adult_dataset:Northern-Africa-and-Western-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Western-Europe
+adult_dataset:Western-Europe rdf:type owl:Class ;
+                             rdfs:subClassOf adult_dataset:Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#White
+adult_dataset:White rdf:type owl:Class ;
+                    rdfs:subClassOf adult_dataset:Race .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Widowed
+adult_dataset:Widowed rdf:type owl:Class ;
+                      rdfs:subClassOf adult_dataset:After-marriage .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Wife
+adult_dataset:Wife rdf:type owl:Class ;
+                   rdfs:subClassOf adult_dataset:Couple .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Without-pay
+adult_dataset:Without-pay rdf:type owl:Class ;
+                          rdfs:subClassOf adult_dataset:No-salary .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#WorkClass
+adult_dataset:WorkClass rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Young-adults
+adult_dataset:Young-adults rdf:type owl:Class ;
+                           rdfs:subClassOf adult_dataset:AgeCategory .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Yugoslavia
+adult_dataset:Yugoslavia rdf:type owl:Class ;
+                         rdfs:subClassOf adult_dataset:Southern-Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Trinadad&Tobago
+<http://www.semanticweb.org/peyman/adult_dataset#Trinadad&Tobago> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf adult_dataset:Caribbean .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Cambodia
+adult_dataset:Cambodia rdf:type owl:NamedIndividual ,
+                                adult_dataset:South-eastern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Canada
+adult_dataset:Canada rdf:type owl:NamedIndividual ,
+                              adult_dataset:Northern-America .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#China
+adult_dataset:China rdf:type owl:NamedIndividual ,
+                             adult_dataset:Eastern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Columbia
+adult_dataset:Columbia rdf:type owl:NamedIndividual ,
+                                adult_dataset:South-America .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Cuba
+adult_dataset:Cuba rdf:type owl:NamedIndividual ,
+                            adult_dataset:Caribbean .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Dominican-Republic
+adult_dataset:Dominican-Republic rdf:type owl:NamedIndividual ,
+                                          adult_dataset:Caribbean .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Ecuador
+adult_dataset:Ecuador rdf:type owl:NamedIndividual ,
+                               adult_dataset:South-America .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#El-Salvador
+adult_dataset:El-Salvador rdf:type owl:NamedIndividual ,
+                                   adult_dataset:Central-America .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#England
+adult_dataset:England rdf:type owl:NamedIndividual ,
+                               adult_dataset:Northern-Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#France
+adult_dataset:France rdf:type owl:NamedIndividual ,
+                              adult_dataset:Western-Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Germany
+adult_dataset:Germany rdf:type owl:NamedIndividual ,
+                               adult_dataset:Western-Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Greece
+adult_dataset:Greece rdf:type owl:NamedIndividual ,
+                              adult_dataset:Southern-Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Guatemala
+adult_dataset:Guatemala rdf:type owl:NamedIndividual ,
+                                 adult_dataset:Central-America .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Haiti
+adult_dataset:Haiti rdf:type owl:NamedIndividual ,
+                             adult_dataset:Caribbean .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Holand-Netherlands
+adult_dataset:Holand-Netherlands rdf:type owl:NamedIndividual ,
+                                          adult_dataset:Western-Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Honduras
+adult_dataset:Honduras rdf:type owl:NamedIndividual ,
+                                adult_dataset:Central-America .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Hong
+adult_dataset:Hong rdf:type owl:NamedIndividual ,
+                            adult_dataset:Eastern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Hungary
+adult_dataset:Hungary rdf:type owl:NamedIndividual ,
+                               adult_dataset:Eastern-Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#India
+adult_dataset:India rdf:type owl:NamedIndividual ,
+                             adult_dataset:Southern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Iran
+adult_dataset:Iran rdf:type owl:NamedIndividual ,
+                            adult_dataset:Southern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Ireland
+adult_dataset:Ireland rdf:type owl:NamedIndividual ,
+                               adult_dataset:Northern-Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Italy
+adult_dataset:Italy rdf:type owl:NamedIndividual ,
+                             adult_dataset:Southern-Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Jamaica
+adult_dataset:Jamaica rdf:type owl:NamedIndividual ,
+                               adult_dataset:Caribbean .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Japan
+adult_dataset:Japan rdf:type owl:NamedIndividual ,
+                             adult_dataset:Eastern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Laos
+adult_dataset:Laos rdf:type owl:NamedIndividual ,
+                            adult_dataset:South-eastern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Mexico
+adult_dataset:Mexico rdf:type owl:NamedIndividual ,
+                              adult_dataset:Central-America .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Nicaragua
+adult_dataset:Nicaragua rdf:type owl:NamedIndividual ,
+                                 adult_dataset:Central-America .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Outlying-US-Guam-USVI-etc
+adult_dataset:Outlying-US-Guam-USVI-etc rdf:type owl:NamedIndividual ,
+                                                 adult_dataset:Caribbean .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Peru
+adult_dataset:Peru rdf:type owl:NamedIndividual ,
+                            adult_dataset:South-America .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Philippines
+adult_dataset:Philippines rdf:type owl:NamedIndividual ,
+                                   adult_dataset:South-eastern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Poland
+adult_dataset:Poland rdf:type owl:NamedIndividual ,
+                              adult_dataset:Eastern-Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Portugal
+adult_dataset:Portugal rdf:type owl:NamedIndividual ,
+                                adult_dataset:Southern-Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Puerto-Rico
+adult_dataset:Puerto-Rico rdf:type owl:NamedIndividual ,
+                                   adult_dataset:Caribbean .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Scotland
+adult_dataset:Scotland rdf:type owl:NamedIndividual ,
+                                adult_dataset:Northern-Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#South
+adult_dataset:South rdf:type owl:NamedIndividual ,
+                             adult_dataset:Eastern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Taiwan
+adult_dataset:Taiwan rdf:type owl:NamedIndividual ,
+                              adult_dataset:Eastern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Thailand
+adult_dataset:Thailand rdf:type owl:NamedIndividual ,
+                                adult_dataset:South-eastern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#United-States
+adult_dataset:United-States rdf:type owl:NamedIndividual ,
+                                     adult_dataset:Northern-America .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Vietnam
+adult_dataset:Vietnam rdf:type owl:NamedIndividual ,
+                               adult_dataset:South-eastern-Asia .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Yugoslavia
+adult_dataset:Yugoslavia rdf:type owl:NamedIndividual ,
+                                  adult_dataset:Southern-Europe .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#adm-clerical
+adult_dataset:adm-clerical rdf:type owl:NamedIndividual ,
+                                    adult_dataset:Adm-clerical .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#ageCat-10-20
+adult_dataset:ageCat-10-20 rdf:type owl:NamedIndividual ,
+                                    adult_dataset:AgeCat-10-20 .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#ageCat-20-30
+adult_dataset:ageCat-20-30 rdf:type owl:NamedIndividual ,
+                                    adult_dataset:AgeCat-20-30 .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#ageCat-30-40
+adult_dataset:ageCat-30-40 rdf:type owl:NamedIndividual ,
+                                    adult_dataset:AgeCat-30-40 .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#ageCat-40-50
+adult_dataset:ageCat-40-50 rdf:type owl:NamedIndividual ,
+                                    adult_dataset:AgeCat-40-50 .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#ageCat-50-60
+adult_dataset:ageCat-50-60 rdf:type owl:NamedIndividual ,
+                                    adult_dataset:AgeCat-50-60 .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#ageCat-60-70
+adult_dataset:ageCat-60-70 rdf:type owl:NamedIndividual ,
+                                    adult_dataset:AgeCat-60-70 .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#ageCat-70-80
+adult_dataset:ageCat-70-80 rdf:type owl:NamedIndividual ,
+                                    adult_dataset:AgeCat-70-80 .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#ageCat-80-90
+adult_dataset:ageCat-80-90 rdf:type owl:NamedIndividual ,
+                                    adult_dataset:AgeCat-80-90 .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#amer-Indian-Eskimo
+adult_dataset:amer-Indian-Eskimo rdf:type owl:NamedIndividual ,
+                                          adult_dataset:Amer-Indian-Eskimo .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#armed-Forces
+adult_dataset:armed-Forces rdf:type owl:NamedIndividual ,
+                                    adult_dataset:Armed-Forces .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#asian-Pac-Islander
+adult_dataset:asian-Pac-Islander rdf:type owl:NamedIndividual ,
+                                          adult_dataset:Asian-Pac-Islander .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#assoc-acdm
+adult_dataset:assoc-acdm rdf:type owl:NamedIndividual ,
+                                  adult_dataset:Assoc-acdm .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#assoc-voc
+adult_dataset:assoc-voc rdf:type owl:NamedIndividual ,
+                                 adult_dataset:Assoc-voc .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#bachelors
+adult_dataset:bachelors rdf:type owl:NamedIndividual ,
+                                 adult_dataset:Bachelors .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#black
+adult_dataset:black rdf:type owl:NamedIndividual ,
+                             adult_dataset:Black .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#craft-repair
+adult_dataset:craft-repair rdf:type owl:NamedIndividual ,
+                                    adult_dataset:Craft-repair .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#divorced
+adult_dataset:divorced rdf:type owl:NamedIndividual ,
+                                adult_dataset:Divorced .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#doctorate
+adult_dataset:doctorate rdf:type owl:NamedIndividual ,
+                                 adult_dataset:Doctorate .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#exec-managerial
+adult_dataset:exec-managerial rdf:type owl:NamedIndividual ,
+                                       adult_dataset:Exec-managerial .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#farming-fishing
+adult_dataset:farming-fishing rdf:type owl:NamedIndividual ,
+                                       adult_dataset:Farming-fishing .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#federal-gov
+adult_dataset:federal-gov rdf:type owl:NamedIndividual ,
+                                   adult_dataset:Federal-gov .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#female
+adult_dataset:female rdf:type owl:NamedIndividual ,
+                              adult_dataset:Female .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#grade-10th
+adult_dataset:grade-10th rdf:type owl:NamedIndividual ,
+                                  adult_dataset:Grade-10th .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#grade-11th
+adult_dataset:grade-11th rdf:type owl:NamedIndividual ,
+                                  adult_dataset:Grade-11th .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#grade-12th
+adult_dataset:grade-12th rdf:type owl:NamedIndividual ,
+                                  adult_dataset:Grade-12th .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#grade-1st-4th
+adult_dataset:grade-1st-4th rdf:type owl:NamedIndividual ,
+                                     adult_dataset:Grade-1st-4th .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#grade-5th-6th
+adult_dataset:grade-5th-6th rdf:type owl:NamedIndividual ,
+                                     adult_dataset:Grade-5th-6th .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#grade-7th-8th
+adult_dataset:grade-7th-8th rdf:type owl:NamedIndividual ,
+                                     adult_dataset:Grade-7th-8th .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#grade-9th
+adult_dataset:grade-9th rdf:type owl:NamedIndividual ,
+                                 adult_dataset:Grade-9th .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#handlers-cleaners
+adult_dataset:handlers-cleaners rdf:type owl:NamedIndividual ,
+                                         adult_dataset:Handlers-cleaners .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#hoursCat-0-10
+adult_dataset:hoursCat-0-10 rdf:type owl:NamedIndividual ,
+                                     adult_dataset:HoursCat-0-10 .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#hoursCat-10-20
+adult_dataset:hoursCat-10-20 rdf:type owl:NamedIndividual ,
+                                      adult_dataset:HoursCat-10-20 .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#hoursCat-20-30
+adult_dataset:hoursCat-20-30 rdf:type owl:NamedIndividual ,
+                                      adult_dataset:HoursCat-20-30 .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#hoursCat-30-40
+adult_dataset:hoursCat-30-40 rdf:type owl:NamedIndividual ,
+                                      adult_dataset:HoursCat-30-40 .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#hoursCat-40-50
+adult_dataset:hoursCat-40-50 rdf:type owl:NamedIndividual ,
+                                      adult_dataset:HoursCat-40-50 .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#hoursCat-50-60
+adult_dataset:hoursCat-50-60 rdf:type owl:NamedIndividual ,
+                                      adult_dataset:HoursCat-50-60 .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#hoursCat-60-70
+adult_dataset:hoursCat-60-70 rdf:type owl:NamedIndividual ,
+                                      adult_dataset:HoursCat-60-70 .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#hoursCat-70-80
+adult_dataset:hoursCat-70-80 rdf:type owl:NamedIndividual ,
+                                      adult_dataset:HoursCat-70-80 .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#hoursCat-80-90
+adult_dataset:hoursCat-80-90 rdf:type owl:NamedIndividual ,
+                                      adult_dataset:HoursCat-80-90 .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#hoursCat-90-100
+adult_dataset:hoursCat-90-100 rdf:type owl:NamedIndividual ,
+                                       adult_dataset:HoursCat-90-100 .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#hs-grad
+adult_dataset:hs-grad rdf:type owl:NamedIndividual ,
+                               adult_dataset:HS-grad .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#husband
+adult_dataset:husband rdf:type owl:NamedIndividual ,
+                               adult_dataset:Husband .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#ind0
+adult_dataset:ind0 rdf:type owl:NamedIndividual ,
+                            adult_dataset:Person ;
+                   adult_dataset:hasAgeCategory adult_dataset:ageCat-30-40 ;
+                   adult_dataset:hasEducation adult_dataset:masters ;
+                   adult_dataset:hasMaritalStatus adult_dataset:never-married ;
+                   adult_dataset:hasNativeCountry adult_dataset:Iran ;
+                   adult_dataset:hasOccupation adult_dataset:tech-support ;
+                   adult_dataset:hasRace adult_dataset:white ;
+                   adult_dataset:hasRelationship adult_dataset:not-in-family ;
+                   adult_dataset:hasSex adult_dataset:male ;
+                   adult_dataset:hasWeeklyWorkingHours adult_dataset:hoursCat-40-50 ;
+                   adult_dataset:hasWorkClass adult_dataset:state-gov .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#local-gov
+adult_dataset:local-gov rdf:type owl:NamedIndividual ,
+                                 adult_dataset:Local-gov .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#machine-op-inspct
+adult_dataset:machine-op-inspct rdf:type owl:NamedIndividual ,
+                                         adult_dataset:Machine-op-inspct .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#male
+adult_dataset:male rdf:type owl:NamedIndividual ,
+                            adult_dataset:Male .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#married-AF-spouse
+adult_dataset:married-AF-spouse rdf:type owl:NamedIndividual ,
+                                         adult_dataset:Married-AF-spouse .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#married-civ-spouse
+adult_dataset:married-civ-spouse rdf:type owl:NamedIndividual ,
+                                          adult_dataset:Married-civ-spouse .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#married-spouse-absent
+adult_dataset:married-spouse-absent rdf:type owl:NamedIndividual ,
+                                             adult_dataset:Married-spouse-absent .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#masters
+adult_dataset:masters rdf:type owl:NamedIndividual ,
+                               adult_dataset:Masters .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#never-married
+adult_dataset:never-married rdf:type owl:NamedIndividual ,
+                                     adult_dataset:Never-married .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#never-worked
+adult_dataset:never-worked rdf:type owl:NamedIndividual ,
+                                    adult_dataset:Never-worked .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#not-in-family
+adult_dataset:not-in-family rdf:type owl:NamedIndividual ,
+                                     adult_dataset:Not-in-family .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#other-race
+adult_dataset:other-race rdf:type owl:NamedIndividual ,
+                                  adult_dataset:Other-race .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#other-relative
+adult_dataset:other-relative rdf:type owl:NamedIndividual ,
+                                      adult_dataset:Other-relative .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#other-service
+adult_dataset:other-service rdf:type owl:NamedIndividual ,
+                                     adult_dataset:Other-service .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#own-child
+adult_dataset:own-child rdf:type owl:NamedIndividual ,
+                                 adult_dataset:Own-child .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#preschool
+adult_dataset:preschool rdf:type owl:NamedIndividual ,
+                                 adult_dataset:Preschool .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#priv-house-serv
+adult_dataset:priv-house-serv rdf:type owl:NamedIndividual ,
+                                       adult_dataset:Priv-house-serv .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#private
+adult_dataset:private rdf:type owl:NamedIndividual ,
+                               adult_dataset:Private .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#prof-school
+adult_dataset:prof-school rdf:type owl:NamedIndividual ,
+                                   adult_dataset:Prof-school .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#prof-specialty
+adult_dataset:prof-specialty rdf:type owl:NamedIndividual ,
+                                      adult_dataset:Prof-specialty .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#protective-serv
+adult_dataset:protective-serv rdf:type owl:NamedIndividual ,
+                                       adult_dataset:Protective-serv .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#sales
+adult_dataset:sales rdf:type owl:NamedIndividual ,
+                             adult_dataset:Sales .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#self-emp-inc
+adult_dataset:self-emp-inc rdf:type owl:NamedIndividual ,
+                                    adult_dataset:Self-emp-inc .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#self-emp-not-inc
+adult_dataset:self-emp-not-inc rdf:type owl:NamedIndividual ,
+                                        adult_dataset:Self-emp-not-inc .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#separated
+adult_dataset:separated rdf:type owl:NamedIndividual ,
+                                 adult_dataset:Separated .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#some-college
+adult_dataset:some-college rdf:type owl:NamedIndividual ,
+                                    adult_dataset:Some-college .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#state-gov
+adult_dataset:state-gov rdf:type owl:NamedIndividual ,
+                                 adult_dataset:State-gov .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#tech-support
+adult_dataset:tech-support rdf:type owl:NamedIndividual ,
+                                    adult_dataset:Tech-support .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#transport-moving
+adult_dataset:transport-moving rdf:type owl:NamedIndividual ,
+                                        adult_dataset:Transport-moving .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#unmarried
+adult_dataset:unmarried rdf:type owl:NamedIndividual ,
+                                 adult_dataset:Unmarried .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#white
+adult_dataset:white rdf:type owl:NamedIndividual ,
+                             adult_dataset:White .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#widowed
+adult_dataset:widowed rdf:type owl:NamedIndividual ,
+                               adult_dataset:Widowed .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#wife
+adult_dataset:wife rdf:type owl:NamedIndividual ,
+                            adult_dataset:Wife .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#without-pay
+adult_dataset:without-pay rdf:type owl:NamedIndividual ,
+                                   adult_dataset:Without-pay .
+
+
+###  http://www.semanticweb.org/peyman/adult_dataset#Trinadad&Tobago
+<http://www.semanticweb.org/peyman/adult_dataset#Trinadad&Tobago> rdf:type owl:NamedIndividual ,
+                                                                           adult_dataset:Caribbean .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
