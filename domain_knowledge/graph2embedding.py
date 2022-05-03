@@ -66,9 +66,11 @@ def main():
     graph2embedding = GRAPH2EMBEDDING(owl_file)
 
     # finding similar individuals to a specific individual
+    N = 10
     ind = "individual0"
-    similar_inds = graph2embedding.FindSimilarIndividuals(ind)
+    similar_individuals = graph2embedding.FindSimilarIndividuals(ind, N)
 
+    print(similar_individuals)
 
 if __name__ == '__main__':
     main()
