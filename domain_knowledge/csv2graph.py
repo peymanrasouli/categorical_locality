@@ -74,16 +74,19 @@ class CSV2GRAPH(object):
 
             ind += 1
 
+            if ind == 5000:
+                break
+
     def saveGraph(self, file_output):
-        self.g.serialize(destination=file_output, format='ttl')
+        self.g.serialize(destination=file_output, format='xml',)
 
 def main():
     # CSV Format:
     # AgeCategory   WeeklyWorkingHours   WorkClass   Education   MaritalStatus   Occupation   Relationship   Race   Sex   NativeCountry
 
     # path of rdf and csv files
-    rdf_file = "../domain_knowledge/adult_ontology.owl"
-    csv_file = "../domain_knowledge/adult_categorical.csv"
+    rdf_file = "ontologies/adult_ontology.owl"
+    csv_file = "csv_data/adult_categorical.csv"
 
     # instantiating the CSV2GRAPH class
     csv2graph = CSV2GRAPH(rdf_file)
@@ -92,7 +95,7 @@ def main():
     csv2graph.Convert(csv_file)
 
     # Graph with only data
-    csv2graph.saveGraph("adult_ontology_filled.ttl")
+    csv2graph.saveGraph("ontologies/adult_ontology_instantiated.owl")
 
 if __name__ == '__main__':
     main()
