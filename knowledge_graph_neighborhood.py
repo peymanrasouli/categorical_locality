@@ -84,7 +84,7 @@ class KnowledgeGraphNeighborhood():
                 x_hat[c] = self.class_data[c][indices[0][0]].copy()
 
         # generating random samples from the distribution of training data
-        X_sampled = FrequencyBasedRandomSampling(self.X_train, N_samples * 3)
+        X_sampled = FrequencyBasedRandomSampling(self.X_train, N_samples * 10)
         X_sampled_c = self.model.predict(X_sampled)
 
         # creating a csv file from original and random data
@@ -109,8 +109,8 @@ class KnowledgeGraphNeighborhood():
         # finding similarity between original input and random data
         similarity_classwise = {}
         for c in self.class_set:
-            sim_vec = np.zeros(N_samples * 3)
-            instances = self.embedding_model.FindSimilarInstances(instance='original'+str(c), N=N_samples * 10)
+            sim_vec = np.zeros(N_samples * 10)
+            instances = self.embedding_model.FindSimilarInstances(instance='original'+str(c), N=N_samples * 20)
             for instance in instances:
                 if instance[0].startswith('random'):
                     idx = int(instance[0].split('random',1)[1])
