@@ -9,7 +9,6 @@ from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.tree import DecisionTreeClassifier
 from explanation_based_neighborhood import ExplanationBasedNeighborhood
 from knowledge_graph_neighborhood import KnowledgeGraphNeighborhood
-from random_sampling_neighborhood import RandomSamplingNeighborhood
 from random_oversampling_neigbhorhood import RandomOversamplingNeighborhood
 from random_instance_selection_neighborhood import RandomInstanceSelectionNeighborhood
 from genetic_neighborhood import GeneticNeighborhood
@@ -277,16 +276,16 @@ def main():
             sampling_methods['mds'] = mds.neighborhoodSampling
 
             # Generating explanations for the samples in the explain set
-            methods_output = {#'exp': {'local_model_pred':[], 'local_model_score':[]},
+            methods_output = {'exp': {'local_model_pred':[], 'local_model_score':[]},
                               'kg': {'local_model_pred': [], 'local_model_score': []},
-                              # 'ros': {'local_model_pred':[], 'local_model_score':[]},
-                              # 'ris': {'local_model_pred':[], 'local_model_score':[]},
-                              # 'gen': {'local_model_pred': [], 'local_model_score': []},
-                              # 'mds': {'local_model_pred': [], 'local_model_score': []}
+                              'ros': {'local_model_pred':[], 'local_model_score':[]},
+                              'ris': {'local_model_pred':[], 'local_model_score':[]},
+                              'gen': {'local_model_pred': [], 'local_model_score': []},
+                              'mds': {'local_model_pred': [], 'local_model_score': []}
                               }
 
             # setting the number of explained instances
-            N_explain = min(X_test.shape[0], 50)
+            N_explain = min(X_test.shape[0], 500)
 
             # explaining instances
             pb = ProgressBar(total=N_explain, prefix='Progress:', suffix='Complete', decimals=1, length=50,

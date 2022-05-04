@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.neural_network import MLPClassifier
 from sklearn.ensemble import GradientBoostingClassifier
 from explanation_based_neighborhood import ExplanationBasedNeighborhood
-from random_sampling_neighborhood import RandomSamplingNeighborhood
+from knowledge_graph_neighborhood import KnowledgeGraphNeighborhood
 from random_oversampling_neigbhorhood import RandomOversamplingNeighborhood
 from random_instance_selection_neighborhood import RandomInstanceSelectionNeighborhood
 from genetic_neighborhood import GeneticNeighborhood
@@ -221,10 +221,10 @@ def main():
             exp.fit()
             sampling_methods['exp'] = exp.neighborhoodSampling
 
-            # random neighborhood
-            rnd = RandomSamplingNeighborhood(X, y, blackbox, dataset)
-            rnd.fit()
-            sampling_methods['rnd'] = rnd.neighborhoodSampling
+            # knowledge graph neighborhood
+            kg = KnowledgeGraphNeighborhood(X, y, blackbox, dataset)
+            kg.fit()
+            sampling_methods['kg'] = kg.neighborhoodSampling
 
             # random oversampling neighborhood
             ros = RandomOversamplingNeighborhood(X, y, blackbox, dataset)
@@ -248,7 +248,7 @@ def main():
 
             # Generating explanations for the samples in the explain set
             methods_output = {'exp': {'local_model_pred':[], 'local_model_score':[]},
-                              'rnd': {'local_model_pred': [], 'local_model_score': []},
+                              'kg': {'local_model_pred': [], 'local_model_score': []},
                               'ros': {'local_model_pred':[], 'local_model_score':[]},
                               'ris': {'local_model_pred':[], 'local_model_score':[]},
                               'gen': {'local_model_pred': [], 'local_model_score': []},
