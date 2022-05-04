@@ -23,7 +23,6 @@ class CSV2GRAPH(object):
         self.g = Graph()
 
         self.g.parse(self.rdf_file)
-        print(len(self.g))
 
         # Prefixes for the serialization
         self.g.bind("adult", self.adult)
