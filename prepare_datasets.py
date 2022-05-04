@@ -209,6 +209,7 @@ def PrepareAdult(dataset_path, dataset_name):
     df_X_org['WeeklyWorkingHours'] = df_X_org['WeeklyWorkingHours'].str.replace("]", "")
     df_X_org.loc[df_X_org['Education'].str.startswith(('1', '5', '7', '9')), 'Education'] = \
         "Grade-" + df_X_org.loc[df_X_org['Education'].str.startswith(('1', '5', '7', '9')), 'Education']
+    df_X_org.loc[df_X_org['Race'] == 'Other', 'Race'] = 'Other-race'
     df_X_org.loc[df_X_org['NativeCountry'] == 'Outlying-US(Guam-USVI-etc)', 'NativeCountry'] = \
         'Outlying-US-Guam-USVI-etc'
 

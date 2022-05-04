@@ -8,7 +8,7 @@ random3,AgeCat-30-40,HoursCat-10-20,Private,Some-college,Divorced,Prof-specialty
 random4,AgeCat-30-40,HoursCat-0-10,Self-emp-not-inc,HS-grad,Married-civ-spouse,Prof-specialty,Not-in-family,White,Male,United-States
 random5,AgeCat-40-50,HoursCat-80-90,Private,Some-college,Divorced,Exec-managerial,Unmarried,White,Male,United-States
 random6,AgeCat-30-40,HoursCat-30-40,Self-emp-not-inc,Some-college,Married-civ-spouse,Sales,Husband,White,Male,United-States
-random7,AgeCat-50-60,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Other-service,Own-child,Other,Female,United-States
+random7,AgeCat-50-60,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Other-service,Own-child,Other-race,Female,United-States
 random8,AgeCat-60-70,HoursCat-30-40,Private,Grade-11th,Never-married,Handlers-cleaners,Wife,Black,Female,United-States
 random9,AgeCat-30-40,HoursCat-40-50,Local-gov,HS-grad,Married-civ-spouse,Craft-repair,Not-in-family,White,Male,United-States
 random10,AgeCat-40-50,HoursCat-40-50,Self-emp-inc,Grade-9th,Married-civ-spouse,Exec-managerial,Own-child,White,Male,United-States
@@ -41,7 +41,7 @@ random36,AgeCat-40-50,HoursCat-10-20,Private,Doctorate,Married-civ-spouse,Farmin
 random37,AgeCat-40-50,HoursCat-30-40,Private,Some-college,Divorced,Machine-op-inspct,Not-in-family,White,Female,United-States
 random38,AgeCat-60-70,HoursCat-40-50,Private,Bachelors,Never-married,Machine-op-inspct,Unmarried,White,Male,United-States
 random39,AgeCat-40-50,HoursCat-40-50,Private,Grade-11th,Married-civ-spouse,Exec-managerial,Husband,Asian-Pac-Islander,Female,Mexico
-random40,AgeCat-30-40,HoursCat-50-60,Private,Masters,Married-civ-spouse,Adm-clerical,Husband,Other,Male,United-States
+random40,AgeCat-30-40,HoursCat-50-60,Private,Masters,Married-civ-spouse,Adm-clerical,Husband,Other-race,Male,United-States
 random41,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Sales,Not-in-family,White,Male,United-States
 random42,AgeCat-40-50,HoursCat-40-50,Self-emp-not-inc,HS-grad,Never-married,Farming-fishing,Own-child,White,Male,United-States
 random43,AgeCat-10-20,HoursCat-70-80,Federal-gov,Bachelors,Never-married,Exec-managerial,Unmarried,White,Male,United-States
@@ -76,7 +76,7 @@ random71,AgeCat-30-40,HoursCat-30-40,Private,Some-college,Never-married,Adm-cler
 random72,AgeCat-60-70,HoursCat-10-20,Private,Some-college,Never-married,Protective-serv,Husband,White,Female,United-States
 random73,AgeCat-40-50,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Adm-clerical,Own-child,Asian-Pac-Islander,Male,United-States
 random74,AgeCat-40-50,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Prof-specialty,Not-in-family,Amer-Indian-Eskimo,Female,United-States
-random75,AgeCat-10-20,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Prof-specialty,Husband,Other,Female,United-States
+random75,AgeCat-10-20,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Prof-specialty,Husband,Other-race,Female,United-States
 random76,AgeCat-20-30,HoursCat-40-50,Private,Doctorate,Never-married,Exec-managerial,Not-in-family,White,Male,Japan
 random77,AgeCat-20-30,HoursCat-50-60,Private,HS-grad,Married-civ-spouse,Prof-specialty,Husband,White,Male,United-States
 random78,AgeCat-20-30,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Machine-op-inspct,Husband,Black,Male,United-States
@@ -235,7 +235,7 @@ random230,AgeCat-20-30,HoursCat-10-20,Private,HS-grad,Never-married,Transport-mo
 random231,AgeCat-20-30,HoursCat-50-60,Private,HS-grad,Widowed,Craft-repair,Own-child,Black,Male,United-States
 random232,AgeCat-30-40,HoursCat-40-50,Private,HS-grad,Married-civ-spouse,Prof-specialty,Own-child,White,Male,England
 random233,AgeCat-10-20,HoursCat-40-50,Private,Some-college,Never-married,Craft-repair,Own-child,White,Female,United-States
-random234,AgeCat-20-30,HoursCat-40-50,Self-emp-inc,HS-grad,Married-civ-spouse,Craft-repair,Not-in-family,Other,Female,United-States
+random234,AgeCat-20-30,HoursCat-40-50,Self-emp-inc,HS-grad,Married-civ-spouse,Craft-repair,Not-in-family,Other-race,Female,United-States
 random235,AgeCat-30-40,HoursCat-40-50,Private,Some-college,Married-civ-spouse,Sales,Husband,White,Male,United-States
 random236,AgeCat-30-40,HoursCat-20-30,Private,Bachelors,Never-married,Handlers-cleaners,Husband,White,Female,United-States
 random237,AgeCat-30-40,HoursCat-60-70,Self-emp-not-inc,Some-college,Married-civ-spouse,Handlers-cleaners,Not-in-family,White,Male,United-States
@@ -314,7 +314,7 @@ random309,AgeCat-10-20,HoursCat-40-50,Private,HS-grad,Married-civ-spouse,Adm-cle
 random310,AgeCat-40-50,HoursCat-30-40,State-gov,Grade-10th,Never-married,Exec-managerial,Husband,White,Female,United-States
 random311,AgeCat-20-30,HoursCat-40-50,Self-emp-not-inc,Grade-10th,Married-civ-spouse,Tech-support,Husband,White,Female,Haiti
 random312,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Divorced,Sales,Husband,White,Female,United-States
-random313,AgeCat-20-30,HoursCat-30-40,Private,Masters,Divorced,Craft-repair,Own-child,Other,Male,United-States
+random313,AgeCat-20-30,HoursCat-30-40,Private,Masters,Divorced,Craft-repair,Own-child,Other-race,Male,United-States
 random314,AgeCat-40-50,HoursCat-40-50,Private,HS-grad,Never-married,Prof-specialty,Husband,White,Male,Columbia
 random315,AgeCat-20-30,HoursCat-30-40,Self-emp-not-inc,HS-grad,Divorced,Other-service,Own-child,White,Male,United-States
 random316,AgeCat-30-40,HoursCat-30-40,Federal-gov,Grade-11th,Married-civ-spouse,Craft-repair,Not-in-family,White,Female,United-States
@@ -374,7 +374,7 @@ random369,AgeCat-40-50,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Sa
 random370,AgeCat-40-50,HoursCat-30-40,Private,Some-college,Never-married,Adm-clerical,Husband,White,Female,United-States
 random371,AgeCat-30-40,HoursCat-30-40,Private,Bachelors,Divorced,Craft-repair,Husband,White,Male,United-States
 random372,AgeCat-40-50,HoursCat-30-40,Private,HS-grad,Divorced,Exec-managerial,Own-child,White,Male,United-States
-random373,AgeCat-40-50,HoursCat-30-40,Private,Grade-12th,Married-civ-spouse,Sales,Wife,Other,Female,Mexico
+random373,AgeCat-40-50,HoursCat-30-40,Private,Grade-12th,Married-civ-spouse,Sales,Wife,Other-race,Female,Mexico
 random374,AgeCat-20-30,HoursCat-30-40,Local-gov,Bachelors,Married-civ-spouse,Machine-op-inspct,Husband,White,Male,United-States
 random375,AgeCat-20-30,HoursCat-30-40,State-gov,Bachelors,Separated,Sales,Own-child,White,Male,United-States
 random376,AgeCat-40-50,HoursCat-40-50,Federal-gov,Bachelors,Married-civ-spouse,Other-service,Not-in-family,White,Male,United-States
@@ -516,7 +516,7 @@ random511,AgeCat-30-40,HoursCat-10-20,Private,Some-college,Never-married,Sales,N
 random512,AgeCat-40-50,HoursCat-30-40,Private,HS-grad,Never-married,Sales,Own-child,White,Female,United-States
 random513,AgeCat-40-50,HoursCat-50-60,Self-emp-not-inc,HS-grad,Never-married,Tech-support,Not-in-family,White,Female,United-States
 random514,AgeCat-40-50,HoursCat-30-40,Private,Grade-11th,Married-civ-spouse,Prof-specialty,Husband,White,Male,United-States
-random515,AgeCat-40-50,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Exec-managerial,Husband,Other,Male,United-States
+random515,AgeCat-40-50,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Exec-managerial,Husband,Other-race,Male,United-States
 random516,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Exec-managerial,Husband,White,Male,United-States
 random517,AgeCat-30-40,HoursCat-30-40,Federal-gov,Bachelors,Never-married,Adm-clerical,Not-in-family,White,Male,United-States
 random518,AgeCat-40-50,HoursCat-10-20,Private,HS-grad,Married-civ-spouse,Sales,Own-child,White,Male,Guatemala
@@ -663,7 +663,7 @@ random658,AgeCat-30-40,HoursCat-30-40,Self-emp-not-inc,Bachelors,Married-civ-spo
 random659,AgeCat-60-70,HoursCat-30-40,State-gov,Grade-7th-8th,Married-civ-spouse,Other-service,Not-in-family,White,Male,United-States
 random660,AgeCat-30-40,HoursCat-40-50,Self-emp-not-inc,Grade-11th,Married-civ-spouse,Handlers-cleaners,Husband,White,Male,Mexico
 random661,AgeCat-50-60,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Machine-op-inspct,Not-in-family,White,Male,United-States
-random662,AgeCat-20-30,HoursCat-30-40,Local-gov,HS-grad,Never-married,Sales,Own-child,Other,Female,United-States
+random662,AgeCat-20-30,HoursCat-30-40,Local-gov,HS-grad,Never-married,Sales,Own-child,Other-race,Female,United-States
 random663,AgeCat-20-30,HoursCat-30-40,Private,Some-college,Never-married,Exec-managerial,Not-in-family,White,Male,United-States
 random664,AgeCat-30-40,HoursCat-30-40,Private,Masters,Married-civ-spouse,Craft-repair,Own-child,White,Male,United-States
 random665,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Never-married,Craft-repair,Husband,Black,Female,United-States
@@ -791,7 +791,7 @@ random786,AgeCat-20-30,HoursCat-40-50,Private,Some-college,Never-married,Exec-ma
 random787,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Other-service,Own-child,White,Female,United-States
 random788,AgeCat-30-40,HoursCat-10-20,Private,Masters,Married-spouse-absent,Handlers-cleaners,Own-child,White,Female,United-States
 random789,AgeCat-20-30,HoursCat-40-50,Private,Masters,Divorced,Adm-clerical,Own-child,White,Female,Guatemala
-random790,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Machine-op-inspct,Husband,Other,Male,United-States
+random790,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Machine-op-inspct,Husband,Other-race,Male,United-States
 random791,AgeCat-20-30,HoursCat-30-40,Private,Some-college,Divorced,Exec-managerial,Other-relative,White,Female,United-States
 random792,AgeCat-40-50,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Exec-managerial,Not-in-family,White,Male,China
 random793,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Divorced,Exec-managerial,Other-relative,White,Male,United-States
@@ -822,7 +822,7 @@ random817,AgeCat-30-40,HoursCat-30-40,Self-emp-inc,Grade-7th-8th,Never-married,F
 random818,AgeCat-40-50,HoursCat-30-40,State-gov,HS-grad,Married-civ-spouse,Handlers-cleaners,Other-relative,White,Male,United-States
 random819,AgeCat-30-40,HoursCat-30-40,Federal-gov,Prof-school,Never-married,Transport-moving,Not-in-family,Black,Male,United-States
 random820,AgeCat-30-40,HoursCat-20-30,Private,HS-grad,Married-civ-spouse,Exec-managerial,Not-in-family,White,Male,United-States
-random821,AgeCat-10-20,HoursCat-40-50,Federal-gov,Bachelors,Married-civ-spouse,Handlers-cleaners,Husband,Other,Female,United-States
+random821,AgeCat-10-20,HoursCat-40-50,Federal-gov,Bachelors,Married-civ-spouse,Handlers-cleaners,Husband,Other-race,Female,United-States
 random822,AgeCat-30-40,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Craft-repair,Other-relative,White,Male,United-States
 random823,AgeCat-10-20,HoursCat-10-20,Private,HS-grad,Never-married,Prof-specialty,Other-relative,White,Female,United-States
 random824,AgeCat-20-30,HoursCat-50-60,Private,Assoc-acdm,Divorced,Exec-managerial,Husband,White,Male,United-States
@@ -832,7 +832,7 @@ random827,AgeCat-50-60,HoursCat-30-40,State-gov,Some-college,Married-civ-spouse,
 random828,AgeCat-40-50,HoursCat-50-60,Private,HS-grad,Married-civ-spouse,Prof-specialty,Husband,White,Male,United-States
 random829,AgeCat-20-30,HoursCat-40-50,Private,Some-college,Married-civ-spouse,Adm-clerical,Husband,White,Male,United-States
 random830,AgeCat-40-50,HoursCat-30-40,Self-emp-not-inc,Some-college,Married-civ-spouse,Prof-specialty,Unmarried,White,Female,United-States
-random831,AgeCat-20-30,HoursCat-40-50,Private,Grade-7th-8th,Divorced,Craft-repair,Not-in-family,Other,Male,South
+random831,AgeCat-20-30,HoursCat-40-50,Private,Grade-7th-8th,Divorced,Craft-repair,Not-in-family,Other-race,Male,South
 random832,AgeCat-40-50,HoursCat-20-30,State-gov,Masters,Married-civ-spouse,Transport-moving,Unmarried,White,Male,United-States
 random833,AgeCat-40-50,HoursCat-30-40,Private,Some-college,Never-married,Sales,Husband,White,Male,United-States
 random834,AgeCat-50-60,HoursCat-50-60,Self-emp-inc,Grade-11th,Never-married,Prof-specialty,Husband,White,Male,United-States
@@ -880,7 +880,7 @@ random875,AgeCat-30-40,HoursCat-60-70,Private,Grade-11th,Married-civ-spouse,Exec
 random876,AgeCat-30-40,HoursCat-30-40,State-gov,HS-grad,Divorced,Craft-repair,Other-relative,White,Male,Mexico
 random877,AgeCat-30-40,HoursCat-40-50,Private,Bachelors,Never-married,Machine-op-inspct,Husband,White,Male,Germany
 random878,AgeCat-50-60,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Adm-clerical,Husband,White,Female,United-States
-random879,AgeCat-40-50,HoursCat-30-40,Private,HS-grad,Never-married,Transport-moving,Own-child,Other,Male,United-States
+random879,AgeCat-40-50,HoursCat-30-40,Private,HS-grad,Never-married,Transport-moving,Own-child,Other-race,Male,United-States
 random880,AgeCat-40-50,HoursCat-20-30,Private,Some-college,Never-married,Craft-repair,Husband,White,Male,United-States
 random881,AgeCat-20-30,HoursCat-10-20,Local-gov,Bachelors,Married-civ-spouse,Sales,Husband,White,Male,United-States
 random882,AgeCat-30-40,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Other-service,Husband,Asian-Pac-Islander,Male,Trinadad&Tobago
@@ -1090,7 +1090,7 @@ random1085,AgeCat-40-50,HoursCat-10-20,Self-emp-not-inc,Some-college,Married-civ
 random1086,AgeCat-10-20,HoursCat-40-50,Private,HS-grad,Married-civ-spouse,Prof-specialty,Own-child,White,Male,United-States
 random1087,AgeCat-40-50,HoursCat-40-50,Private,Bachelors,Never-married,Craft-repair,Husband,White,Female,United-States
 random1088,AgeCat-50-60,HoursCat-40-50,Private,Grade-1st-4th,Married-civ-spouse,Craft-repair,Own-child,White,Male,United-States
-random1089,AgeCat-30-40,HoursCat-50-60,Private,Some-college,Married-civ-spouse,Sales,Not-in-family,Other,Female,United-States
+random1089,AgeCat-30-40,HoursCat-50-60,Private,Some-college,Married-civ-spouse,Sales,Not-in-family,Other-race,Female,United-States
 random1090,AgeCat-30-40,HoursCat-50-60,Private,HS-grad,Never-married,Craft-repair,Not-in-family,White,Female,United-States
 random1091,AgeCat-20-30,HoursCat-30-40,Private,Bachelors,Never-married,Other-service,Husband,White,Male,United-States
 random1092,AgeCat-40-50,HoursCat-30-40,Private,Bachelors,Divorced,Other-service,Husband,White,Female,United-States
@@ -1263,7 +1263,7 @@ random1258,AgeCat-40-50,HoursCat-30-40,Private,Masters,Married-civ-spouse,Farmin
 random1259,AgeCat-50-60,HoursCat-30-40,Private,HS-grad,Divorced,Other-service,Husband,Black,Male,United-States
 random1260,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Never-married,Sales,Husband,Amer-Indian-Eskimo,Male,United-States
 random1261,AgeCat-40-50,HoursCat-40-50,Private,Some-college,Married-civ-spouse,Machine-op-inspct,Husband,Black,Male,United-States
-random1262,AgeCat-30-40,HoursCat-30-40,Private,Assoc-voc,Married-civ-spouse,Machine-op-inspct,Husband,Other,Male,United-States
+random1262,AgeCat-30-40,HoursCat-30-40,Private,Assoc-voc,Married-civ-spouse,Machine-op-inspct,Husband,Other-race,Male,United-States
 random1263,AgeCat-30-40,HoursCat-90-100,Federal-gov,HS-grad,Married-civ-spouse,Craft-repair,Husband,White,Male,United-States
 random1264,AgeCat-60-70,HoursCat-50-60,Private,Assoc-voc,Never-married,Machine-op-inspct,Husband,White,Male,United-States
 random1265,AgeCat-60-70,HoursCat-40-50,Private,Masters,Never-married,Adm-clerical,Husband,White,Female,United-States
@@ -1288,7 +1288,7 @@ random1283,AgeCat-20-30,HoursCat-60-70,Private,HS-grad,Never-married,Exec-manage
 random1284,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Adm-clerical,Other-relative,White,Female,United-States
 random1285,AgeCat-60-70,HoursCat-40-50,Private,Some-college,Never-married,Machine-op-inspct,Own-child,White,Female,Mexico
 random1286,AgeCat-20-30,HoursCat-40-50,Private,Some-college,Married-civ-spouse,Craft-repair,Other-relative,White,Female,United-States
-random1287,AgeCat-30-40,HoursCat-20-30,Private,HS-grad,Divorced,Craft-repair,Own-child,Other,Male,United-States
+random1287,AgeCat-30-40,HoursCat-20-30,Private,HS-grad,Divorced,Craft-repair,Own-child,Other-race,Male,United-States
 random1288,AgeCat-10-20,HoursCat-30-40,State-gov,HS-grad,Separated,Transport-moving,Unmarried,White,Female,United-States
 random1289,AgeCat-30-40,HoursCat-30-40,Private,Masters,Married-civ-spouse,Other-service,Husband,White,Male,United-States
 random1290,AgeCat-20-30,HoursCat-70-80,Private,Grade-11th,Married-civ-spouse,Other-service,Husband,Asian-Pac-Islander,Male,United-States
@@ -1381,7 +1381,7 @@ random1376,AgeCat-20-30,HoursCat-0-10,Federal-gov,Bachelors,Never-married,Sales,
 random1377,AgeCat-30-40,HoursCat-40-50,Private,Grade-9th,Married-civ-spouse,Exec-managerial,Husband,White,Male,United-States
 random1378,AgeCat-20-30,HoursCat-30-40,Local-gov,Some-college,Never-married,Other-service,Husband,White,Male,United-States
 random1379,AgeCat-20-30,HoursCat-40-50,Private,Grade-7th-8th,Married-civ-spouse,Craft-repair,Husband,White,Male,United-States
-random1380,AgeCat-40-50,HoursCat-30-40,Self-emp-not-inc,Bachelors,Married-civ-spouse,Farming-fishing,Husband,Other,Male,United-States
+random1380,AgeCat-40-50,HoursCat-30-40,Self-emp-not-inc,Bachelors,Married-civ-spouse,Farming-fishing,Husband,Other-race,Male,United-States
 random1381,AgeCat-10-20,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Prof-specialty,Husband,White,Male,United-States
 random1382,AgeCat-50-60,HoursCat-30-40,Self-emp-inc,Masters,Never-married,Transport-moving,Husband,White,Male,United-States
 random1383,AgeCat-30-40,HoursCat-20-30,Private,HS-grad,Divorced,Adm-clerical,Husband,Black,Male,United-States
@@ -1390,7 +1390,7 @@ random1385,AgeCat-30-40,HoursCat-30-40,Private,Grade-1st-4th,Married-civ-spouse,
 random1386,AgeCat-40-50,HoursCat-40-50,Self-emp-not-inc,Bachelors,Married-civ-spouse,Sales,Husband,White,Male,United-States
 random1387,AgeCat-30-40,HoursCat-10-20,Self-emp-inc,Bachelors,Married-civ-spouse,Craft-repair,Unmarried,Asian-Pac-Islander,Male,United-States
 random1388,AgeCat-20-30,HoursCat-30-40,Private,Bachelors,Widowed,Transport-moving,Own-child,White,Female,United-States
-random1389,AgeCat-20-30,HoursCat-30-40,Private,Bachelors,Never-married,Adm-clerical,Husband,Other,Male,United-States
+random1389,AgeCat-20-30,HoursCat-30-40,Private,Bachelors,Never-married,Adm-clerical,Husband,Other-race,Male,United-States
 random1390,AgeCat-20-30,HoursCat-30-40,Local-gov,Assoc-voc,Never-married,Adm-clerical,Husband,White,Male,United-States
 random1391,AgeCat-30-40,HoursCat-30-40,Self-emp-not-inc,Some-college,Married-civ-spouse,Craft-repair,Husband,White,Female,United-States
 random1392,AgeCat-20-30,HoursCat-10-20,Private,Grade-7th-8th,Married-civ-spouse,Other-service,Husband,White,Female,United-States
@@ -1487,7 +1487,7 @@ random1482,AgeCat-10-20,HoursCat-20-30,Private,Bachelors,Married-civ-spouse,Othe
 random1483,AgeCat-60-70,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Tech-support,Unmarried,White,Male,United-States
 random1484,AgeCat-40-50,HoursCat-10-20,Private,Doctorate,Never-married,Sales,Husband,White,Male,United-States
 random1485,AgeCat-60-70,HoursCat-40-50,Private,Some-college,Married-civ-spouse,Exec-managerial,Husband,White,Male,United-States
-random1486,AgeCat-30-40,HoursCat-40-50,Local-gov,Some-college,Never-married,Prof-specialty,Husband,Other,Female,United-States
+random1486,AgeCat-30-40,HoursCat-40-50,Local-gov,Some-college,Never-married,Prof-specialty,Husband,Other-race,Female,United-States
 random1487,AgeCat-40-50,HoursCat-10-20,Private,Some-college,Married-civ-spouse,Other-service,Not-in-family,Black,Female,United-States
 random1488,AgeCat-30-40,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Other-service,Husband,Black,Male,United-States
 random1489,AgeCat-30-40,HoursCat-30-40,Private,Bachelors,Never-married,Tech-support,Husband,White,Male,United-States
@@ -1589,7 +1589,7 @@ random1584,AgeCat-50-60,HoursCat-30-40,Private,Some-college,Married-civ-spouse,F
 random1585,AgeCat-30-40,HoursCat-40-50,Private,Some-college,Divorced,Handlers-cleaners,Own-child,White,Male,United-States
 random1586,AgeCat-30-40,HoursCat-30-40,Private,Bachelors,Never-married,Exec-managerial,Husband,White,Male,United-States
 random1587,AgeCat-10-20,HoursCat-20-30,Self-emp-not-inc,Grade-11th,Married-civ-spouse,Adm-clerical,Not-in-family,White,Female,United-States
-random1588,AgeCat-80-90,HoursCat-30-40,Private,Grade-7th-8th,Married-civ-spouse,Prof-specialty,Not-in-family,Other,Male,United-States
+random1588,AgeCat-80-90,HoursCat-30-40,Private,Grade-7th-8th,Married-civ-spouse,Prof-specialty,Not-in-family,Other-race,Male,United-States
 random1589,AgeCat-20-30,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Adm-clerical,Own-child,White,Male,United-States
 random1590,AgeCat-40-50,HoursCat-40-50,Local-gov,HS-grad,Divorced,Machine-op-inspct,Unmarried,White,Male,United-States
 random1591,AgeCat-50-60,HoursCat-30-40,Private,HS-grad,Never-married,Farming-fishing,Not-in-family,White,Male,United-States
@@ -1664,7 +1664,7 @@ random1659,AgeCat-50-60,HoursCat-40-50,Private,Assoc-voc,Never-married,Handlers-
 random1660,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Widowed,Adm-clerical,Unmarried,White,Male,United-States
 random1661,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Craft-repair,Not-in-family,White,Female,United-States
 random1662,AgeCat-40-50,HoursCat-30-40,Private,Masters,Never-married,Prof-specialty,Not-in-family,White,Male,United-States
-random1663,AgeCat-30-40,HoursCat-50-60,Private,HS-grad,Divorced,Craft-repair,Own-child,Other,Male,United-States
+random1663,AgeCat-30-40,HoursCat-50-60,Private,HS-grad,Divorced,Craft-repair,Own-child,Other-race,Male,United-States
 random1664,AgeCat-30-40,HoursCat-30-40,Private,Some-college,Never-married,Sales,Husband,White,Male,United-States
 random1665,AgeCat-30-40,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Other-service,Husband,White,Male,Japan
 random1666,AgeCat-30-40,HoursCat-30-40,Private,Assoc-acdm,Never-married,Sales,Husband,White,Male,United-States
@@ -1817,7 +1817,7 @@ random1812,AgeCat-60-70,HoursCat-30-40,Self-emp-not-inc,Masters,Never-married,Ex
 random1813,AgeCat-60-70,HoursCat-30-40,Private,Grade-12th,Never-married,Sales,Unmarried,White,Male,United-States
 random1814,AgeCat-50-60,HoursCat-30-40,Private,Grade-12th,Married-civ-spouse,Machine-op-inspct,Husband,White,Male,United-States
 random1815,AgeCat-40-50,HoursCat-30-40,Private,HS-grad,Never-married,Machine-op-inspct,Husband,White,Female,Mexico
-random1816,AgeCat-30-40,HoursCat-30-40,Local-gov,Grade-10th,Never-married,Prof-specialty,Not-in-family,Other,Male,United-States
+random1816,AgeCat-30-40,HoursCat-30-40,Local-gov,Grade-10th,Never-married,Prof-specialty,Not-in-family,Other-race,Male,United-States
 random1817,AgeCat-10-20,HoursCat-30-40,Self-emp-not-inc,HS-grad,Never-married,Exec-managerial,Unmarried,White,Male,United-States
 random1818,AgeCat-40-50,HoursCat-40-50,Private,Some-college,Never-married,Machine-op-inspct,Own-child,White,Male,United-States
 random1819,AgeCat-70-80,HoursCat-30-40,Private,Some-college,Never-married,Craft-repair,Not-in-family,White,Male,United-States
@@ -1944,7 +1944,7 @@ random1939,AgeCat-10-20,HoursCat-40-50,Private,Some-college,Married-civ-spouse,T
 random1940,AgeCat-40-50,HoursCat-10-20,Private,Grade-10th,Married-civ-spouse,Other-service,Husband,White,Female,United-States
 random1941,AgeCat-60-70,HoursCat-30-40,Self-emp-not-inc,Grade-10th,Married-civ-spouse,Craft-repair,Wife,White,Male,United-States
 random1942,AgeCat-20-30,HoursCat-60-70,Private,Masters,Married-civ-spouse,Craft-repair,Wife,White,Female,United-States
-random1943,AgeCat-40-50,HoursCat-40-50,Private,Bachelors,Married-civ-spouse,Adm-clerical,Husband,Other,Female,United-States
+random1943,AgeCat-40-50,HoursCat-40-50,Private,Bachelors,Married-civ-spouse,Adm-clerical,Husband,Other-race,Female,United-States
 random1944,AgeCat-40-50,HoursCat-30-40,Private,Some-college,Divorced,Machine-op-inspct,Unmarried,Black,Female,United-States
 random1945,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Other-service,Wife,White,Male,United-States
 random1946,AgeCat-10-20,HoursCat-30-40,Self-emp-not-inc,Grade-10th,Never-married,Prof-specialty,Not-in-family,White,Male,United-States
@@ -2061,7 +2061,7 @@ random2056,AgeCat-20-30,HoursCat-30-40,Private,Assoc-acdm,Divorced,Exec-manageri
 random2057,AgeCat-40-50,HoursCat-30-40,Private,Grade-11th,Never-married,Handlers-cleaners,Wife,White,Male,United-States
 random2058,AgeCat-30-40,HoursCat-10-20,Private,HS-grad,Married-civ-spouse,Farming-fishing,Husband,White,Male,United-States
 random2059,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Adm-clerical,Husband,White,Male,United-States
-random2060,AgeCat-30-40,HoursCat-30-40,Private,Assoc-voc,Separated,Other-service,Husband,Other,Female,United-States
+random2060,AgeCat-30-40,HoursCat-30-40,Private,Assoc-voc,Separated,Other-service,Husband,Other-race,Female,United-States
 random2061,AgeCat-30-40,HoursCat-20-30,Private,Bachelors,Never-married,Handlers-cleaners,Husband,White,Male,United-States
 random2062,AgeCat-30-40,HoursCat-40-50,State-gov,Some-college,Never-married,Prof-specialty,Own-child,White,Male,United-States
 random2063,AgeCat-40-50,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Tech-support,Not-in-family,White,Female,United-States
@@ -2135,7 +2135,7 @@ random2130,AgeCat-20-30,HoursCat-30-40,Private,Masters,Divorced,Transport-moving
 random2131,AgeCat-40-50,HoursCat-30-40,Private,Doctorate,Married-civ-spouse,Adm-clerical,Husband,Black,Male,Poland
 random2132,AgeCat-40-50,HoursCat-30-40,Private,HS-grad,Divorced,Exec-managerial,Husband,White,Female,United-States
 random2133,AgeCat-50-60,HoursCat-50-60,Private,HS-grad,Married-civ-spouse,Farming-fishing,Own-child,White,Female,United-States
-random2134,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Adm-clerical,Wife,Other,Female,United-States
+random2134,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Adm-clerical,Wife,Other-race,Female,United-States
 random2135,AgeCat-20-30,HoursCat-30-40,Private,Bachelors,Never-married,Prof-specialty,Husband,White,Female,United-States
 random2136,AgeCat-40-50,HoursCat-30-40,Private,HS-grad,Divorced,Prof-specialty,Not-in-family,White,Female,United-States
 random2137,AgeCat-20-30,HoursCat-80-90,Private,Bachelors,Never-married,Sales,Unmarried,White,Male,United-States
@@ -2284,7 +2284,7 @@ random2279,AgeCat-50-60,HoursCat-30-40,Private,HS-grad,Never-married,Prof-specia
 random2280,AgeCat-30-40,HoursCat-10-20,Private,Prof-school,Married-civ-spouse,Exec-managerial,Own-child,White,Male,United-States
 random2281,AgeCat-40-50,HoursCat-60-70,State-gov,Assoc-acdm,Never-married,Craft-repair,Not-in-family,Black,Male,United-States
 random2282,AgeCat-40-50,HoursCat-30-40,Self-emp-not-inc,HS-grad,Never-married,Craft-repair,Husband,White,Male,United-States
-random2283,AgeCat-30-40,HoursCat-40-50,Private,HS-grad,Married-civ-spouse,Other-service,Not-in-family,Other,Male,South
+random2283,AgeCat-30-40,HoursCat-40-50,Private,HS-grad,Married-civ-spouse,Other-service,Not-in-family,Other-race,Male,South
 random2284,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Exec-managerial,Husband,White,Male,United-States
 random2285,AgeCat-40-50,HoursCat-30-40,Private,Some-college,Never-married,Adm-clerical,Husband,White,Female,United-States
 random2286,AgeCat-30-40,HoursCat-30-40,Private,Some-college,Never-married,Sales,Husband,White,Female,United-States
@@ -2343,7 +2343,7 @@ random2338,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Tech-s
 random2339,AgeCat-50-60,HoursCat-30-40,Local-gov,Some-college,Never-married,Prof-specialty,Husband,White,Male,United-States
 random2340,AgeCat-20-30,HoursCat-50-60,Private,Grade-5th-6th,Married-civ-spouse,Prof-specialty,Wife,Black,Female,United-States
 random2341,AgeCat-20-30,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Exec-managerial,Unmarried,White,Female,United-States
-random2342,AgeCat-40-50,HoursCat-30-40,Local-gov,HS-grad,Divorced,Machine-op-inspct,Not-in-family,Other,Male,United-States
+random2342,AgeCat-40-50,HoursCat-30-40,Local-gov,HS-grad,Divorced,Machine-op-inspct,Not-in-family,Other-race,Male,United-States
 random2343,AgeCat-40-50,HoursCat-30-40,Private,HS-grad,Divorced,Other-service,Unmarried,White,Female,United-States
 random2344,AgeCat-50-60,HoursCat-50-60,Private,Some-college,Married-civ-spouse,Adm-clerical,Husband,White,Female,United-States
 random2345,AgeCat-50-60,HoursCat-0-10,Local-gov,HS-grad,Married-civ-spouse,Adm-clerical,Other-relative,White,Male,United-States
@@ -2853,7 +2853,7 @@ random2848,AgeCat-40-50,HoursCat-30-40,Private,Masters,Married-civ-spouse,Farmin
 random2849,AgeCat-30-40,HoursCat-30-40,Self-emp-inc,Masters,Married-civ-spouse,Prof-specialty,Unmarried,White,Female,United-States
 random2850,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Other-service,Husband,White,Male,United-States
 random2851,AgeCat-60-70,HoursCat-30-40,Private,HS-grad,Never-married,Craft-repair,Own-child,White,Male,United-States
-random2852,AgeCat-30-40,HoursCat-20-30,Private,Grade-11th,Married-civ-spouse,Prof-specialty,Not-in-family,Other,Female,United-States
+random2852,AgeCat-30-40,HoursCat-20-30,Private,Grade-11th,Married-civ-spouse,Prof-specialty,Not-in-family,Other-race,Female,United-States
 random2853,AgeCat-20-30,HoursCat-30-40,Private,Grade-11th,Married-civ-spouse,Exec-managerial,Own-child,White,Male,United-States
 random2854,AgeCat-30-40,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Exec-managerial,Husband,White,Female,United-States
 random2855,AgeCat-30-40,HoursCat-50-60,Private,HS-grad,Never-married,Prof-specialty,Not-in-family,White,Male,United-States
@@ -2995,7 +2995,7 @@ random2990,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Widowed,Craft-repair,Husb
 random2991,AgeCat-30-40,HoursCat-30-40,Private,Doctorate,Married-civ-spouse,Sales,Not-in-family,White,Female,United-States
 random2992,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Prof-specialty,Husband,White,Male,United-States
 random2993,AgeCat-50-60,HoursCat-40-50,Private,Assoc-voc,Separated,Sales,Not-in-family,White,Male,United-States
-random2994,AgeCat-20-30,HoursCat-10-20,Private,HS-grad,Married-civ-spouse,Other-service,Wife,Other,Female,United-States
+random2994,AgeCat-20-30,HoursCat-10-20,Private,HS-grad,Married-civ-spouse,Other-service,Wife,Other-race,Female,United-States
 random2995,AgeCat-60-70,HoursCat-40-50,Private,Grade-7th-8th,Never-married,Machine-op-inspct,Not-in-family,White,Female,United-States
 random2996,AgeCat-30-40,HoursCat-20-30,Private,Bachelors,Divorced,Sales,Not-in-family,White,Female,United-States
 random2997,AgeCat-30-40,HoursCat-40-50,Private,HS-grad,Married-civ-spouse,Adm-clerical,Own-child,White,Male,United-States
@@ -3017,7 +3017,7 @@ random3012,AgeCat-20-30,HoursCat-30-40,State-gov,Bachelors,Married-civ-spouse,Tr
 random3013,AgeCat-30-40,HoursCat-40-50,Private,Grade-10th,Widowed,Prof-specialty,Wife,White,Male,United-States
 random3014,AgeCat-20-30,HoursCat-30-40,State-gov,Grade-9th,Never-married,Craft-repair,Unmarried,White,Male,United-States
 random3015,AgeCat-20-30,HoursCat-0-10,Private,HS-grad,Married-civ-spouse,Adm-clerical,Husband,White,Female,United-States
-random3016,AgeCat-30-40,HoursCat-40-50,Private,HS-grad,Never-married,Adm-clerical,Not-in-family,Other,Male,United-States
+random3016,AgeCat-30-40,HoursCat-40-50,Private,HS-grad,Never-married,Adm-clerical,Not-in-family,Other-race,Male,United-States
 random3017,AgeCat-60-70,HoursCat-30-40,Private,Grade-7th-8th,Married-civ-spouse,Craft-repair,Wife,White,Male,South
 random3018,AgeCat-40-50,HoursCat-30-40,Self-emp-inc,HS-grad,Married-civ-spouse,Adm-clerical,Other-relative,White,Female,United-States
 random3019,AgeCat-20-30,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Prof-specialty,Husband,White,Female,United-States
@@ -3103,7 +3103,7 @@ random3098,AgeCat-30-40,HoursCat-50-60,Private,Bachelors,Divorced,Farming-fishin
 random3099,AgeCat-20-30,HoursCat-10-20,Private,Grade-7th-8th,Never-married,Prof-specialty,Unmarried,White,Female,United-States
 random3100,AgeCat-20-30,HoursCat-10-20,Local-gov,Some-college,Never-married,Tech-support,Husband,White,Female,United-States
 random3101,AgeCat-40-50,HoursCat-30-40,Private,Grade-10th,Divorced,Craft-repair,Husband,White,Male,United-States
-random3102,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Exec-managerial,Unmarried,Other,Female,United-States
+random3102,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Exec-managerial,Unmarried,Other-race,Female,United-States
 random3103,AgeCat-80-90,HoursCat-50-60,Private,Bachelors,Never-married,Exec-managerial,Not-in-family,Amer-Indian-Eskimo,Female,United-States
 random3104,AgeCat-40-50,HoursCat-30-40,Private,Some-college,Divorced,Other-service,Not-in-family,White,Male,United-States
 random3105,AgeCat-30-40,HoursCat-40-50,Private,HS-grad,Married-civ-spouse,Prof-specialty,Not-in-family,White,Male,United-States
@@ -3232,7 +3232,7 @@ random3227,AgeCat-30-40,HoursCat-40-50,Private,HS-grad,Widowed,Sales,Unmarried,W
 random3228,AgeCat-40-50,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Prof-specialty,Own-child,White,Male,United-States
 random3229,AgeCat-20-30,HoursCat-30-40,Private,Some-college,Divorced,Tech-support,Husband,White,Male,United-States
 random3230,AgeCat-20-30,HoursCat-30-40,Private,Grade-10th,Never-married,Transport-moving,Not-in-family,White,Female,United-States
-random3231,AgeCat-30-40,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Prof-specialty,Husband,Other,Male,United-States
+random3231,AgeCat-30-40,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Prof-specialty,Husband,Other-race,Male,United-States
 random3232,AgeCat-40-50,HoursCat-10-20,Private,Some-college,Separated,Exec-managerial,Not-in-family,White,Female,United-States
 random3233,AgeCat-50-60,HoursCat-10-20,Private,HS-grad,Never-married,Tech-support,Not-in-family,White,Female,United-States
 random3234,AgeCat-10-20,HoursCat-30-40,Federal-gov,HS-grad,Never-married,Machine-op-inspct,Husband,White,Male,United-States
@@ -3245,7 +3245,7 @@ random3240,AgeCat-10-20,HoursCat-50-60,Private,Some-college,Never-married,Prof-s
 random3241,AgeCat-10-20,HoursCat-30-40,Federal-gov,HS-grad,Divorced,Transport-moving,Husband,White,Male,United-States
 random3242,AgeCat-60-70,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Priv-house-serv,Unmarried,White,Male,Haiti
 random3243,AgeCat-50-60,HoursCat-40-50,Private,Bachelors,Never-married,Prof-specialty,Husband,White,Male,United-States
-random3244,AgeCat-40-50,HoursCat-70-80,Self-emp-inc,Bachelors,Never-married,Exec-managerial,Husband,Other,Male,United-States
+random3244,AgeCat-40-50,HoursCat-70-80,Self-emp-inc,Bachelors,Never-married,Exec-managerial,Husband,Other-race,Male,United-States
 random3245,AgeCat-20-30,HoursCat-20-30,Private,Some-college,Divorced,Craft-repair,Husband,White,Male,United-States
 random3246,AgeCat-30-40,HoursCat-40-50,Private,HS-grad,Married-civ-spouse,Handlers-cleaners,Wife,White,Male,United-States
 random3247,AgeCat-50-60,HoursCat-10-20,Private,Some-college,Never-married,Sales,Wife,White,Female,United-States
@@ -3300,7 +3300,7 @@ random3295,AgeCat-30-40,HoursCat-10-20,Private,Grade-5th-6th,Married-civ-spouse,
 random3296,AgeCat-20-30,HoursCat-30-40,Private,Some-college,Divorced,Other-service,Husband,White,Male,United-States
 random3297,AgeCat-50-60,HoursCat-30-40,Self-emp-inc,HS-grad,Married-civ-spouse,Sales,Husband,White,Male,Guatemala
 random3298,AgeCat-30-40,HoursCat-40-50,Private,HS-grad,Married-civ-spouse,Craft-repair,Not-in-family,White,Male,United-States
-random3299,AgeCat-40-50,HoursCat-50-60,Private,Assoc-acdm,Married-civ-spouse,Handlers-cleaners,Husband,Other,Male,United-States
+random3299,AgeCat-40-50,HoursCat-50-60,Private,Assoc-acdm,Married-civ-spouse,Handlers-cleaners,Husband,Other-race,Male,United-States
 random3300,AgeCat-20-30,HoursCat-10-20,Local-gov,Grade-10th,Married-civ-spouse,Sales,Not-in-family,White,Male,Philippines
 random3301,AgeCat-20-30,HoursCat-40-50,Private,HS-grad,Married-civ-spouse,Machine-op-inspct,Own-child,White,Male,United-States
 random3302,AgeCat-30-40,HoursCat-30-40,State-gov,Some-college,Divorced,Machine-op-inspct,Husband,White,Male,United-States
@@ -3311,7 +3311,7 @@ random3306,AgeCat-40-50,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Craft-
 random3307,AgeCat-40-50,HoursCat-50-60,Private,HS-grad,Widowed,Machine-op-inspct,Wife,Asian-Pac-Islander,Male,United-States
 random3308,AgeCat-20-30,HoursCat-30-40,Self-emp-not-inc,HS-grad,Divorced,Handlers-cleaners,Not-in-family,White,Female,United-States
 random3309,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Divorced,Craft-repair,Not-in-family,White,Male,United-States
-random3310,AgeCat-40-50,HoursCat-30-40,Private,Some-college,Never-married,Sales,Husband,Other,Female,United-States
+random3310,AgeCat-40-50,HoursCat-30-40,Private,Some-college,Never-married,Sales,Husband,Other-race,Female,United-States
 random3311,AgeCat-20-30,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Exec-managerial,Husband,White,Female,United-States
 random3312,AgeCat-60-70,HoursCat-30-40,Private,Bachelors,Never-married,Farming-fishing,Not-in-family,White,Male,United-States
 random3313,AgeCat-30-40,HoursCat-50-60,Federal-gov,Some-college,Married-civ-spouse,Prof-specialty,Not-in-family,White,Female,United-States
@@ -3580,7 +3580,7 @@ random3575,AgeCat-50-60,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Machin
 random3576,AgeCat-40-50,HoursCat-30-40,State-gov,Bachelors,Never-married,Other-service,Husband,White,Male,United-States
 random3577,AgeCat-40-50,HoursCat-20-30,Self-emp-not-inc,Doctorate,Divorced,Machine-op-inspct,Not-in-family,White,Female,United-States
 random3578,AgeCat-20-30,HoursCat-10-20,Private,HS-grad,Never-married,Other-service,Own-child,White,Female,United-States
-random3579,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Divorced,Other-service,Husband,Other,Male,United-States
+random3579,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Divorced,Other-service,Husband,Other-race,Male,United-States
 random3580,AgeCat-50-60,HoursCat-40-50,Self-emp-not-inc,Assoc-voc,Married-civ-spouse,Craft-repair,Husband,White,Female,United-States
 random3581,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Widowed,Protective-serv,Own-child,White,Female,United-States
 random3582,AgeCat-10-20,HoursCat-20-30,Private,Masters,Widowed,Prof-specialty,Husband,White,Male,United-States
@@ -3644,7 +3644,7 @@ random3639,AgeCat-40-50,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Adm-cl
 random3640,AgeCat-30-40,HoursCat-30-40,Private,Some-college,Never-married,Sales,Own-child,White,Female,United-States
 random3641,AgeCat-20-30,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Prof-specialty,Husband,White,Male,United-States
 random3642,AgeCat-30-40,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Priv-house-serv,Husband,White,Female,United-States
-random3643,AgeCat-50-60,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Sales,Own-child,Other,Male,United-States
+random3643,AgeCat-50-60,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Sales,Own-child,Other-race,Male,United-States
 random3644,AgeCat-60-70,HoursCat-10-20,Private,Grade-11th,Married-civ-spouse,Other-service,Not-in-family,White,Male,United-States
 random3645,AgeCat-50-60,HoursCat-30-40,Private,Some-college,Never-married,Exec-managerial,Not-in-family,White,Male,United-States
 random3646,AgeCat-20-30,HoursCat-20-30,Private,Some-college,Married-civ-spouse,Sales,Husband,White,Male,United-States
@@ -3685,11 +3685,11 @@ random3680,AgeCat-10-20,HoursCat-30-40,Private,HS-grad,Never-married,Craft-repai
 random3681,AgeCat-20-30,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Prof-specialty,Husband,White,Female,United-States
 random3682,AgeCat-30-40,HoursCat-40-50,Private,Assoc-acdm,Never-married,Farming-fishing,Not-in-family,White,Male,United-States
 random3683,AgeCat-20-30,HoursCat-30-40,Private,Some-college,Never-married,Other-service,Husband,White,Male,United-States
-random3684,AgeCat-20-30,HoursCat-10-20,Private,HS-grad,Separated,Sales,Wife,Other,Male,United-States
+random3684,AgeCat-20-30,HoursCat-10-20,Private,HS-grad,Separated,Sales,Wife,Other-race,Male,United-States
 random3685,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Prof-specialty,Unmarried,White,Male,United-States
 random3686,AgeCat-20-30,HoursCat-50-60,Private,HS-grad,Divorced,Priv-house-serv,Husband,White,Male,United-States
 random3687,AgeCat-40-50,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Exec-managerial,Husband,White,Male,United-States
-random3688,AgeCat-50-60,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Sales,Husband,Other,Male,United-States
+random3688,AgeCat-50-60,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Sales,Husband,Other-race,Male,United-States
 random3689,AgeCat-50-60,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Adm-clerical,Husband,White,Male,United-States
 random3690,AgeCat-20-30,HoursCat-30-40,Private,Grade-12th,Never-married,Craft-repair,Husband,White,Male,United-States
 random3691,AgeCat-20-30,HoursCat-40-50,Private,Grade-10th,Married-civ-spouse,Craft-repair,Own-child,White,Female,United-States
@@ -4026,7 +4026,7 @@ random4021,AgeCat-50-60,HoursCat-40-50,Private,HS-grad,Divorced,Prof-specialty,W
 random4022,AgeCat-40-50,HoursCat-50-60,Private,Some-college,Married-civ-spouse,Adm-clerical,Own-child,White,Male,United-States
 random4023,AgeCat-40-50,HoursCat-30-40,State-gov,Some-college,Never-married,Prof-specialty,Not-in-family,Amer-Indian-Eskimo,Female,United-States
 random4024,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Never-married,Exec-managerial,Husband,Amer-Indian-Eskimo,Male,United-States
-random4025,AgeCat-20-30,HoursCat-20-30,Private,Grade-10th,Never-married,Machine-op-inspct,Own-child,Other,Female,United-States
+random4025,AgeCat-20-30,HoursCat-20-30,Private,Grade-10th,Never-married,Machine-op-inspct,Own-child,Other-race,Female,United-States
 random4026,AgeCat-60-70,HoursCat-30-40,Private,Assoc-acdm,Married-civ-spouse,Handlers-cleaners,Husband,White,Male,United-States
 random4027,AgeCat-30-40,HoursCat-60-70,Private,Some-college,Never-married,Protective-serv,Not-in-family,Black,Male,United-States
 random4028,AgeCat-20-30,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Craft-repair,Husband,White,Female,South
@@ -4048,7 +4048,7 @@ random4043,AgeCat-10-20,HoursCat-40-50,Private,Bachelors,Married-civ-spouse,Mach
 random4044,AgeCat-20-30,HoursCat-40-50,Private,HS-grad,Married-civ-spouse,Handlers-cleaners,Unmarried,Black,Male,United-States
 random4045,AgeCat-50-60,HoursCat-10-20,Private,Assoc-acdm,Married-civ-spouse,Transport-moving,Not-in-family,White,Male,United-States
 random4046,AgeCat-20-30,HoursCat-20-30,Self-emp-not-inc,Some-college,Married-civ-spouse,Adm-clerical,Husband,White,Male,United-States
-random4047,AgeCat-60-70,HoursCat-30-40,State-gov,Bachelors,Divorced,Machine-op-inspct,Husband,Other,Female,United-States
+random4047,AgeCat-60-70,HoursCat-30-40,State-gov,Bachelors,Divorced,Machine-op-inspct,Husband,Other-race,Female,United-States
 random4048,AgeCat-20-30,HoursCat-30-40,Local-gov,Assoc-acdm,Never-married,Transport-moving,Husband,White,Male,United-States
 random4049,AgeCat-20-30,HoursCat-40-50,Federal-gov,Prof-school,Married-civ-spouse,Prof-specialty,Husband,Asian-Pac-Islander,Male,United-States
 random4050,AgeCat-50-60,HoursCat-30-40,Private,Grade-10th,Never-married,Exec-managerial,Not-in-family,White,Male,United-States
@@ -4358,7 +4358,7 @@ random4353,AgeCat-50-60,HoursCat-10-20,Local-gov,Masters,Divorced,Adm-clerical,W
 random4354,AgeCat-20-30,HoursCat-30-40,Private,Prof-school,Married-civ-spouse,Adm-clerical,Not-in-family,White,Male,United-States
 random4355,AgeCat-40-50,HoursCat-30-40,Self-emp-inc,Some-college,Married-civ-spouse,Craft-repair,Husband,White,Male,United-States
 random4356,AgeCat-10-20,HoursCat-30-40,Self-emp-not-inc,Some-college,Never-married,Adm-clerical,Not-in-family,White,Male,United-States
-random4357,AgeCat-50-60,HoursCat-30-40,Private,Some-college,Never-married,Other-service,Own-child,Other,Male,United-States
+random4357,AgeCat-50-60,HoursCat-30-40,Private,Some-college,Never-married,Other-service,Own-child,Other-race,Male,United-States
 random4358,AgeCat-40-50,HoursCat-30-40,Private,Some-college,Never-married,Craft-repair,Own-child,White,Male,United-States
 random4359,AgeCat-30-40,HoursCat-10-20,Private,Some-college,Separated,Prof-specialty,Husband,White,Male,England
 random4360,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Craft-repair,Husband,White,Male,Puerto-Rico
@@ -4413,7 +4413,7 @@ random4408,AgeCat-10-20,HoursCat-40-50,Local-gov,Assoc-voc,Married-civ-spouse,Cr
 random4409,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Sales,Not-in-family,White,Male,Canada
 random4410,AgeCat-50-60,HoursCat-40-50,Private,Some-college,Never-married,Tech-support,Husband,White,Male,United-States
 random4411,AgeCat-30-40,HoursCat-30-40,Self-emp-not-inc,HS-grad,Divorced,Sales,Own-child,White,Male,United-States
-random4412,AgeCat-20-30,HoursCat-30-40,Private,Assoc-voc,Married-civ-spouse,Other-service,Own-child,Other,Male,United-States
+random4412,AgeCat-20-30,HoursCat-30-40,Private,Assoc-voc,Married-civ-spouse,Other-service,Own-child,Other-race,Male,United-States
 random4413,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Never-married,Prof-specialty,Own-child,White,Male,United-States
 random4414,AgeCat-40-50,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Other-service,Unmarried,White,Female,United-States
 random4415,AgeCat-30-40,HoursCat-30-40,Private,Some-college,Never-married,Protective-serv,Husband,White,Male,United-States
@@ -4642,7 +4642,7 @@ random4637,AgeCat-50-60,HoursCat-40-50,Self-emp-inc,Some-college,Never-married,M
 random4638,AgeCat-30-40,HoursCat-20-30,Private,Grade-10th,Married-civ-spouse,Prof-specialty,Not-in-family,White,Male,United-States
 random4639,AgeCat-40-50,HoursCat-20-30,State-gov,Bachelors,Separated,Exec-managerial,Not-in-family,White,Female,United-States
 random4640,AgeCat-10-20,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Prof-specialty,Not-in-family,White,Male,United-States
-random4641,AgeCat-60-70,HoursCat-30-40,Private,Bachelors,Never-married,Prof-specialty,Own-child,Other,Female,United-States
+random4641,AgeCat-60-70,HoursCat-30-40,Private,Bachelors,Never-married,Prof-specialty,Own-child,Other-race,Female,United-States
 random4642,AgeCat-30-40,HoursCat-30-40,Self-emp-inc,Bachelors,Married-civ-spouse,Adm-clerical,Unmarried,White,Male,Outlying-US-Guam-USVI-etc
 random4643,AgeCat-20-30,HoursCat-0-10,Private,HS-grad,Never-married,Adm-clerical,Own-child,White,Male,United-States
 random4644,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Other-service,Unmarried,White,Male,United-States
@@ -4793,7 +4793,7 @@ random4788,AgeCat-40-50,HoursCat-40-50,Self-emp-inc,HS-grad,Married-civ-spouse,A
 random4789,AgeCat-50-60,HoursCat-10-20,Private,Bachelors,Never-married,Transport-moving,Unmarried,White,Male,United-States
 random4790,AgeCat-40-50,HoursCat-40-50,Self-emp-not-inc,Some-college,Married-civ-spouse,Prof-specialty,Own-child,White,Male,United-States
 random4791,AgeCat-40-50,HoursCat-10-20,Federal-gov,Grade-7th-8th,Married-civ-spouse,Sales,Husband,White,Male,United-States
-random4792,AgeCat-20-30,HoursCat-40-50,Private,HS-grad,Never-married,Craft-repair,Not-in-family,Other,Male,United-States
+random4792,AgeCat-20-30,HoursCat-40-50,Private,HS-grad,Never-married,Craft-repair,Not-in-family,Other-race,Male,United-States
 random4793,AgeCat-20-30,HoursCat-30-40,State-gov,HS-grad,Married-civ-spouse,Prof-specialty,Husband,White,Male,United-States
 random4794,AgeCat-40-50,HoursCat-50-60,Private,Assoc-voc,Married-civ-spouse,Prof-specialty,Not-in-family,Asian-Pac-Islander,Male,United-States
 random4795,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Exec-managerial,Husband,White,Male,United-States
@@ -5039,7 +5039,7 @@ random5034,AgeCat-30-40,HoursCat-50-60,Private,HS-grad,Married-civ-spouse,Sales,
 random5035,AgeCat-20-30,HoursCat-30-40,Self-emp-inc,Some-college,Married-civ-spouse,Craft-repair,Husband,White,Male,United-States
 random5036,AgeCat-30-40,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Craft-repair,Husband,White,Female,United-States
 random5037,AgeCat-40-50,HoursCat-30-40,Private,Bachelors,Divorced,Adm-clerical,Not-in-family,Asian-Pac-Islander,Male,United-States
-random5038,AgeCat-20-30,HoursCat-30-40,Private,Grade-11th,Never-married,Exec-managerial,Husband,Other,Male,United-States
+random5038,AgeCat-20-30,HoursCat-30-40,Private,Grade-11th,Never-married,Exec-managerial,Husband,Other-race,Male,United-States
 random5039,AgeCat-30-40,HoursCat-30-40,Private,Some-college,Never-married,Adm-clerical,Not-in-family,White,Male,United-States
 random5040,AgeCat-20-30,HoursCat-30-40,Private,Bachelors,Never-married,Transport-moving,Husband,White,Male,United-States
 random5041,AgeCat-30-40,HoursCat-20-30,Private,Grade-5th-6th,Married-civ-spouse,Machine-op-inspct,Unmarried,White,Female,United-States
@@ -5195,7 +5195,7 @@ random5190,AgeCat-30-40,HoursCat-40-50,Self-emp-not-inc,HS-grad,Never-married,Pr
 random5191,AgeCat-40-50,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Sales,Husband,White,Male,United-States
 random5192,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Never-married,Farming-fishing,Husband,White,Female,United-States
 random5193,AgeCat-30-40,HoursCat-40-50,Private,Some-college,Married-civ-spouse,Machine-op-inspct,Own-child,White,Male,United-States
-random5194,AgeCat-30-40,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Machine-op-inspct,Unmarried,Other,Male,United-States
+random5194,AgeCat-30-40,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Machine-op-inspct,Unmarried,Other-race,Male,United-States
 random5195,AgeCat-20-30,HoursCat-50-60,Local-gov,Grade-7th-8th,Divorced,Exec-managerial,Husband,White,Female,United-States
 random5196,AgeCat-50-60,HoursCat-50-60,Self-emp-not-inc,HS-grad,Married-civ-spouse,Other-service,Wife,White,Male,United-States
 random5197,AgeCat-50-60,HoursCat-20-30,Self-emp-inc,HS-grad,Never-married,Other-service,Unmarried,White,Male,Greece
@@ -5251,7 +5251,7 @@ random5246,AgeCat-30-40,HoursCat-30-40,Private,Assoc-acdm,Married-civ-spouse,Pro
 random5247,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Adm-clerical,Husband,White,Male,Canada
 random5248,AgeCat-40-50,HoursCat-30-40,Private,Assoc-voc,Never-married,Other-service,Own-child,White,Male,United-States
 random5249,AgeCat-50-60,HoursCat-30-40,Private,Some-college,Never-married,Farming-fishing,Own-child,White,Male,United-States
-random5250,AgeCat-10-20,HoursCat-40-50,Private,Grade-7th-8th,Married-civ-spouse,Tech-support,Not-in-family,Other,Female,United-States
+random5250,AgeCat-10-20,HoursCat-40-50,Private,Grade-7th-8th,Married-civ-spouse,Tech-support,Not-in-family,Other-race,Female,United-States
 random5251,AgeCat-30-40,HoursCat-30-40,Private,Bachelors,Never-married,Handlers-cleaners,Husband,White,Male,United-States
 random5252,AgeCat-20-30,HoursCat-30-40,Self-emp-not-inc,Bachelors,Never-married,Craft-repair,Own-child,White,Male,United-States
 random5253,AgeCat-20-30,HoursCat-30-40,Private,Some-college,Never-married,Exec-managerial,Not-in-family,White,Male,United-States
@@ -5516,7 +5516,7 @@ random5511,AgeCat-30-40,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Farm
 random5512,AgeCat-20-30,HoursCat-40-50,Self-emp-inc,Masters,Married-civ-spouse,Craft-repair,Not-in-family,White,Female,United-States
 random5513,AgeCat-20-30,HoursCat-40-50,Private,Grade-10th,Never-married,Adm-clerical,Husband,White,Male,United-States
 random5514,AgeCat-50-60,HoursCat-40-50,Self-emp-not-inc,Doctorate,Married-civ-spouse,Craft-repair,Not-in-family,White,Female,United-States
-random5515,AgeCat-20-30,HoursCat-30-40,Private,Bachelors,Never-married,Farming-fishing,Not-in-family,Other,Female,Cuba
+random5515,AgeCat-20-30,HoursCat-30-40,Private,Bachelors,Never-married,Farming-fishing,Not-in-family,Other-race,Female,Cuba
 random5516,AgeCat-30-40,HoursCat-40-50,Private,HS-grad,Divorced,Other-service,Not-in-family,Asian-Pac-Islander,Male,United-States
 random5517,AgeCat-20-30,HoursCat-40-50,Private,Grade-12th,Never-married,Sales,Own-child,White,Male,United-States
 random5518,AgeCat-40-50,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Handlers-cleaners,Unmarried,White,Male,United-States
@@ -5571,7 +5571,7 @@ random5566,AgeCat-20-30,HoursCat-30-40,Private,Bachelors,Never-married,Other-ser
 random5567,AgeCat-60-70,HoursCat-30-40,Private,Some-college,Never-married,Prof-specialty,Husband,White,Male,United-States
 random5568,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Craft-repair,Not-in-family,White,Female,United-States
 random5569,AgeCat-40-50,HoursCat-30-40,Private,Assoc-voc,Widowed,Machine-op-inspct,Not-in-family,White,Female,United-States
-random5570,AgeCat-30-40,HoursCat-40-50,Self-emp-not-inc,Grade-11th,Divorced,Craft-repair,Not-in-family,Other,Female,United-States
+random5570,AgeCat-30-40,HoursCat-40-50,Self-emp-not-inc,Grade-11th,Divorced,Craft-repair,Not-in-family,Other-race,Female,United-States
 random5571,AgeCat-30-40,HoursCat-40-50,Private,HS-grad,Married-civ-spouse,Exec-managerial,Husband,White,Male,United-States
 random5572,AgeCat-60-70,HoursCat-30-40,Private,Grade-7th-8th,Married-civ-spouse,Handlers-cleaners,Husband,White,Male,United-States
 random5573,AgeCat-40-50,HoursCat-50-60,Private,Grade-10th,Married-civ-spouse,Sales,Not-in-family,White,Male,United-States
@@ -5697,7 +5697,7 @@ random5692,AgeCat-40-50,HoursCat-30-40,Local-gov,Bachelors,Never-married,Transpo
 random5693,AgeCat-10-20,HoursCat-40-50,Self-emp-not-inc,Grade-11th,Married-civ-spouse,Craft-repair,Own-child,White,Female,United-States
 random5694,AgeCat-20-30,HoursCat-30-40,Self-emp-not-inc,Masters,Married-civ-spouse,Sales,Husband,Black,Male,United-States
 random5695,AgeCat-50-60,HoursCat-30-40,State-gov,Bachelors,Married-civ-spouse,Adm-clerical,Not-in-family,Black,Male,United-States
-random5696,AgeCat-40-50,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Machine-op-inspct,Other-relative,Other,Male,United-States
+random5696,AgeCat-40-50,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Machine-op-inspct,Other-relative,Other-race,Male,United-States
 random5697,AgeCat-40-50,HoursCat-20-30,Private,Prof-school,Never-married,Craft-repair,Other-relative,White,Male,United-States
 random5698,AgeCat-30-40,HoursCat-50-60,Local-gov,Bachelors,Divorced,Prof-specialty,Not-in-family,White,Male,United-States
 random5699,AgeCat-10-20,HoursCat-30-40,Private,Some-college,Never-married,Other-service,Husband,White,Male,United-States
@@ -5730,7 +5730,7 @@ random5725,AgeCat-10-20,HoursCat-50-60,Private,Bachelors,Never-married,Craft-rep
 random5726,AgeCat-20-30,HoursCat-30-40,Federal-gov,Bachelors,Married-civ-spouse,Prof-specialty,Husband,White,Male,United-States
 random5727,AgeCat-10-20,HoursCat-40-50,Private,Some-college,Divorced,Exec-managerial,Not-in-family,White,Male,Trinadad&Tobago
 random5728,AgeCat-20-30,HoursCat-40-50,Private,HS-grad,Divorced,Machine-op-inspct,Husband,White,Male,United-States
-random5729,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Machine-op-inspct,Husband,Other,Male,United-States
+random5729,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Machine-op-inspct,Husband,Other-race,Male,United-States
 random5730,AgeCat-40-50,HoursCat-40-50,Private,HS-grad,Divorced,Protective-serv,Unmarried,White,Male,United-States
 random5731,AgeCat-40-50,HoursCat-0-10,Private,HS-grad,Never-married,Adm-clerical,Not-in-family,White,Male,United-States
 random5732,AgeCat-20-30,HoursCat-30-40,Local-gov,Bachelors,Married-civ-spouse,Other-service,Unmarried,White,Male,United-States
@@ -5864,7 +5864,7 @@ random5859,AgeCat-20-30,HoursCat-40-50,Private,HS-grad,Married-civ-spouse,Prof-s
 random5860,AgeCat-20-30,HoursCat-40-50,Private,Some-college,Married-civ-spouse,Prof-specialty,Husband,White,Male,United-States
 random5861,AgeCat-30-40,HoursCat-30-40,Private,Grade-5th-6th,Married-spouse-absent,Other-service,Husband,White,Male,United-States
 random5862,AgeCat-20-30,HoursCat-30-40,Private,Bachelors,Never-married,Machine-op-inspct,Not-in-family,White,Female,United-States
-random5863,AgeCat-60-70,HoursCat-40-50,Private,Assoc-voc,Never-married,Craft-repair,Husband,Other,Male,United-States
+random5863,AgeCat-60-70,HoursCat-40-50,Private,Assoc-voc,Never-married,Craft-repair,Husband,Other-race,Male,United-States
 random5864,AgeCat-10-20,HoursCat-30-40,Private,Bachelors,Never-married,Farming-fishing,Other-relative,White,Male,United-States
 random5865,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Never-married,Sales,Husband,White,Male,Greece
 random5866,AgeCat-40-50,HoursCat-20-30,Self-emp-inc,Some-college,Never-married,Sales,Not-in-family,White,Male,United-States
@@ -6109,7 +6109,7 @@ random6104,AgeCat-40-50,HoursCat-30-40,Federal-gov,Some-college,Separated,Other-
 random6105,AgeCat-20-30,HoursCat-10-20,Private,HS-grad,Never-married,Farming-fishing,Not-in-family,White,Male,United-States
 random6106,AgeCat-60-70,HoursCat-30-40,Private,Some-college,Never-married,Other-service,Not-in-family,White,Female,United-States
 random6107,AgeCat-20-30,HoursCat-20-30,State-gov,Masters,Divorced,Exec-managerial,Husband,White,Female,United-States
-random6108,AgeCat-20-30,HoursCat-60-70,Private,HS-grad,Never-married,Other-service,Husband,Other,Male,United-States
+random6108,AgeCat-20-30,HoursCat-60-70,Private,HS-grad,Never-married,Other-service,Husband,Other-race,Male,United-States
 random6109,AgeCat-30-40,HoursCat-40-50,Private,HS-grad,Married-civ-spouse,Handlers-cleaners,Not-in-family,Black,Male,Dominican-Republic
 random6110,AgeCat-30-40,HoursCat-50-60,Private,Bachelors,Never-married,Sales,Unmarried,White,Male,United-States
 random6111,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Never-married,Craft-repair,Wife,White,Male,United-States
@@ -6345,7 +6345,7 @@ random6340,AgeCat-20-30,HoursCat-30-40,Private,Bachelors,Widowed,Exec-managerial
 random6341,AgeCat-20-30,HoursCat-50-60,Private,Prof-school,Never-married,Exec-managerial,Not-in-family,Amer-Indian-Eskimo,Female,United-States
 random6342,AgeCat-30-40,HoursCat-60-70,Private,Grade-11th,Married-civ-spouse,Craft-repair,Husband,White,Male,United-States
 random6343,AgeCat-20-30,HoursCat-30-40,Private,Masters,Married-civ-spouse,Sales,Not-in-family,White,Male,United-States
-random6344,AgeCat-20-30,HoursCat-40-50,Private,Some-college,Never-married,Machine-op-inspct,Husband,Other,Female,United-States
+random6344,AgeCat-20-30,HoursCat-40-50,Private,Some-college,Never-married,Machine-op-inspct,Husband,Other-race,Female,United-States
 random6345,AgeCat-60-70,HoursCat-70-80,Private,HS-grad,Married-civ-spouse,Other-service,Unmarried,White,Female,United-States
 random6346,AgeCat-30-40,HoursCat-10-20,Private,Some-college,Never-married,Exec-managerial,Not-in-family,White,Male,Puerto-Rico
 random6347,AgeCat-40-50,HoursCat-40-50,Private,Some-college,Married-civ-spouse,Exec-managerial,Not-in-family,White,Male,Mexico
@@ -6355,7 +6355,7 @@ random6350,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Divorced,Farming-fishing,
 random6351,AgeCat-40-50,HoursCat-30-40,Private,Bachelors,Divorced,Adm-clerical,Not-in-family,White,Female,United-States
 random6352,AgeCat-40-50,HoursCat-30-40,Self-emp-not-inc,Bachelors,Married-civ-spouse,Exec-managerial,Not-in-family,White,Male,Portugal
 random6353,AgeCat-40-50,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Machine-op-inspct,Husband,White,Male,United-States
-random6354,AgeCat-40-50,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Other-service,Not-in-family,Other,Male,Mexico
+random6354,AgeCat-40-50,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Other-service,Not-in-family,Other-race,Male,Mexico
 random6355,AgeCat-20-30,HoursCat-10-20,Private,Grade-10th,Divorced,Adm-clerical,Not-in-family,White,Female,United-States
 random6356,AgeCat-20-30,HoursCat-30-40,Private,Some-college,Never-married,Transport-moving,Not-in-family,White,Male,United-States
 random6357,AgeCat-30-40,HoursCat-30-40,State-gov,Grade-9th,Never-married,Craft-repair,Husband,White,Male,United-States
@@ -6414,7 +6414,7 @@ random6409,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Never-married,Machine-op-
 random6410,AgeCat-20-30,HoursCat-40-50,Private,HS-grad,Never-married,Other-service,Not-in-family,White,Male,United-States
 random6411,AgeCat-40-50,HoursCat-30-40,Private,Masters,Never-married,Machine-op-inspct,Unmarried,Black,Female,Philippines
 random6412,AgeCat-40-50,HoursCat-30-40,Self-emp-not-inc,HS-grad,Never-married,Craft-repair,Husband,White,Male,United-States
-random6413,AgeCat-30-40,HoursCat-30-40,Private,Some-college,Divorced,Other-service,Not-in-family,Other,Male,Philippines
+random6413,AgeCat-30-40,HoursCat-30-40,Private,Some-college,Divorced,Other-service,Not-in-family,Other-race,Male,Philippines
 random6414,AgeCat-20-30,HoursCat-0-10,Private,Grade-7th-8th,Divorced,Priv-house-serv,Wife,White,Male,United-States
 random6415,AgeCat-20-30,HoursCat-30-40,Self-emp-not-inc,Bachelors,Married-civ-spouse,Handlers-cleaners,Not-in-family,White,Male,United-States
 random6416,AgeCat-10-20,HoursCat-40-50,Private,Some-college,Widowed,Prof-specialty,Own-child,Black,Male,United-States
@@ -6431,7 +6431,7 @@ random6426,AgeCat-20-30,HoursCat-70-80,Private,Some-college,Divorced,Adm-clerica
 random6427,AgeCat-40-50,HoursCat-50-60,Private,Prof-school,Never-married,Craft-repair,Husband,White,Female,United-States
 random6428,AgeCat-40-50,HoursCat-30-40,Self-emp-not-inc,Prof-school,Never-married,Farming-fishing,Husband,White,Female,United-States
 random6429,AgeCat-40-50,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Craft-repair,Wife,White,Male,United-States
-random6430,AgeCat-30-40,HoursCat-10-20,Private,Some-college,Married-civ-spouse,Handlers-cleaners,Not-in-family,Other,Male,United-States
+random6430,AgeCat-30-40,HoursCat-10-20,Private,Some-college,Married-civ-spouse,Handlers-cleaners,Not-in-family,Other-race,Male,United-States
 random6431,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Adm-clerical,Husband,White,Male,Taiwan
 random6432,AgeCat-20-30,HoursCat-30-40,Federal-gov,Assoc-acdm,Married-civ-spouse,Machine-op-inspct,Not-in-family,Black,Male,United-States
 random6433,AgeCat-40-50,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Handlers-cleaners,Husband,White,Male,United-States
@@ -6568,7 +6568,7 @@ random6563,AgeCat-40-50,HoursCat-50-60,Private,Bachelors,Married-civ-spouse,Exec
 random6564,AgeCat-20-30,HoursCat-40-50,Private,Grade-10th,Never-married,Exec-managerial,Husband,White,Male,United-States
 random6565,AgeCat-50-60,HoursCat-0-10,Private,Bachelors,Married-civ-spouse,Tech-support,Husband,White,Male,United-States
 random6566,AgeCat-30-40,HoursCat-30-40,State-gov,Some-college,Never-married,Prof-specialty,Own-child,White,Male,China
-random6567,AgeCat-30-40,HoursCat-40-50,Private,Bachelors,Never-married,Prof-specialty,Husband,Other,Male,United-States
+random6567,AgeCat-30-40,HoursCat-40-50,Private,Bachelors,Never-married,Prof-specialty,Husband,Other-race,Male,United-States
 random6568,AgeCat-20-30,HoursCat-70-80,Private,Grade-9th,Married-civ-spouse,Other-service,Not-in-family,White,Male,United-States
 random6569,AgeCat-40-50,HoursCat-40-50,Private,Doctorate,Divorced,Sales,Not-in-family,White,Male,United-States
 random6570,AgeCat-60-70,HoursCat-40-50,Private,Bachelors,Never-married,Craft-repair,Husband,White,Male,United-States
@@ -6615,8 +6615,8 @@ random6610,AgeCat-40-50,HoursCat-40-50,Local-gov,HS-grad,Divorced,Prof-specialty
 random6611,AgeCat-30-40,HoursCat-20-30,Private,HS-grad,Never-married,Craft-repair,Husband,White,Male,United-States
 random6612,AgeCat-20-30,HoursCat-30-40,Private,Grade-7th-8th,Never-married,Adm-clerical,Husband,White,Female,United-States
 random6613,AgeCat-10-20,HoursCat-50-60,Private,Some-college,Married-civ-spouse,Prof-specialty,Husband,White,Male,United-States
-random6614,AgeCat-20-30,HoursCat-30-40,Private,Bachelors,Never-married,Craft-repair,Husband,Other,Male,United-States
-random6615,AgeCat-20-30,HoursCat-30-40,State-gov,Bachelors,Never-married,Other-service,Not-in-family,Other,Female,United-States
+random6614,AgeCat-20-30,HoursCat-30-40,Private,Bachelors,Never-married,Craft-repair,Husband,Other-race,Male,United-States
+random6615,AgeCat-20-30,HoursCat-30-40,State-gov,Bachelors,Never-married,Other-service,Not-in-family,Other-race,Female,United-States
 random6616,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Divorced,Sales,Wife,White,Female,United-States
 random6617,AgeCat-30-40,HoursCat-20-30,Private,Assoc-voc,Never-married,Tech-support,Husband,White,Male,United-States
 random6618,AgeCat-20-30,HoursCat-50-60,Local-gov,Some-college,Never-married,Transport-moving,Husband,White,Male,United-States
@@ -6823,7 +6823,7 @@ random6818,AgeCat-50-60,HoursCat-20-30,Private,HS-grad,Divorced,Craft-repair,Hus
 random6819,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Craft-repair,Husband,White,Male,United-States
 random6820,AgeCat-40-50,HoursCat-30-40,Private,Preschool,Never-married,Sales,Husband,White,Male,United-States
 random6821,AgeCat-20-30,HoursCat-30-40,State-gov,Some-college,Married-civ-spouse,Transport-moving,Not-in-family,White,Male,United-States
-random6822,AgeCat-20-30,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Craft-repair,Husband,Other,Female,United-States
+random6822,AgeCat-20-30,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Craft-repair,Husband,Other-race,Female,United-States
 random6823,AgeCat-40-50,HoursCat-30-40,Private,Masters,Widowed,Other-service,Husband,White,Male,United-States
 random6824,AgeCat-50-60,HoursCat-30-40,Private,HS-grad,Divorced,Craft-repair,Husband,Black,Male,United-States
 random6825,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Sales,Not-in-family,White,Male,Trinadad&Tobago
@@ -7008,7 +7008,7 @@ random7003,AgeCat-50-60,HoursCat-20-30,Private,HS-grad,Married-civ-spouse,Exec-m
 random7004,AgeCat-10-20,HoursCat-30-40,Self-emp-inc,Grade-11th,Separated,Sales,Husband,White,Male,United-States
 random7005,AgeCat-60-70,HoursCat-30-40,Private,Doctorate,Divorced,Sales,Not-in-family,White,Male,United-States
 random7006,AgeCat-30-40,HoursCat-50-60,Private,Some-college,Never-married,Craft-repair,Not-in-family,White,Female,China
-random7007,AgeCat-30-40,HoursCat-30-40,Private,Some-college,Never-married,Sales,Own-child,Other,Male,United-States
+random7007,AgeCat-30-40,HoursCat-30-40,Private,Some-college,Never-married,Sales,Own-child,Other-race,Male,United-States
 random7008,AgeCat-30-40,HoursCat-30-40,Private,Grade-7th-8th,Married-civ-spouse,Priv-house-serv,Not-in-family,White,Male,United-States
 random7009,AgeCat-50-60,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Sales,Husband,White,Female,United-States
 random7010,AgeCat-40-50,HoursCat-30-40,Local-gov,Bachelors,Married-civ-spouse,Adm-clerical,Husband,Asian-Pac-Islander,Male,United-States
@@ -7028,7 +7028,7 @@ random7023,AgeCat-20-30,HoursCat-40-50,Self-emp-not-inc,Grade-5th-6th,Never-marr
 random7024,AgeCat-50-60,HoursCat-30-40,Private,Assoc-voc,Widowed,Sales,Not-in-family,White,Male,United-States
 random7025,AgeCat-30-40,HoursCat-10-20,Self-emp-inc,HS-grad,Never-married,Sales,Not-in-family,White,Male,United-States
 random7026,AgeCat-10-20,HoursCat-50-60,Local-gov,Bachelors,Never-married,Handlers-cleaners,Wife,White,Male,United-States
-random7027,AgeCat-30-40,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Other-service,Not-in-family,Other,Female,United-States
+random7027,AgeCat-30-40,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Other-service,Not-in-family,Other-race,Female,United-States
 random7028,AgeCat-30-40,HoursCat-40-50,Private,Grade-11th,Divorced,Transport-moving,Wife,White,Male,United-States
 random7029,AgeCat-50-60,HoursCat-80-90,Private,Some-college,Married-civ-spouse,Prof-specialty,Husband,White,Female,United-States
 random7030,AgeCat-30-40,HoursCat-20-30,Private,HS-grad,Never-married,Exec-managerial,Own-child,White,Male,United-States
@@ -7099,7 +7099,7 @@ random7094,AgeCat-40-50,HoursCat-30-40,Private,Grade-11th,Married-civ-spouse,Adm
 random7095,AgeCat-30-40,HoursCat-30-40,Private,Assoc-acdm,Married-civ-spouse,Adm-clerical,Husband,White,Male,United-States
 random7096,AgeCat-30-40,HoursCat-40-50,Private,HS-grad,Never-married,Sales,Husband,White,Male,United-States
 random7097,AgeCat-20-30,HoursCat-60-70,Private,HS-grad,Married-civ-spouse,Handlers-cleaners,Unmarried,White,Female,United-States
-random7098,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Sales,Husband,Other,Female,United-States
+random7098,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Sales,Husband,Other-race,Female,United-States
 random7099,AgeCat-30-40,HoursCat-30-40,Private,Some-college,Divorced,Protective-serv,Husband,Black,Male,United-States
 random7100,AgeCat-40-50,HoursCat-40-50,Private,HS-grad,Never-married,Craft-repair,Husband,White,Male,United-States
 random7101,AgeCat-20-30,HoursCat-40-50,Private,Some-college,Married-civ-spouse,Prof-specialty,Husband,White,Male,United-States
@@ -7238,7 +7238,7 @@ random7233,AgeCat-50-60,HoursCat-20-30,Private,Assoc-voc,Never-married,Handlers-
 random7234,AgeCat-40-50,HoursCat-50-60,Local-gov,HS-grad,Married-civ-spouse,Handlers-cleaners,Not-in-family,White,Male,United-States
 random7235,AgeCat-30-40,HoursCat-20-30,Private,HS-grad,Divorced,Other-service,Unmarried,Asian-Pac-Islander,Male,United-States
 random7236,AgeCat-50-60,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Transport-moving,Husband,White,Male,United-States
-random7237,AgeCat-40-50,HoursCat-30-40,Private,HS-grad,Widowed,Farming-fishing,Own-child,Other,Male,United-States
+random7237,AgeCat-40-50,HoursCat-30-40,Private,HS-grad,Widowed,Farming-fishing,Own-child,Other-race,Male,United-States
 random7238,AgeCat-40-50,HoursCat-0-10,Private,Assoc-acdm,Never-married,Sales,Husband,White,Male,United-States
 random7239,AgeCat-30-40,HoursCat-30-40,Private,Doctorate,Divorced,Other-service,Not-in-family,White,Male,United-States
 random7240,AgeCat-20-30,HoursCat-30-40,Private,Masters,Married-civ-spouse,Other-service,Husband,White,Female,England
@@ -7333,7 +7333,7 @@ random7328,AgeCat-40-50,HoursCat-30-40,State-gov,Some-college,Married-civ-spouse
 random7329,AgeCat-30-40,HoursCat-50-60,Local-gov,Some-college,Widowed,Exec-managerial,Own-child,White,Male,United-States
 random7330,AgeCat-20-30,HoursCat-50-60,Private,Prof-school,Married-civ-spouse,Other-service,Husband,White,Male,United-States
 random7331,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Divorced,Protective-serv,Not-in-family,White,Male,United-States
-random7332,AgeCat-30-40,HoursCat-50-60,Private,HS-grad,Never-married,Prof-specialty,Husband,Other,Female,United-States
+random7332,AgeCat-30-40,HoursCat-50-60,Private,HS-grad,Never-married,Prof-specialty,Husband,Other-race,Female,United-States
 random7333,AgeCat-50-60,HoursCat-30-40,Self-emp-not-inc,Assoc-voc,Never-married,Craft-repair,Unmarried,White,Male,United-States
 random7334,AgeCat-40-50,HoursCat-50-60,State-gov,HS-grad,Married-civ-spouse,Sales,Own-child,White,Female,United-States
 random7335,AgeCat-50-60,HoursCat-50-60,Private,Some-college,Married-civ-spouse,Craft-repair,Own-child,White,Female,United-States
@@ -7579,7 +7579,7 @@ random7574,AgeCat-30-40,HoursCat-10-20,Private,Grade-9th,Married-civ-spouse,Craf
 random7575,AgeCat-50-60,HoursCat-30-40,Local-gov,Bachelors,Widowed,Craft-repair,Not-in-family,White,Male,United-States
 random7576,AgeCat-30-40,HoursCat-30-40,Local-gov,HS-grad,Married-civ-spouse,Craft-repair,Wife,White,Male,United-States
 random7577,AgeCat-20-30,HoursCat-0-10,Private,Masters,Divorced,Farming-fishing,Own-child,White,Female,United-States
-random7578,AgeCat-20-30,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Sales,Wife,Other,Male,United-States
+random7578,AgeCat-20-30,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Sales,Wife,Other-race,Male,United-States
 random7579,AgeCat-50-60,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Exec-managerial,Husband,White,Male,United-States
 random7580,AgeCat-20-30,HoursCat-40-50,Private,Bachelors,Married-civ-spouse,Exec-managerial,Own-child,White,Male,United-States
 random7581,AgeCat-20-30,HoursCat-40-50,Local-gov,HS-grad,Never-married,Exec-managerial,Not-in-family,White,Male,United-States
@@ -7690,7 +7690,7 @@ random7685,AgeCat-50-60,HoursCat-30-40,Private,Bachelors,Separated,Sales,Husband
 random7686,AgeCat-20-30,HoursCat-30-40,Local-gov,Assoc-acdm,Married-civ-spouse,Machine-op-inspct,Other-relative,Black,Male,United-States
 random7687,AgeCat-30-40,HoursCat-30-40,Private,Masters,Never-married,Farming-fishing,Husband,White,Male,United-States
 random7688,AgeCat-30-40,HoursCat-30-40,Private,Doctorate,Married-civ-spouse,Craft-repair,Husband,White,Male,Scotland
-random7689,AgeCat-40-50,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Farming-fishing,Husband,Other,Female,United-States
+random7689,AgeCat-40-50,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Farming-fishing,Husband,Other-race,Female,United-States
 random7690,AgeCat-20-30,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Craft-repair,Husband,White,Female,United-States
 random7691,AgeCat-20-30,HoursCat-40-50,Private,Grade-7th-8th,Never-married,Protective-serv,Husband,White,Male,United-States
 random7692,AgeCat-40-50,HoursCat-60-70,Self-emp-not-inc,HS-grad,Married-civ-spouse,Machine-op-inspct,Wife,White,Male,United-States
@@ -7750,7 +7750,7 @@ random7745,AgeCat-60-70,HoursCat-30-40,Private,HS-grad,Divorced,Other-service,Ow
 random7746,AgeCat-40-50,HoursCat-40-50,Private,Bachelors,Married-civ-spouse,Adm-clerical,Husband,White,Female,United-States
 random7747,AgeCat-10-20,HoursCat-60-70,Private,Bachelors,Married-civ-spouse,Other-service,Husband,White,Female,United-States
 random7748,AgeCat-10-20,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Adm-clerical,Not-in-family,White,Male,United-States
-random7749,AgeCat-20-30,HoursCat-30-40,Federal-gov,HS-grad,Never-married,Exec-managerial,Other-relative,Other,Female,United-States
+random7749,AgeCat-20-30,HoursCat-30-40,Federal-gov,HS-grad,Never-married,Exec-managerial,Other-relative,Other-race,Female,United-States
 random7750,AgeCat-40-50,HoursCat-30-40,Private,Assoc-voc,Never-married,Tech-support,Own-child,Asian-Pac-Islander,Male,United-States
 random7751,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Transport-moving,Not-in-family,White,Male,United-States
 random7752,AgeCat-30-40,HoursCat-30-40,Private,Grade-7th-8th,Never-married,Craft-repair,Husband,White,Male,United-States
@@ -7851,7 +7851,7 @@ random7846,AgeCat-30-40,HoursCat-30-40,Private,Grade-7th-8th,Never-married,Prof-
 random7847,AgeCat-40-50,HoursCat-30-40,Private,Some-college,Never-married,Machine-op-inspct,Not-in-family,White,Female,United-States
 random7848,AgeCat-30-40,HoursCat-50-60,Private,Some-college,Married-civ-spouse,Prof-specialty,Own-child,White,Female,United-States
 random7849,AgeCat-30-40,HoursCat-30-40,Private,Masters,Married-civ-spouse,Exec-managerial,Wife,White,Male,United-States
-random7850,AgeCat-20-30,HoursCat-30-40,Local-gov,Assoc-acdm,Divorced,Other-service,Not-in-family,Other,Female,United-States
+random7850,AgeCat-20-30,HoursCat-30-40,Local-gov,Assoc-acdm,Divorced,Other-service,Not-in-family,Other-race,Female,United-States
 random7851,AgeCat-30-40,HoursCat-50-60,Private,Bachelors,Married-civ-spouse,Exec-managerial,Husband,White,Male,Vietnam
 random7852,AgeCat-30-40,HoursCat-30-40,Federal-gov,Doctorate,Widowed,Sales,Husband,White,Male,United-States
 random7853,AgeCat-50-60,HoursCat-40-50,Private,Some-college,Married-civ-spouse,Other-service,Not-in-family,White,Female,Dominican-Republic
@@ -8037,7 +8037,7 @@ random8032,AgeCat-40-50,HoursCat-30-40,Private,Some-college,Married-civ-spouse,A
 random8033,AgeCat-10-20,HoursCat-40-50,Private,Grade-12th,Never-married,Other-service,Own-child,White,Male,United-States
 random8034,AgeCat-30-40,HoursCat-30-40,Private,Masters,Divorced,Craft-repair,Husband,White,Male,United-States
 random8035,AgeCat-30-40,HoursCat-30-40,Self-emp-not-inc,Masters,Married-civ-spouse,Craft-repair,Not-in-family,White,Male,United-States
-random8036,AgeCat-20-30,HoursCat-10-20,Self-emp-not-inc,HS-grad,Never-married,Handlers-cleaners,Husband,Other,Male,United-States
+random8036,AgeCat-20-30,HoursCat-10-20,Self-emp-not-inc,HS-grad,Never-married,Handlers-cleaners,Husband,Other-race,Male,United-States
 random8037,AgeCat-40-50,HoursCat-70-80,Private,Masters,Married-civ-spouse,Craft-repair,Husband,White,Female,United-States
 random8038,AgeCat-50-60,HoursCat-30-40,Private,HS-grad,Divorced,Exec-managerial,Own-child,White,Male,United-States
 random8039,AgeCat-60-70,HoursCat-40-50,Private,Bachelors,Married-civ-spouse,Craft-repair,Not-in-family,White,Female,United-States
@@ -8126,7 +8126,7 @@ random8121,AgeCat-20-30,HoursCat-20-30,Private,Bachelors,Widowed,Sales,Own-child
 random8122,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Never-married,Machine-op-inspct,Own-child,White,Female,United-States
 random8123,AgeCat-40-50,HoursCat-20-30,Private,HS-grad,Married-civ-spouse,Craft-repair,Not-in-family,White,Female,United-States
 random8124,AgeCat-20-30,HoursCat-30-40,Private,Masters,Never-married,Protective-serv,Not-in-family,White,Male,United-States
-random8125,AgeCat-40-50,HoursCat-40-50,Local-gov,Grade-7th-8th,Married-civ-spouse,Adm-clerical,Not-in-family,Other,Female,United-States
+random8125,AgeCat-40-50,HoursCat-40-50,Local-gov,Grade-7th-8th,Married-civ-spouse,Adm-clerical,Not-in-family,Other-race,Female,United-States
 random8126,AgeCat-40-50,HoursCat-80-90,Private,HS-grad,Married-spouse-absent,Machine-op-inspct,Husband,Asian-Pac-Islander,Male,United-States
 random8127,AgeCat-20-30,HoursCat-20-30,Private,HS-grad,Never-married,Handlers-cleaners,Own-child,White,Female,United-States
 random8128,AgeCat-40-50,HoursCat-40-50,Private,Some-college,Married-civ-spouse,Sales,Not-in-family,Asian-Pac-Islander,Male,United-States
@@ -8159,7 +8159,7 @@ random8154,AgeCat-50-60,HoursCat-50-60,Federal-gov,HS-grad,Married-civ-spouse,Cr
 random8155,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Never-married,Prof-specialty,Own-child,White,Male,United-States
 random8156,AgeCat-30-40,HoursCat-50-60,Private,Assoc-voc,Married-civ-spouse,Sales,Not-in-family,Asian-Pac-Islander,Male,United-States
 random8157,AgeCat-30-40,HoursCat-30-40,Private,Masters,Never-married,Prof-specialty,Not-in-family,White,Male,United-States
-random8158,AgeCat-10-20,HoursCat-40-50,Private,Grade-11th,Never-married,Adm-clerical,Not-in-family,Other,Male,United-States
+random8158,AgeCat-10-20,HoursCat-40-50,Private,Grade-11th,Never-married,Adm-clerical,Not-in-family,Other-race,Male,United-States
 random8159,AgeCat-20-30,HoursCat-80-90,Private,Some-college,Never-married,Prof-specialty,Husband,White,Male,United-States
 random8160,AgeCat-30-40,HoursCat-30-40,Private,Some-college,Never-married,Exec-managerial,Husband,White,Male,United-States
 random8161,AgeCat-30-40,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Prof-specialty,Other-relative,Black,Female,United-States
@@ -8345,7 +8345,7 @@ random8340,AgeCat-20-30,HoursCat-30-40,State-gov,Some-college,Married-civ-spouse
 random8341,AgeCat-50-60,HoursCat-60-70,Private,HS-grad,Married-civ-spouse,Other-service,Own-child,White,Male,United-States
 random8342,AgeCat-40-50,HoursCat-30-40,Self-emp-not-inc,Masters,Married-civ-spouse,Prof-specialty,Wife,White,Male,United-States
 random8343,AgeCat-30-40,HoursCat-30-40,State-gov,Some-college,Never-married,Craft-repair,Husband,White,Male,United-States
-random8344,AgeCat-50-60,HoursCat-30-40,Private,Assoc-voc,Married-civ-spouse,Adm-clerical,Husband,Other,Male,United-States
+random8344,AgeCat-50-60,HoursCat-30-40,Private,Assoc-voc,Married-civ-spouse,Adm-clerical,Husband,Other-race,Male,United-States
 random8345,AgeCat-40-50,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Exec-managerial,Own-child,White,Male,United-States
 random8346,AgeCat-30-40,HoursCat-50-60,Private,Bachelors,Divorced,Prof-specialty,Husband,White,Female,United-States
 random8347,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Adm-clerical,Husband,White,Female,United-States
@@ -8700,7 +8700,7 @@ random8695,AgeCat-30-40,HoursCat-40-50,Private,Some-college,Married-civ-spouse,M
 random8696,AgeCat-50-60,HoursCat-30-40,Self-emp-not-inc,HS-grad,Married-civ-spouse,Other-service,Husband,White,Male,United-States
 random8697,AgeCat-30-40,HoursCat-70-80,Private,Some-college,Separated,Farming-fishing,Husband,White,Male,United-States
 random8698,AgeCat-20-30,HoursCat-30-40,Private,Bachelors,Divorced,Machine-op-inspct,Unmarried,Black,Male,United-States
-random8699,AgeCat-60-70,HoursCat-50-60,Local-gov,HS-grad,Married-civ-spouse,Tech-support,Not-in-family,Other,Male,United-States
+random8699,AgeCat-60-70,HoursCat-50-60,Local-gov,HS-grad,Married-civ-spouse,Tech-support,Not-in-family,Other-race,Male,United-States
 random8700,AgeCat-50-60,HoursCat-30-40,Private,Assoc-voc,Never-married,Craft-repair,Husband,White,Female,United-States
 random8701,AgeCat-50-60,HoursCat-50-60,Private,HS-grad,Married-civ-spouse,Adm-clerical,Unmarried,White,Male,United-States
 random8702,AgeCat-40-50,HoursCat-30-40,Private,Assoc-acdm,Married-civ-spouse,Tech-support,Husband,White,Male,United-States
@@ -8964,7 +8964,7 @@ random8959,AgeCat-20-30,HoursCat-40-50,Local-gov,Assoc-voc,Married-civ-spouse,Te
 random8960,AgeCat-20-30,HoursCat-0-10,Private,Some-college,Divorced,Exec-managerial,Wife,White,Female,United-States
 random8961,AgeCat-30-40,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Machine-op-inspct,Own-child,White,Male,United-States
 random8962,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Never-married,Sales,Other-relative,White,Male,United-States
-random8963,AgeCat-30-40,HoursCat-30-40,Self-emp-inc,HS-grad,Never-married,Prof-specialty,Husband,Other,Male,United-States
+random8963,AgeCat-30-40,HoursCat-30-40,Self-emp-inc,HS-grad,Never-married,Prof-specialty,Husband,Other-race,Male,United-States
 random8964,AgeCat-30-40,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Machine-op-inspct,Husband,White,Male,United-States
 random8965,AgeCat-10-20,HoursCat-30-40,Private,Grade-1st-4th,Never-married,Craft-repair,Not-in-family,White,Male,United-States
 random8966,AgeCat-30-40,HoursCat-30-40,Private,Grade-9th,Married-civ-spouse,Sales,Not-in-family,White,Female,United-States
@@ -9091,7 +9091,7 @@ random9086,AgeCat-30-40,HoursCat-40-50,Private,HS-grad,Divorced,Machine-op-inspc
 random9087,AgeCat-20-30,HoursCat-50-60,Private,HS-grad,Married-civ-spouse,Other-service,Husband,White,Female,United-States
 random9088,AgeCat-20-30,HoursCat-40-50,Local-gov,Bachelors,Never-married,Other-service,Husband,White,Female,United-States
 random9089,AgeCat-60-70,HoursCat-30-40,Private,Grade-11th,Married-civ-spouse,Exec-managerial,Other-relative,White,Male,United-States
-random9090,AgeCat-20-30,HoursCat-50-60,Private,Grade-7th-8th,Married-civ-spouse,Exec-managerial,Own-child,Other,Male,United-States
+random9090,AgeCat-20-30,HoursCat-50-60,Private,Grade-7th-8th,Married-civ-spouse,Exec-managerial,Own-child,Other-race,Male,United-States
 random9091,AgeCat-30-40,HoursCat-40-50,Private,Assoc-voc,Married-civ-spouse,Adm-clerical,Husband,White,Male,United-States
 random9092,AgeCat-30-40,HoursCat-50-60,Private,HS-grad,Divorced,Other-service,Not-in-family,Black,Male,United-States
 random9093,AgeCat-40-50,HoursCat-30-40,State-gov,HS-grad,Never-married,Craft-repair,Not-in-family,White,Male,United-States
@@ -9117,7 +9117,7 @@ random9112,AgeCat-30-40,HoursCat-40-50,Private,HS-grad,Never-married,Exec-manage
 random9113,AgeCat-20-30,HoursCat-10-20,Federal-gov,HS-grad,Divorced,Other-service,Unmarried,White,Male,United-States
 random9114,AgeCat-20-30,HoursCat-30-40,Private,Grade-10th,Never-married,Exec-managerial,Husband,White,Male,United-States
 random9115,AgeCat-20-30,HoursCat-20-30,Local-gov,Masters,Married-civ-spouse,Adm-clerical,Husband,White,Female,United-States
-random9116,AgeCat-50-60,HoursCat-50-60,Private,HS-grad,Divorced,Exec-managerial,Not-in-family,Other,Male,United-States
+random9116,AgeCat-50-60,HoursCat-50-60,Private,HS-grad,Divorced,Exec-managerial,Not-in-family,Other-race,Male,United-States
 random9117,AgeCat-10-20,HoursCat-30-40,Private,Bachelors,Never-married,Machine-op-inspct,Wife,White,Female,United-States
 random9118,AgeCat-30-40,HoursCat-30-40,Self-emp-not-inc,Grade-10th,Divorced,Craft-repair,Other-relative,White,Male,United-States
 random9119,AgeCat-20-30,HoursCat-30-40,Self-emp-inc,Some-college,Married-civ-spouse,Prof-specialty,Husband,White,Male,United-States
@@ -9153,7 +9153,7 @@ random9148,AgeCat-20-30,HoursCat-30-40,Private,Assoc-voc,Married-civ-spouse,Exec
 random9149,AgeCat-50-60,HoursCat-30-40,Private,Assoc-voc,Widowed,Craft-repair,Own-child,White,Male,United-States
 random9150,AgeCat-30-40,HoursCat-30-40,Local-gov,Bachelors,Never-married,Craft-repair,Wife,White,Female,United-States
 random9151,AgeCat-20-30,HoursCat-30-40,Private,HS-grad,Never-married,Handlers-cleaners,Wife,White,Female,United-States
-random9152,AgeCat-50-60,HoursCat-30-40,Private,Some-college,Never-married,Exec-managerial,Husband,Other,Male,United-States
+random9152,AgeCat-50-60,HoursCat-30-40,Private,Some-college,Never-married,Exec-managerial,Husband,Other-race,Male,United-States
 random9153,AgeCat-30-40,HoursCat-30-40,Private,Some-college,Never-married,Exec-managerial,Husband,White,Male,United-States
 random9154,AgeCat-10-20,HoursCat-30-40,Local-gov,HS-grad,Married-civ-spouse,Other-service,Not-in-family,Black,Male,United-States
 random9155,AgeCat-20-30,HoursCat-30-40,Private,Grade-5th-6th,Never-married,Sales,Husband,White,Female,United-States
@@ -9409,7 +9409,7 @@ random9404,AgeCat-30-40,HoursCat-30-40,Self-emp-inc,Some-college,Married-civ-spo
 random9405,AgeCat-40-50,HoursCat-40-50,Local-gov,Some-college,Never-married,Prof-specialty,Husband,White,Male,United-States
 random9406,AgeCat-50-60,HoursCat-30-40,Federal-gov,HS-grad,Never-married,Exec-managerial,Not-in-family,White,Male,United-States
 random9407,AgeCat-40-50,HoursCat-0-10,Private,HS-grad,Never-married,Transport-moving,Husband,White,Female,Canada
-random9408,AgeCat-20-30,HoursCat-30-40,Private,Assoc-voc,Married-civ-spouse,Prof-specialty,Husband,Other,Male,United-States
+random9408,AgeCat-20-30,HoursCat-30-40,Private,Assoc-voc,Married-civ-spouse,Prof-specialty,Husband,Other-race,Male,United-States
 random9409,AgeCat-20-30,HoursCat-30-40,Self-emp-not-inc,HS-grad,Married-civ-spouse,Craft-repair,Husband,White,Male,United-States
 random9410,AgeCat-20-30,HoursCat-30-40,Private,Doctorate,Never-married,Other-service,Husband,White,Male,United-States
 random9411,AgeCat-40-50,HoursCat-30-40,Self-emp-not-inc,HS-grad,Never-married,Craft-repair,Not-in-family,White,Male,Philippines
@@ -9593,7 +9593,7 @@ random9588,AgeCat-30-40,HoursCat-50-60,Private,HS-grad,Never-married,Exec-manage
 random9589,AgeCat-40-50,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Craft-repair,Own-child,Asian-Pac-Islander,Male,United-States
 random9590,AgeCat-10-20,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Prof-specialty,Husband,White,Male,United-States
 random9591,AgeCat-40-50,HoursCat-30-40,Private,Some-college,Divorced,Sales,Own-child,White,Female,United-States
-random9592,AgeCat-20-30,HoursCat-30-40,Local-gov,Bachelors,Never-married,Other-service,Husband,Other,Male,Columbia
+random9592,AgeCat-20-30,HoursCat-30-40,Local-gov,Bachelors,Never-married,Other-service,Husband,Other-race,Male,Columbia
 random9593,AgeCat-20-30,HoursCat-40-50,Private,HS-grad,Divorced,Adm-clerical,Not-in-family,White,Male,United-States
 random9594,AgeCat-50-60,HoursCat-30-40,Private,Some-college,Divorced,Craft-repair,Not-in-family,White,Male,United-States
 random9595,AgeCat-20-30,HoursCat-60-70,Self-emp-not-inc,Assoc-voc,Never-married,Adm-clerical,Other-relative,White,Female,Dominican-Republic
@@ -9725,7 +9725,7 @@ random9720,AgeCat-40-50,HoursCat-50-60,Private,HS-grad,Married-civ-spouse,Craft-
 random9721,AgeCat-10-20,HoursCat-30-40,Private,Grade-7th-8th,Divorced,Craft-repair,Husband,White,Male,United-States
 random9722,AgeCat-30-40,HoursCat-30-40,Private,Bachelors,Never-married,Transport-moving,Not-in-family,Black,Male,United-States
 random9723,AgeCat-30-40,HoursCat-30-40,Private,Grade-9th,Married-civ-spouse,Prof-specialty,Other-relative,Black,Female,United-States
-random9724,AgeCat-30-40,HoursCat-10-20,Federal-gov,Some-college,Married-civ-spouse,Craft-repair,Wife,Other,Male,United-States
+random9724,AgeCat-30-40,HoursCat-10-20,Federal-gov,Some-college,Married-civ-spouse,Craft-repair,Wife,Other-race,Male,United-States
 random9725,AgeCat-40-50,HoursCat-30-40,Private,Bachelors,Married-civ-spouse,Prof-specialty,Husband,White,Female,Peru
 random9726,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Never-married,Machine-op-inspct,Not-in-family,White,Male,United-States
 random9727,AgeCat-30-40,HoursCat-30-40,Private,HS-grad,Married-civ-spouse,Handlers-cleaners,Husband,Black,Female,United-States
@@ -9960,7 +9960,7 @@ random9955,AgeCat-20-30,HoursCat-30-40,Private,Some-college,Married-civ-spouse,M
 random9956,AgeCat-10-20,HoursCat-30-40,Private,HS-grad,Separated,Sales,Own-child,White,Female,United-States
 random9957,AgeCat-20-30,HoursCat-10-20,Private,Some-college,Never-married,Other-service,Unmarried,Black,Male,United-States
 random9958,AgeCat-60-70,HoursCat-40-50,Private,Bachelors,Divorced,Other-service,Husband,White,Male,United-States
-random9959,AgeCat-10-20,HoursCat-30-40,Federal-gov,Some-college,Divorced,Machine-op-inspct,Not-in-family,Other,Male,United-States
+random9959,AgeCat-10-20,HoursCat-30-40,Federal-gov,Some-college,Divorced,Machine-op-inspct,Not-in-family,Other-race,Male,United-States
 random9960,AgeCat-50-60,HoursCat-40-50,Private,Some-college,Married-civ-spouse,Craft-repair,Husband,White,Female,United-States
 random9961,AgeCat-10-20,HoursCat-30-40,Private,Some-college,Married-civ-spouse,Other-service,Husband,Asian-Pac-Islander,Male,United-States
 random9962,AgeCat-40-50,HoursCat-40-50,Self-emp-not-inc,HS-grad,Never-married,Craft-repair,Husband,White,Male,United-States
@@ -9996,7 +9996,7 @@ random9991,AgeCat-20-30,HoursCat-30-40,Private,Prof-school,Never-married,Sales,H
 random9992,AgeCat-20-30,HoursCat-30-40,Self-emp-not-inc,Some-college,Married-civ-spouse,Prof-specialty,Husband,White,Male,United-States
 random9993,AgeCat-20-30,HoursCat-40-50,Private,Grade-11th,Married-civ-spouse,Sales,Own-child,White,Female,United-States
 random9994,AgeCat-40-50,HoursCat-50-60,Private,HS-grad,Never-married,Handlers-cleaners,Other-relative,White,Male,United-States
-random9995,AgeCat-30-40,HoursCat-40-50,Private,HS-grad,Married-civ-spouse,Sales,Unmarried,Other,Female,United-States
+random9995,AgeCat-30-40,HoursCat-40-50,Private,HS-grad,Married-civ-spouse,Sales,Unmarried,Other-race,Female,United-States
 random9996,AgeCat-30-40,HoursCat-30-40,Private,Some-college,Never-married,Exec-managerial,Not-in-family,White,Male,United-States
 random9997,AgeCat-40-50,HoursCat-30-40,Self-emp-inc,HS-grad,Married-civ-spouse,Craft-repair,Own-child,White,Male,United-States
 random9998,AgeCat-10-20,HoursCat-30-40,Private,HS-grad,Never-married,Exec-managerial,Unmarried,White,Male,United-States

@@ -103,12 +103,26 @@ class KnowledgeGraphNeighborhood():
         # converting input and random samples to knowledge graph
         self.transformCSV2GRAPH()
 
-        # converting knowledge graph to embeddings for finding similarity between instances
+        # converting knowledge graph to embeddings
         self.transformGRAPH2EMBEDDING()
+
+        # finding similarity between original input and random data
+        similarity_classwise = {}
+        for c in self.class_set:
+            sim_vec = np.zeros(N_samples * 10)
+            instances = self.embedding_model.FindSimilarInstances(instance='original'+str(c), N=N_samples * 20)
+            for instance in instances:
+                if instance[0].startswith('random'):
+                    idx = int(instance[0].split('random',1)[1])
+                    sim = instance[1]
+                    sim_vec[idx] = sim
+            similarity_classwise[c] = sim_vec
 
         print()
 
-        # # calculating the distance between inputs and the random samples
+        # calculating the distance between inputs and the random samples
+
+
         # distance = np.zeros(X_sampled.shape[0])
         # for i, c in enumerate(X_sampled_c):
         #     feature_width = np.r_[self.numerical_width, np.asarray(list(self.categorical_width[c].values()))]
