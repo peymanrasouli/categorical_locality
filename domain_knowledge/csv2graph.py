@@ -28,35 +28,32 @@ class CSV2GRAPH(object):
         # Prefixes for the serialization
         self.g.bind("adult", self.adult)
 
-    def Convert(self, csv_file=None, data_frame=None):
+    def Convert(self, csv_file):
 
         #Format:
-        #      0                 1               2           3             4             5             6          7      8         9
-        # AgeCategory   WeeklyWorkingHours   WorkClass   Education   MaritalStatus   Occupation   Relationship   Race   Sex   NativeCountry
+        #   0          1                 2               3           4             5             6             7          8      9         10
+        # Index   AgeCategory   WeeklyWorkingHours   WorkClass   Education   MaritalStatus   Occupation   Relationship   Race   Sex   NativeCountry
 
-        # read data to a pandas dataframe if CSV file is given
-        if data_frame == None:
-            # Load data in dataframe
-            self.data_frame = pd.read_csv(csv_file, sep=',', quotechar='"', escapechar="\\")
+        # read CSV data to a pandas dataframe
+        self.data_frame = pd.read_csv(csv_file, sep=',', quotechar='"', escapechar="\\", index_col=0)
 
         # parsing the adult ontology RDF graph
         self.ParseKG()
 
-        ind = 0
-        for row in self.data_frame.itertuples(index=False):
+        for row in self.data_frame.itertuples(index=True):
 
             # Mapping feature values (categories) to instances
-            entity_individual_uri = self.adult_ns_str + 'individual'+str(ind)
-            entity_agecategory_uri = self.adult_ns_str + row[0].lower()
-            entity_weeklyworkinghours_uri = self.adult_ns_str + row[1].lower()
-            entity_workclass_uri = self.adult_ns_str + row[2].lower()
-            entity_education_uri = self.adult_ns_str + row[3].lower()
-            entity_maritalstatus_uri = self.adult_ns_str + row[4].lower()
-            entity_occupation_uri = self.adult_ns_str + row[5].lower()
-            entity_relationship_uri = self.adult_ns_str + row[6].lower()
-            entity_race_uri = self.adult_ns_str + row[7].lower()
-            entity_sex_uri = self.adult_ns_str + row[8].lower()
-            entity_nativecountry_uri = self.adult_ns_str + row[9].lower()
+            entity_individual_uri = self.adult_ns_str + row[0].lower()  # index
+            entity_agecategory_uri = self.adult_ns_str + row[1].lower()
+            entity_weeklyworkinghours_uri = self.adult_ns_str + row[2].lower()
+            entity_workclass_uri = self.adult_ns_str + row[3].lower()
+            entity_education_uri = self.adult_ns_str + row[4].lower()
+            entity_maritalstatus_uri = self.adult_ns_str + row[5].lower()
+            entity_occupation_uri = self.adult_ns_str + row[6].lower()
+            entity_relationship_uri = self.adult_ns_str + row[7].lower()
+            entity_race_uri = self.adult_ns_str + row[8].lower()
+            entity_sex_uri = self.adult_ns_str + row[9].lower()
+            entity_nativecountry_uri = self.adult_ns_str + row[10].lower()
 
             #Types triples
             self.g.add((URIRef(entity_individual_uri), RDF.type, self.adult.Person))
@@ -72,17 +69,13 @@ class CSV2GRAPH(object):
             self.g.add((URIRef(entity_individual_uri), self.adult.hasSex, URIRef(entity_sex_uri)))
             self.g.add((URIRef(entity_individual_uri), self.adult.hasNativeCountry, URIRef(entity_nativecountry_uri)))
 
-            ind += 1
-
-            if ind == 5000:
-                break
 
     def saveGraph(self, file_output):
         self.g.serialize(destination=file_output, format='xml',)
 
 def main():
     # CSV Format:
-    # AgeCategory   WeeklyWorkingHours   WorkClass   Education   MaritalStatus   Occupation   Relationship   Race   Sex   NativeCountry
+    # Index   AgeCategory   WeeklyWorkingHours   WorkClass   Education   MaritalStatus   Occupation   Relationship   Race   Sex   NativeCountry
 
     # path of rdf and csv files
     rdf_file = "ontologies/adult_ontology.owl"

@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(1,"OWL2Vec-Star")
+sys.path.insert(1,"domain_knowledge/OWL2Vec-Star")
 from owl2vec_star import owl2vec_star
 from gensim.models import KeyedVectors
 
@@ -13,27 +13,27 @@ class GRAPH2EMBEDDING(object):
         # uri_doc
         # lit_doc
         # mix_doc
-        gensim_model = owl2vec_star.extract_owl2vec_model(owl_file, "default.cfg", True, True, True)
+        gensim_model = owl2vec_star.extract_owl2vec_model(owl_file, "domain_knowledge/default.cfg", True, True, True)
 
-        output_folder = "./embeddings/"
+        output_folder = "domain_knowledge/embeddings/"
 
         # Gensim format
         gensim_model.save(output_folder + "adult_embeddings")
+
         # Txt format
         gensim_model.wv.save_word2vec_format(output_folder + "adult_embeddings.txt", binary=False)
 
-    def FindSimilarIndividuals(self, ind, N=None):
+        # load embedding model and Word2Vec Keyed Vectors
+        model = KeyedVectors.load(output_folder + "adult_embeddings", mmap='r')
+        self.model = model
+        self.word2vec = model.wv
 
-        # Embedding vectors generated above
-        output_folder = "./embeddings/"
-
-        model = KeyedVectors.load(output_folder+"adult_embeddings", mmap='r')
-        wv = model.wv
+    def FindSimilarInstances(self, instance, N=None):
 
         # Most similar entities: cosmul
-        result = wv.most_similar_cosmul(positive=[ind],topn=N)
+        instances = self.word2vec.most_similar_cosmul(positive=[instance],topn=N)
 
-        return result
+        return instances
 
 
 
@@ -59,18 +59,18 @@ class GRAPH2EMBEDDING(object):
 
 def main():
 
-    # path of rdf and csv files
+    # path of the knowledge graph file
     owl_file = "ontologies/adult_ontology_instantiated.owl"
 
     # instantiating the GRAPH2EMBEDDING class
     graph2embedding = GRAPH2EMBEDDING(owl_file)
 
-    # finding similar individuals to a specific individual
+    # finding similar instances to a specific instance
     N = 10
-    ind = "individual0"
-    similar_individuals = graph2embedding.FindSimilarIndividuals(ind, N)
+    instance = "individual0"
+    similar_instances = graph2embedding.FindSimilarInstances(instance, N)
 
-    print(similar_individuals)
+    print(similar_instances)
 
 if __name__ == '__main__':
     main()

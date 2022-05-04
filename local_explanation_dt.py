@@ -8,6 +8,7 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.tree import DecisionTreeClassifier
 from explanation_based_neighborhood import ExplanationBasedNeighborhood
+from knowledge_graph_neighborhood import KnowledgeGraphNeighborhood
 from random_sampling_neighborhood import RandomSamplingNeighborhood
 from random_oversampling_neigbhorhood import RandomOversamplingNeighborhood
 from random_instance_selection_neighborhood import RandomInstanceSelectionNeighborhood
@@ -250,10 +251,10 @@ def main():
             exp.fit()
             sampling_methods['exp'] = exp.neighborhoodSampling
 
-            # random neighborhood
-            rnd = RandomSamplingNeighborhood(X, y, blackbox, dataset)
-            rnd.fit()
-            sampling_methods['rnd'] = rnd.neighborhoodSampling
+            # knowledge graph neighborhood
+            kg = KnowledgeGraphNeighborhood(X, y, blackbox, dataset)
+            kg.fit()
+            sampling_methods['kg'] = kg.neighborhoodSampling
 
             # random oversampling neighborhood
             ros = RandomOversamplingNeighborhood(X, y, blackbox, dataset)
@@ -276,12 +277,12 @@ def main():
             sampling_methods['mds'] = mds.neighborhoodSampling
 
             # Generating explanations for the samples in the explain set
-            methods_output = {'exp': {'local_model_pred':[], 'local_model_score':[]},
-                              'rnd': {'local_model_pred': [], 'local_model_score': []},
-                              'ros': {'local_model_pred':[], 'local_model_score':[]},
-                              'ris': {'local_model_pred':[], 'local_model_score':[]},
-                              'gen': {'local_model_pred': [], 'local_model_score': []},
-                              'mds': {'local_model_pred': [], 'local_model_score': []}
+            methods_output = {#'exp': {'local_model_pred':[], 'local_model_score':[]},
+                              'kg': {'local_model_pred': [], 'local_model_score': []},
+                              # 'ros': {'local_model_pred':[], 'local_model_score':[]},
+                              # 'ris': {'local_model_pred':[], 'local_model_score':[]},
+                              # 'gen': {'local_model_pred': [], 'local_model_score': []},
+                              # 'mds': {'local_model_pred': [], 'local_model_score': []}
                               }
 
             # setting the number of explained instances
