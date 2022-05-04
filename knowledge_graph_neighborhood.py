@@ -84,7 +84,7 @@ class KnowledgeGraphNeighborhood():
                 x_hat[c] = self.class_data[c][indices[0][0]].copy()
 
         # generating random samples from the distribution of training data
-        X_sampled = FrequencyBasedRandomSampling(self.X_train, N_samples * 10)
+        X_sampled = FrequencyBasedRandomSampling(self.X_train, N_samples * 3)
         X_sampled_c = self.model.predict(X_sampled)
 
         # creating a csv file from original and random data
@@ -109,8 +109,8 @@ class KnowledgeGraphNeighborhood():
         # finding similarity between original input and random data
         similarity_classwise = {}
         for c in self.class_set:
-            sim_vec = np.zeros(N_samples * 10)
-            instances = self.embedding_model.FindSimilarInstances(instance='original'+str(c), N=N_samples * 20)
+            sim_vec = np.zeros(N_samples * 3)
+            instances = self.embedding_model.FindSimilarInstances(instance='original'+str(c), N=N_samples * 10)
             for instance in instances:
                 if instance[0].startswith('random'):
                     idx = int(instance[0].split('random',1)[1])
@@ -118,27 +118,20 @@ class KnowledgeGraphNeighborhood():
                     sim_vec[idx] = sim
             similarity_classwise[c] = sim_vec
 
-        print()
+        # obtaining similarity between inputs and the random samples
+        similarity = np.zeros(X_sampled.shape[0])
+        for i, c in enumerate(X_sampled_c):
+            similarity[i] = similarity_classwise[c][i]
 
-        # calculating the distance between inputs and the random samples
+        # selecting N_samples based on the calculated similarity
+        sorted_indices = np.argsort(-similarity)
+        selected_indices = sorted_indices[:N_samples]
+        sampled_data = X_sampled[selected_indices, :]
+        neighborhood_data = np.r_[x.reshape(1, -1), sampled_data]
 
+        # predicting the label and probability of the neighborhood data
+        neighborhood_labels = self.model.predict(neighborhood_data)
+        neighborhood_proba = self.model.predict_proba(neighborhood_data)
+        neighborhood_proba = neighborhood_proba[:, neighborhood_labels[0]]
 
-        # distance = np.zeros(X_sampled.shape[0])
-        # for i, c in enumerate(X_sampled_c):
-        #     feature_width = np.r_[self.numerical_width, np.asarray(list(self.categorical_width[c].values()))]
-        #     dist = (1 / feature_width) * abs(x_hat_exp[c] - X_sampled_exp[i,:])
-        #     distance[i] = np.mean(dist)
-        #
-        # # selecting N_samples based on the calculated distance
-        # sorted_indices = np.argsort(distance)
-        # selected_indices = sorted_indices[:N_samples]
-        # sampled_data = X_sampled[selected_indices, :]
-        # neighborhood_data = np.r_[x.reshape(1, -1), sampled_data]
-        #
-        # # predicting the label and probability of the neighborhood data
-        # neighborhood_labels = self.model.predict(neighborhood_data)
-        # neighborhood_proba = self.model.predict_proba(neighborhood_data)
-        # neighborhood_proba = neighborhood_proba[:, neighborhood_labels[0]]
-        #
-        # return neighborhood_data, neighborhood_labels, neighborhood_proba
-        return 0
+        return neighborhood_data, neighborhood_labels, neighborhood_proba

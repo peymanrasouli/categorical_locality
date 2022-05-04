@@ -286,7 +286,7 @@ def main():
                               }
 
             # setting the number of explained instances
-            N_explain = min(X_test.shape[0], 500)
+            N_explain = min(X_test.shape[0], 50)
 
             # explaining instances
             pb = ProgressBar(total=N_explain, prefix='Progress:', suffix='Complete', decimals=1, length=50,
