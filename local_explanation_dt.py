@@ -169,18 +169,18 @@ def main():
     # defining the list of data sets
     datsets_list = {
         'adult': ('adult.csv', PrepareAdult),
-        'compas-scores-two-years': ('compas-scores-two-years.csv', PrepareCOMPAS),
-        'credit-card-default': ('credit-card-default.csv', PrepareCreditCardDefault),
-        'german-credit': ('german-credit.csv', PrepareGermanCredit),
-        'breast-cancer': ('breast-cancer.data', PrepareBreastCancer),
-        'heart-disease': ('heart-disease.csv', PrepareHeartDisease),
-        'car': ('car.data', PrepareCar),
+        # 'compas-scores-two-years': ('compas-scores-two-years.csv', PrepareCOMPAS),
+        # 'credit-card-default': ('credit-card-default.csv', PrepareCreditCardDefault),
+        # 'german-credit': ('german-credit.csv', PrepareGermanCredit),
+        # 'breast-cancer': ('breast-cancer.data', PrepareBreastCancer),
+        # 'heart-disease': ('heart-disease.csv', PrepareHeartDisease),
+        # 'car': ('car.data', PrepareCar),
     }
 
     # defining the list of black-boxes
     blackbox_list = {
         'nn': MLPClassifier,
-        'gb': GradientBoostingClassifier
+        # 'gb': GradientBoostingClassifier
     }
 
     # defining the number of neighborhood samples
@@ -276,12 +276,12 @@ def main():
             sampling_methods['mds'] = mds.neighborhoodSampling
 
             # Generating explanations for the samples in the explain set
-            methods_output = {'exp': {'local_model_pred':[], 'local_model_score':[]},
+            methods_output = {#'exp': {'local_model_pred':[], 'local_model_score':[]},
                               'kg': {'local_model_pred': [], 'local_model_score': []},
-                              'ros': {'local_model_pred':[], 'local_model_score':[]},
-                              'ris': {'local_model_pred':[], 'local_model_score':[]},
-                              'gen': {'local_model_pred': [], 'local_model_score': []},
-                              'mds': {'local_model_pred': [], 'local_model_score': []}
+                              # 'ros': {'local_model_pred':[], 'local_model_score':[]},
+                              # 'ris': {'local_model_pred':[], 'local_model_score':[]},
+                              # 'gen': {'local_model_pred': [], 'local_model_score': []},
+                              # 'mds': {'local_model_pred': [], 'local_model_score': []}
                               }
 
             # setting the number of explained instances
