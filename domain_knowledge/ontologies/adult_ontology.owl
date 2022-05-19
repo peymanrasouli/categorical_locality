@@ -27,6 +27,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/peyman/adult_ontology#biggerThan">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/peyman/adult_ontology#WeeklyWorkingHours"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/peyman/adult_ontology#WeeklyWorkingHours"/>
@@ -138,6 +139,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/peyman/adult_ontology#higherThan">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/peyman/adult_ontology#Education"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/peyman/adult_ontology#Education"/>
@@ -149,6 +151,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/peyman/adult_ontology#morePaidThan">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/peyman/adult_ontology#Occupation"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/peyman/adult_ontology#Occupation"/>
@@ -160,6 +163,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/peyman/adult_ontology#olderThan">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/peyman/adult_ontology#AgeCategory"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/peyman/adult_ontology#AgeCategory"/>
