@@ -247,8 +247,8 @@ def main():
             sampling_methods['mds'] = mds.neighborhoodSampling
 
             # Generating explanations for the samples in the explain set
-            methods_output = {#'exp': {'local_model_pred':[], 'local_model_score':[]},
-                              'kg': {'local_model_pred': [], 'local_model_score': []},
+            methods_output = {'exp': {'local_model_pred':[], 'local_model_score':[]},
+                              # 'kg': {'local_model_pred': [], 'local_model_score': []},
                               # 'ros': {'local_model_pred':[], 'local_model_score':[]},
                               # 'ris': {'local_model_pred':[], 'local_model_score':[]},
                               # 'gen': {'local_model_pred': [], 'local_model_score': []},
