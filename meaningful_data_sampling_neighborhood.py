@@ -1,6 +1,6 @@
 import sys
-sys.path.append('MDS')
-from MDS.meaningful_sampling import MeaningfulSampling
+sys.path.append('meaningful_locality')
+from meaningful_locality.meaningful_sampling import MeaningfulSampling
 
 class MeaningfulDataSamplingNeighborhood():
     def __init__(self,

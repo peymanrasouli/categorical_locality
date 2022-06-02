@@ -217,14 +217,14 @@ def main():
             sampling_methods = {}
 
             # explanation based neighborhood
-            exp = ExplanationBasedNeighborhood(X, y, blackbox, dataset)
-            exp.fit()
-            sampling_methods['exp'] = exp.neighborhoodSampling
+            xbl = ExplanationBasedNeighborhood(X, y, blackbox, dataset)
+            xbl.fit()
+            sampling_methods['xbl'] = xbl.neighborhoodSampling
 
             # knowledge graph neighborhood
-            kg = KnowledgeGraphNeighborhood(X, y, blackbox, dataset)
-            kg.fit()
-            sampling_methods['kg'] = kg.neighborhoodSampling
+            kbl = KnowledgeGraphNeighborhood(X, y, blackbox, dataset)
+            kbl.fit()
+            sampling_methods['kbl'] = kbl.neighborhoodSampling
 
             # random oversampling neighborhood
             ros = RandomOversamplingNeighborhood(X, y, blackbox, dataset)
@@ -242,17 +242,17 @@ def main():
             sampling_methods['gen'] = gen.neighborhoodSampling
 
             # meaningful data sampling neighborhood
-            mds = MeaningfulDataSamplingNeighborhood(X, y, blackbox, dataset)
-            mds.fit()
-            sampling_methods['mds'] = mds.neighborhoodSampling
+            mnl = MeaningfulDataSamplingNeighborhood(X, y, blackbox, dataset)
+            mnl.fit()
+            sampling_methods['mnl'] = mnl.neighborhoodSampling
 
             # Generating explanations for the samples in the explain set
-            methods_output = {'exp': {'local_model_pred':[], 'local_model_score':[]},
-                              # 'kg': {'local_model_pred': [], 'local_model_score': []},
+            methods_output = {'xbl': {'local_model_pred':[], 'local_model_score':[]},
+                              # 'kbl': {'local_model_pred': [], 'local_model_score': []},
                               # 'ros': {'local_model_pred':[], 'local_model_score':[]},
                               # 'ris': {'local_model_pred':[], 'local_model_score':[]},
                               # 'gen': {'local_model_pred': [], 'local_model_score': []},
-                              # 'mds': {'local_model_pred': [], 'local_model_score': []}
+                              # 'mnl': {'local_model_pred': [], 'local_model_score': []}
                               }
 
             # setting the number of explained instances
