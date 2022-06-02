@@ -1,1 +1,1 @@
-# new_work
+# Categorical Locality
