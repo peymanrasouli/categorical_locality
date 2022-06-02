@@ -20,17 +20,17 @@ BibTeX:
 # Setup
 1- Clone the repository using HTTP/SSH:
 ```
-git clone https://github.com/peymanrasouli/categorical-locality
+git clone https://github.com/peymanrasouli/categorical_locality
 ```
 2- Create a conda virtual environment:
 ```
-conda create -n categorical-locality python=3.6
+conda create -n categorical_locality python=3.6
 ```
 3- Activate the conda environment: 
 ```
-conda activate categorical-locality
+conda activate categorical_locality
 ```
-4- Standing in categorical-locality directory, install the requirements:
+4- Standing in categorical_locality directory, install the requirements:
 ```
 pip install -r requirements.txt
 ```
