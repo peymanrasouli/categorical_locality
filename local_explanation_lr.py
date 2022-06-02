@@ -140,12 +140,12 @@ def main():
     # defining the list of data sets
     datsets_list = {
         'adult': ('adult.csv', PrepareAdult),
-        # 'compas-scores-two-years': ('compas-scores-two-years.csv', PrepareCOMPAS),
-        # 'credit-card-default': ('credit-card-default.csv', PrepareCreditCardDefault),
-        # 'german-credit': ('german-credit.csv', PrepareGermanCredit),
-        # 'breast-cancer': ('breast-cancer.data', PrepareBreastCancer),
-        # 'heart-disease': ('heart-disease.csv', PrepareHeartDisease),
-        # 'car': ('car.data', PrepareCar),
+        'compas-scores-two-years': ('compas-scores-two-years.csv', PrepareCOMPAS),
+        'credit-card-default': ('credit-card-default.csv', PrepareCreditCardDefault),
+        'german-credit': ('german-credit.csv', PrepareGermanCredit),
+        'breast-cancer': ('breast-cancer.data', PrepareBreastCancer),
+        'heart-disease': ('heart-disease.csv', PrepareHeartDisease),
+        'car': ('car.data', PrepareCar),
     }
 
     # defining the list of black-boxes
@@ -249,14 +249,14 @@ def main():
             # Generating explanations for the samples in the explain set
             methods_output = {'xbl': {'local_model_pred':[], 'local_model_score':[]},
                               # 'kbl': {'local_model_pred': [], 'local_model_score': []},
-                              # 'ros': {'local_model_pred':[], 'local_model_score':[]},
-                              # 'ris': {'local_model_pred':[], 'local_model_score':[]},
-                              # 'gen': {'local_model_pred': [], 'local_model_score': []},
-                              # 'mnl': {'local_model_pred': [], 'local_model_score': []}
+                              'ros': {'local_model_pred':[], 'local_model_score':[]},
+                              'ris': {'local_model_pred':[], 'local_model_score':[]},
+                              'gen': {'local_model_pred': [], 'local_model_score': []},
+                              'mnl': {'local_model_pred': [], 'local_model_score': []}
                               }
 
             # setting the number of explained instances
-            N_explain = min(X_test.shape[0], 300)
+            N_explain = min(X_test.shape[0], 500)
 
             # explaining instances
             pb = ProgressBar(total=N_explain, prefix='Progress:', suffix='Complete', decimals=1, length=50,
