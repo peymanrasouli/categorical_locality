@@ -329,19 +329,19 @@ def main():
             for method, output in methods_output.items():
                 # F1 score
                 local_f1 = f1_score(bb_pred, np.asarray(output['local_model_pred']), average='macro')
-                results[dataset_kw][blackbox_name][method]['f1_score'] = local_f1
+                results[dataset_kw][blackbox_name][method]['f1_score'] = np.round(local_f1, 3)
 
                 # Precision score
                 local_precision = precision_score(bb_pred, np.asarray(output['local_model_pred']), average='macro')
-                results[dataset_kw][blackbox_name][method]['precision'] = local_precision
+                results[dataset_kw][blackbox_name][method]['precision'] = np.round(local_precision, 3)
 
                 # Accuracy score
                 local_accuracy = accuracy_score(bb_pred, np.asarray(output['local_model_pred']))
-                results[dataset_kw][blackbox_name][method]['accuracy'] = local_accuracy
+                results[dataset_kw][blackbox_name][method]['accuracy'] = np.round(local_accuracy, 3)
 
                 # Average score of local model
                 avg_local_model_score = np.mean(np.asarray(output['local_model_score']))
-                results[dataset_kw][blackbox_name][method]['model_score'] = avg_local_model_score
+                results[dataset_kw][blackbox_name][method]['model_score'] = np.round(avg_local_model_score, 3)
 
             for key, val in results[dataset_kw][blackbox_name].items():
                 print(key, ':', val)

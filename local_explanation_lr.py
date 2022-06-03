@@ -307,19 +307,19 @@ def main():
             for method, output in methods_output.items():
                 # R2 score
                 local_r2 = r2_score(bb_pred, np.asarray(output['local_model_pred']))
-                results[dataset_kw][blackbox_name][method]['r2_score'] = local_r2
+                results[dataset_kw][blackbox_name][method]['r2_score'] = np.round(local_r2, 3)
 
                 # MAE
                 mae = mean_absolute_error(bb_pred, np.asarray(output['local_model_pred']))
-                results[dataset_kw][blackbox_name][method]['mae'] = mae
+                results[dataset_kw][blackbox_name][method]['mae'] = np.round(mae, 3)
 
                 # MSE
                 mse = mean_squared_error(bb_pred, np.asarray(output['local_model_pred']))
-                results[dataset_kw][blackbox_name][method]['mse'] = mse
+                results[dataset_kw][blackbox_name][method]['mse'] = np.round(mse, 3)
 
                 # Average score of local model
                 avg_local_model_score = np.mean(np.asarray(output['local_model_score']))
-                results[dataset_kw][blackbox_name][method]['model_score'] = avg_local_model_score
+                results[dataset_kw][blackbox_name][method]['model_score'] = np.round(avg_local_model_score, 3)
 
             for key, val in results[dataset_kw][blackbox_name].items():
                 print(key, ':', val)
