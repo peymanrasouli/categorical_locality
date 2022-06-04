@@ -116,13 +116,16 @@ class ExplanationBasedNeighborhood():
 
         # finding the closest neighbors in the other classes
         x_hat = {}
+        distance_hat = {}
         x_ohe = ord2ohe(x, self.dataset)
         for c in self.class_set:
             if c == x_c:
                 x_hat[c] = x
+                distance_hat[c] = (x_hat[c] !=  x_hat[c]).astype(int)
             else:
                 distances, indices = self.neighborhood_models[c].kneighbors(x_ohe.reshape(1, -1))
                 x_hat[c] = self.class_data[c][indices[0][0]].copy()
+                distance_hat[c] =  (x_hat[c] !=  x).astype(int)
 
         # converting input samples from categorical to numerical representation
         x_hat_exp = {}
@@ -130,7 +133,7 @@ class ExplanationBasedNeighborhood():
             x_hat_exp[c] = self.cat2numConverter(instance)
 
         # generating random samples from the distribution of training data
-        X_sampled = FrequencyBasedRandomSampling(self.X_train, N_samples * 10)
+        X_sampled = FrequencyBasedRandomSampling(self.X_train, N_samples * 5)
         X_sampled_c = self.model.predict(X_sampled)
 
         # converting random samples from categorical to numerical representation
@@ -139,9 +142,12 @@ class ExplanationBasedNeighborhood():
         # calculating the distance between inputs and the random samples
         distance = np.zeros(X_sampled.shape[0])
         for i, c in enumerate(X_sampled_c):
-            feature_width = np.asarray(list(self.categorical_width[c].values()))
-            dist = (1 / feature_width) * abs(x_hat_exp[c] - X_sampled_exp[i,:])
-            distance[i] = np.mean(dist)
+            # feature_width = np.asarray(list(self.categorical_width[c].values()))
+            dist = (abs(x_hat_exp[c] - X_sampled_exp[i,:]))
+
+            # dist = (x_hat[c] != X_sampled[i,:]).astype(int)
+
+            distance[i] = np.mean(dist) + np.mean(distance_hat[c])
 
         # selecting N_samples based on the calculated distance
         sorted_indices = np.argsort(distance)
