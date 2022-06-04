@@ -242,9 +242,9 @@ def main():
             sampling_methods['gen'] = gen.neighborhoodSampling
 
             # meaningful data sampling neighborhood
-            mnl = MeaningfulDataSamplingNeighborhood(X, y, blackbox, dataset)
-            mnl.fit()
-            sampling_methods['mnl'] = mnl.neighborhoodSampling
+            mds = MeaningfulDataSamplingNeighborhood(X, y, blackbox, dataset)
+            mds.fit()
+            sampling_methods['mds'] = mds.neighborhoodSampling
 
             # Generating explanations for the samples in the explain set
             methods_output = {'xbl': {'local_model_pred':[], 'local_model_score':[]},
@@ -252,7 +252,7 @@ def main():
                               'ros': {'local_model_pred':[], 'local_model_score':[]},
                               'ris': {'local_model_pred':[], 'local_model_score':[]},
                               'gen': {'local_model_pred': [], 'local_model_score': []},
-                              'mnl': {'local_model_pred': [], 'local_model_score': []}
+                              'mds': {'local_model_pred': [], 'local_model_score': []}
                               }
 
             # setting the number of explained instances
