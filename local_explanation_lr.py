@@ -17,6 +17,7 @@ from console_progressbar.progressbar import ProgressBar
 from datetime import datetime
 from encoding_utils import *
 import matplotlib.pyplot as plt
+plt.rcParams.update({'font.size': 14})
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -48,8 +49,8 @@ def plot_feature_importance(model, feature_names, class_name, input, label, expe
     colors = ['#FF0051' if x > 0 else '#008BFB' for x in vals]
     pos = np.arange(len(vals)) + .5
     plt.barh(pos, vals, align='center', color=colors)
-    plt.yticks(pos, names,fontsize=13)
-    plt.title('Local explanation for class %s' % class_name[label], fontsize=15)
+    plt.yticks(pos, names,fontsize=15)
+    plt.title('Local Explanation | Prediction: %s' % class_name[label], fontsize=16)
     plt.xlabel('Regression\'s coefficients (impact on model output)')
     plt.savefig(experiment_path + str(index_instance) + '_' + sampling_name + '_' + dataset_name + '_' + blackbox_name
                 +'.pdf', bbox_inches = 'tight')
