@@ -30,8 +30,6 @@ class ExplanationBasedNeighborhood():
         self.model = model
         self.dataset = dataset
         self.discrete_indices = dataset['discrete_indices']
-        self.continuous_indices = dataset['continuous_indices']
-        self.numerical_width = dataset['feature_width'][dataset['continuous_indices']]
         self.class_set = np.unique(y_train)
 
     def categoricalSimilarity(self):
@@ -141,7 +139,7 @@ class ExplanationBasedNeighborhood():
         # calculating the distance between inputs and the random samples
         distance = np.zeros(X_sampled.shape[0])
         for i, c in enumerate(X_sampled_c):
-            feature_width = np.r_[self.numerical_width, np.asarray(list(self.categorical_width[c].values()))]
+            feature_width = np.asarray(list(self.categorical_width[c].values()))
             dist = (1 / feature_width) * abs(x_hat_exp[c] - X_sampled_exp[i,:])
             distance[i] = np.mean(dist)
 
