@@ -51,7 +51,6 @@ class ExplanationBasedNeighborhood():
                             target_names=self.class_set,
                             low_resolution_threshold=100)
         ale_exp = ale_explainer.explain(self.X_train)
-        # plot_ale(ale_exp)
 
         # extracting global effect values
         for c in self.class_set:
