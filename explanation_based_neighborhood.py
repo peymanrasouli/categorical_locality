@@ -142,8 +142,8 @@ class ExplanationBasedNeighborhood():
         # calculating the distance between inputs and the random samples
         distance = np.zeros(X_sampled.shape[0])
         for i, c in enumerate(X_sampled_c):
-            # feature_width = np.asarray(list(self.categorical_width[c].values()))
-            dist = (abs(x_hat_exp[c] - X_sampled_exp[i,:]))
+            feature_width = np.asarray(list(self.categorical_width[c].values()))
+            dist = ((1/feature_width) * abs(x_hat_exp[c] - X_sampled_exp[i,:]))
 
             # dist = (x_hat[c] != X_sampled[i,:]).astype(int)
 
