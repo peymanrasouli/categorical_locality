@@ -249,7 +249,7 @@ def main():
 
             # Generating explanations for the samples in the explain set
             methods_output = {'xbl': {'local_model_pred':[], 'local_model_score':[]},
-                              # 'kbl': {'local_model_pred': [], 'local_model_score': []},
+                              'kbl': {'local_model_pred': [], 'local_model_score': []},
                               'ros': {'local_model_pred':[], 'local_model_score':[]},
                               'ris': {'local_model_pred':[], 'local_model_score':[]},
                               'gen': {'local_model_pred': [], 'local_model_score': []},
