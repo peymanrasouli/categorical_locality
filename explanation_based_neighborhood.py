@@ -133,7 +133,7 @@ class ExplanationBasedNeighborhood():
             x_hat_exp[c] = self.cat2numConverter(instance)
 
         # generating random samples from the distribution of training data
-        X_sampled = FrequencyBasedRandomSampling(self.X_train, N_samples * 5)
+        X_sampled = FrequencyBasedRandomSampling(self.X_train, N_samples * 10)
         X_sampled_c = self.model.predict(X_sampled)
 
         # converting random samples from categorical to numerical representation
@@ -142,12 +142,8 @@ class ExplanationBasedNeighborhood():
         # calculating the distance between inputs and the random samples
         distance = np.zeros(X_sampled.shape[0])
         for i, c in enumerate(X_sampled_c):
-            # feature_width = np.asarray(list(self.categorical_width[c].values()))
-            dist = (abs(x_hat_exp[c] - X_sampled_exp[i,:]))# + (x_hat[c] != X_sampled[i,:]).astype(int)
-
-            # dist = (x_hat[c] != X_sampled[i,:]).astype(int)
-
-            distance[i] = np.mean(dist) #+ np.mean(distance_hat[c])
+            dist = (abs(x_hat_exp[c] - X_sampled_exp[i,:]))
+            distance[i] = np.mean(dist)
 
         # selecting N_samples based on the calculated distance
         sorted_indices = np.argsort(distance)
