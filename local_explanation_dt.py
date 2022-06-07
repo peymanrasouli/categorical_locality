@@ -279,9 +279,9 @@ def main():
             methods_output = {'xbl': {'local_model_pred':[], 'local_model_score':[]},
                               # 'kbl': {'local_model_pred': [], 'local_model_score': []},
                               # 'ros': {'local_model_pred':[], 'local_model_score':[]},
-                              # 'ris': {'local_model_pred':[], 'local_model_score':[]},
-                              # 'gen': {'local_model_pred': [], 'local_model_score': []},
-                              # 'mds': {'local_model_pred': [], 'local_model_score': []}
+                              'ris': {'local_model_pred':[], 'local_model_score':[]},
+                              'gen': {'local_model_pred': [], 'local_model_score': []},
+                              'mds': {'local_model_pred': [], 'local_model_score': []}
                               }
 
             # setting the number of explained instances
