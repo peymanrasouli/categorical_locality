@@ -140,7 +140,7 @@ class ExplanationBasedNeighborhood():
             distance_hat[c] = ((1/feature_width)*abs(x_exp - x_counterpart))
 
         # generating random samples from the distribution of training data
-        X_sampled = FrequencyBasedRandomSampling(self.X_train, N_samples * 10)
+        X_sampled = FrequencyBasedRandomSampling(self.X_train, N_samples * 20)
         X_sampled_c = self.model.predict(X_sampled)
 
         # converting random samples from categorical to numerical representation
