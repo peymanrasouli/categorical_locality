@@ -89,27 +89,27 @@ class ExplanationBasedNeighborhood():
     def cat2numConverter(self,
                           x,
                           feature_list=None,
-                          x_c = None):
+                          label = None):
 
         # converting features in categorical representation to explanation representation
         if feature_list == None:
             feature_list = self.discrete_indices
 
-        x_exp = x.copy()
-        if x_exp.shape.__len__() == 1:
+        x_num = x.copy()
+        if x_num.shape.__len__() == 1:
             # the input is a single instance
-            if x_c is None:
-                x_c = self.model.predict(x.reshape(1,-1))[0]
+            if label is None:
+                label = self.model.predict(x.reshape(1,-1))[0]
             for f in feature_list:
-                x_exp[f] = self.categorical_similarity[x_c][f][x[f]]
+                x_num[f] = self.categorical_similarity[label][f][x[f]]
         else:
             # the input is a matrix of instances
-            x_c = self.model.predict(x)
+            labels = self.model.predict(x)
             for f in feature_list:
                 vec = x[:,f]
-                vec_converted = np.asarray(list(map(lambda c,v: self.categorical_similarity[c][f][v], x_c, vec)))
-                x_exp[:,f] = vec_converted
-        return x_exp
+                vec_converted = np.asarray(list(map(lambda c,v: self.categorical_similarity[c][f][v], labels, vec)))
+                x_num[:,f] = vec_converted
+        return x_num
 
     def neighborhoodSampling(self, x, N_samples):
 
@@ -117,47 +117,47 @@ class ExplanationBasedNeighborhood():
         x_c = self.model.predict(x.reshape(1,-1))[0]
 
         # finding the closest neighbors in the other classes
-        x_hat = {}
+        R = {}
         x_ohe = ord2ohe(x, self.dataset)
         for c in self.class_set:
             if c == x_c:
-                x_hat[c] = x
+                R[c] = x
             else:
                 distances, indices = self.neighborhood_models[c].kneighbors(x_ohe.reshape(1, -1))
-                x_hat[c] = self.class_data[c][indices[0][0]].copy()
+                R[c] = self.class_data[c][indices[0][0]].copy()
 
-        # converting input samples from categorical to numerical representation
-        x_hat_exp = {}
-        for c, instance in x_hat.items():
-            x_hat_exp[c] = self.cat2numConverter(instance)
+        # converting input samples from categorical to numerical (global feature effects) representation
+        R_num = {}
+        for c, x_counterpart in R.items():
+            R_num[c] = self.cat2numConverter(x_counterpart)
 
-        # distance from x to counterparts
-        distance_hat = {}
+        # distance from x to counterparts in numerical (global feature effects) representation
+        distance_representative = {}
+        x_num = self.cat2numConverter(x)
         feature_width = np.asarray(list(self.categorical_width[x_c].values()))
-        x_exp =  self.cat2numConverter(x)
-        for c, instance in x_hat.items():
-            x_counterpart = self.cat2numConverter(instance, x_c=x_c)
-            distance_hat[c] = ((1/feature_width)*abs(x_exp - x_counterpart))
+        for c, x_counterpart in R.items():
+            x_counterpart_num = self.cat2numConverter(x_counterpart, label=x_c)
+            distance_representative[c] = ((1/feature_width) * abs(x_num - x_counterpart_num))
 
         # generating random samples from the distribution of training data
-        X_sampled = FrequencyBasedRandomSampling(self.X_train, N_samples * 20)
-        X_sampled_c = self.model.predict(X_sampled)
+        S = FrequencyBasedRandomSampling(self.X_train, N_samples * 20)
+        S_c = self.model.predict(S)
 
         # converting random samples from categorical to numerical representation
-        X_sampled_exp = self.cat2numConverter(X_sampled)
+        S_num = self.cat2numConverter(S)
 
-        # calculating the distance between inputs and the random samples
-        distance = np.zeros(X_sampled.shape[0])
-        for i, c in enumerate(X_sampled_c):
+        # calculating the distance between x and the random samples
+        distance = np.zeros(S.shape[0])
+        for i, c in enumerate(S_c):
+            distance_identical = (R[c] != S[i,:]).astype(int)
             feature_width = np.asarray(list(self.categorical_width[c].values()))
-            dist_effect = ((1/feature_width)*abs(x_hat_exp[c] - X_sampled_exp[i,:]))
-            dist_identical = (x_hat[c] != X_sampled[i,:]).astype(int)
-            distance[i] = np.mean(dist_effect + dist_identical + distance_hat[c])
+            distance_effect = ((1/feature_width) * abs(R_num[c] - S_num[i,:]))
+            distance[i] = np.mean(distance_identical + distance_effect + distance_representative[c])
 
         # selecting N_samples based on the calculated distance
         sorted_indices = np.argsort(distance)
         selected_indices = sorted_indices[:N_samples]
-        sampled_data = X_sampled[selected_indices, :]
+        sampled_data = S[selected_indices, :]
         neighborhood_data = np.r_[x.reshape(1, -1), sampled_data]
 
         # predicting the label and probability of the neighborhood data
