@@ -34,3 +34,14 @@ conda activate categorical_locality
 ```
 pip install -r requirements.txt
 ```
+# Reproducing the results
+To reproduce the explanation results of categorical_locality method vs. baselines with:
+
+1- Linear Regression as interpretable model run:
+```
+python local_explanation_lr.py
+```
+2- Decision Tree as interpretable model run:
+```
+python local_explanation_dt.py
+```
