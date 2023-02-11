@@ -2,7 +2,18 @@
 
 This repository contains the implementation source code of the following paper:
 
-Interpreting Categorical Data Classifiers using Explanation-based Locality
+[Interpreting Categorical Data Classifiers using Explanation-based Locality](https://ieeexplore.ieee.org/document/10031039)
+
+BibTeX:
+    
+    @inproceedings{rasouli2022interpreting,
+                  title={Interpreting Categorical Data Classifiers using Explanation-based Locality},
+                  author={Rasouli, Peyman and Yu, Ingrid Chieh and Jim{\'e}nez-Ruiz, Ernesto},
+                  booktitle={2022 IEEE International Conference on Data Mining Workshops (ICDMW)},
+                  pages={163--170},
+                  year={2022},
+                  organization={IEEE}
+    }
 
 # Setup
 1- Clone the repository using HTTP/SSH:
